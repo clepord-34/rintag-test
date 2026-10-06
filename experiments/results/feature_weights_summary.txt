@@ -1,0 +1,529 @@
+======================================================================
+CRF FEATURE WEIGHT ANALYSIS — SUMMARY FOR THESIS RESULTS
+======================================================================
+
+-- ADJ (12933 features) --
+  Top 20 POSITIVE features (evidence FOR ADJ):
+      1. word[:5]:pinak                            +2.9820
+      2. word[:3]:dak                              +2.8282
+      3. word[:4]:irak                             +2.6723
+      4. word[-2:]:al                              +2.6281
+      5. word[:3]:maa                              +2.6201
+      6. word[:5]:magay                            +2.5022
+      7. word[:4]:tama                             +2.3795
+      8. word[:3]:mah                              +2.3218
+      9. word[-2:]:ed                              +2.3005
+     10. word[-3:]:kut                             +2.2807
+     11. word[:4]:masa                             +2.2669
+     12. word[:2]:ne                               +2.2336
+     13. word[:2]:gr                               +2.2172
+     14. word[-3:]:kot                             +2.2065
+     15. word[:3]:tam                              +2.2039
+     16. word[:4]:maga                             +2.1934
+     17. word[:3]:mal                              +2.0772
+     18. word[:5]:pabor                            +2.0752
+     19. word[:4]:pary                             +2.0640
+     20. -1:word.lower()|word.lower():nirang|babayi  +2.0085
+  Top 10 NEGATIVE features (evidence AGAINST ADJ):
+      1. word[:3]:pag                              -2.5536
+      2. word[:3]:mag                              -2.0304
+      3. word[:4]:para                             -2.0056
+      4. word[:3]:kan                              -1.9014
+      5. word[:3]:man                              -1.7943
+      6. word[-2:]:an                              -1.6749
+      7. word[-5:]:ayong                           -1.4993
+      8. word[:2]:an                               -1.4592
+      9. word[:2]:gi                               -1.4275
+     10. +2:word[:2]:gu                            -1.4107
+
+-- ADP (7251 features) --
+  Top 20 POSITIVE features (evidence FOR ADP):
+      1. word[-2:]:sa                              +3.3083
+      2. word[:4]:manu                             +3.2300
+      3. word[:3]:sad                              +2.7859
+      4. word[:5]:manun                            +2.6835
+      5. -2:word.lower():namumuyang                +2.4673
+      6. +2:word.lower():nakatangad                +2.4321
+      7. word[:2]:ni                               +2.1974
+      8. +1:word[:3]:kad                           +2.0796
+      9. word[:4]:sadt                             +2.0729
+     10. word[:3]:han                              +1.9917
+     11. +2:word[-2:]:go                           +1.8836
+     12. word[-2:]|+1:word[-2:]:ud|ng              +1.8541
+     13. word[:4]:hang                             +1.7729
+     14. +1:word[:2]:th                            +1.7634
+     15. word[:3]:bas                              +1.7190
+     16. word[:3]:ang                              +1.7106
+     17. word[-2:]:to                              +1.7047
+     18. word[:3]:man                              +1.6744
+     19. word.lower()|+1:word[:3]:an|pag           +1.6256
+     20. -1:word[-3:]:ter                          +1.5511
+  Top 10 NEGATIVE features (evidence AGAINST ADP):
+      1. +1:word[-2:]:ak                           -1.7490
+      2. -1:word[-3:]:tan                          -1.6514
+      3. +1:word[:2]:ri                            -1.6240
+      4. +1:word[-3:]:yad                          -1.5071
+      5. +2:word[:3]:san                           -1.4990
+      6. -1:word[:2]:su                            -1.3845
+      7. word.lower()|+1:word[:3]:para|mak         -1.3627
+      8. +2:word[-2:]:ok                           -1.3540
+      9. -1:word[:2]:be                            -1.3416
+     10. word.has_unit_repeat                      -1.3001
+
+-- ADV (13045 features) --
+  Top 20 POSITIVE features (evidence FOR ADV):
+      1. word[:4]:pirm                             +3.1959
+      2. word[:3]:gay                              +2.8286
+      3. word[:3]:pau                              +2.8128
+      4. word[-5:]:naman                           +2.7259
+      5. word[:5]:talag                            +2.6970
+      6. word[-3:]:man                             +2.5476
+      7. word[-3:]:aad                             +2.3740
+      8. word[-4:]:baad                            +2.3740
+      9. -1:word[-2:]|word[-2:]:o|ya               +2.3242
+     10. -1:word[:2]|word.lower():di|na            +2.3104
+     11. word.lower()|+1:word.lower():na|sana      +2.2781
+     12. word[:3]:ngo                              +2.2196
+     13. word[:2]:tl                               +2.1712
+     14. -1:word[:2]:aw                            +2.1599
+     15. word[:4]:paba                             +2.1551
+     16. -1:word[-2:]|word[-2:]:bo|na              +2.1455
+     17. word[:3]:sig                              +2.1153
+     18. word[:4]:suba                             +2.0624
+     19. word[-4:]:nsan                            +2.0465
+     20. word[-3:]:rmi                             +2.0464
+  Top 10 NEGATIVE features (evidence AGAINST ADV):
+      1. +1:word[:2]:bu                            -1.8224
+      2. +2:word[:2]:pr                            -1.6718
+      3. -2:word[:2]:co                            -1.4594
+      4. +2:word[-2:]:od                           -1.4494
+      5. +1:word[-3:]:gan                          -1.4323
+      6. -2:word[:3]:tan                           -1.4272
+      7. +1:word[-3:]:nan                          -1.3195
+      8. -2:word[-2:]:no                           -1.3055
+      9. +2:word[:3]:bal                           -1.2919
+     10. +2:word[:3]:gab                           -1.2917
+
+-- AUX (984 features) --
+  Top 20 POSITIVE features (evidence FOR AUX):
+      1. word[:2]:pw                               +3.2505
+      2. word[:4]:pwed                             +2.7785
+      3. word[:3]:pwe                              +1.6214
+      4. word.lower():dapat                        +1.6140
+      5. word[:4]:dapa                             +1.6140
+      6. word[-5:]:dapat                           +1.6140
+      7. word[:5]:dapat                            +1.6140
+      8. word[:3]:dap                              +1.5772
+      9. word[-4:]:apat                            +1.5703
+     10. word[:5]:pwede                            +1.5680
+     11. word[-3:]:pat                             +1.5588
+     12. word[-2:]:de                              +1.4331
+     13. +1:word[-2:]:er                           +1.4158
+     14. word[:1]:p                                +1.3737
+     15. word[-4:]:kaka                            +1.3003
+     16. word[:2]:mg                               +1.1923
+     17. word[-2:]|+1:word[-2:]:pa|so              +1.1914
+     18. word[-2:]:ka                              +1.1868
+     19. word[:3]:pwd                              +1.1439
+     20. +2:word.lower():sunudun                   +1.0433
+  Top 10 NEGATIVE features (evidence AGAINST AUX):
+      1. +1:word[:2]:na                            -0.8456
+      2. bias                                      -0.6976
+      3. +2:word[:2]:sa                            -0.5776
+      4. +2:word[:2]:an                            -0.5576
+      5. -1:word[-2:]:an                           -0.5564
+      6. word[:2]:pa                               -0.5387
+      7. -2:word[:2]:pa                            -0.4639
+      8. -1:word[-2:]:ng                           -0.4560
+      9. word[-1:]:n                               -0.4336
+     10. +1:word[:2]:ma                            -0.4308
+
+-- CCONJ (2080 features) --
+  Top 20 POSITIVE features (evidence FOR CCONJ):
+      1. word[-4:]:saka                            +2.2426
+      2. word[:3]:sag                              +1.8319
+      3. word.lower():alagad                       +1.7002
+      4. word[:4]:alag                             +1.7002
+      5. word[-5:]:lagad                           +1.7002
+      6. word[:5]:alaga                            +1.7002
+      7. word[:2]:as                               +1.6488
+      8. word[-3:]:ndi                             +1.6377
+      9. word.lower():saka                         +1.6093
+     10. word[-5:]:saka                            +1.6093
+     11. word[:5]:saka                             +1.6093
+     12. word[-2:]|+1:word[-2:]:la|on              +1.5818
+     13. word[:2]:pe                               +1.5769
+     14. word[-3:]:aka                             +1.5753
+     15. word[:4]:saka                             +1.5717
+     16. word[-3:]:pos                             +1.5712
+     17. word[-1:]:d                               +1.5598
+     18. word.lower():kaya                         +1.5540
+     19. word[-5:]:kaya                            +1.5540
+     20. word[:5]:kaya                             +1.5540
+  Top 10 NEGATIVE features (evidence AGAINST CCONJ):
+      1. +1:word[-2:]:pa                           -1.4561
+      2. +1:word.is_punctuation                    -1.3288
+      3. +2:word[-2:]:on                           -1.0013
+      4. +1:word[-3:]:ong                          -0.8738
+      5. -1:word[-2:]|word[-2:]:na|ya              -0.8332
+      6. -1:word[:2]:ko                            -0.7968
+      7. -1:word[-2:]:og                           -0.7934
+      8. word[-2:]:ng                              -0.7368
+      9. EOS                                       -0.6938
+     10. -1:word[:2]|word.lower():na|kaya          -0.6543
+
+-- DET (4962 features) --
+  Top 20 POSITIVE features (evidence FOR DET):
+      1. word[-3:]:mga                             +2.2779
+      2. word[:2]:an                               +2.0575
+      3. word[:3]:kad                              +1.9642
+      4. word[:2]:mg                               +1.8506
+      5. word[:2]:ni                               +1.8134
+      6. +1:word[-2:]:ia                           +1.7052
+      7. word[-2:]|+1:word[-2:]:ng|ng              +1.6822
+      8. word.lower():lambang                      +1.6058
+      9. word[:4]:lamb                             +1.6058
+     10. word[:5]:lamba                            +1.6058
+     11. +1:word[-3:]:gon                          +1.6011
+     12. word[-5:]:mbang                           +1.5073
+     13. -1:word[-2:]|word[-2:]:ay|ku              +1.4814
+     14. word[-2:]|+1:word[-2:]:an|ak              +1.4690
+     15. -1:word[-3:]:nya                          +1.4607
+     16. word[:2]:ka                               +1.4256
+     17. word[:2]:th                               +1.4018
+     18. word[:3]:lam                              +1.4010
+     19. word.lower():mga                          +1.3962
+     20. word[-4:]:mga                             +1.3962
+  Top 10 NEGATIVE features (evidence AGAINST DET):
+      1. +1:word.is_punctuation                    -2.1419
+      2. +1:word[-3:]:ela                          -1.7692
+      3. -1:word[-3:]:pan                          -1.5360
+      4. -2:word[-3:]:ran                          -1.4920
+      5. +2:word[-3:]:gad                          -1.4331
+      6. -1:word[:2]|word.lower():pa|a             -1.4270
+      7. +1:word[-3:]:lan                          -1.3425
+      8. -1:word[-2:]:po                           -1.3420
+      9. +1:word[-3:]:say                          -1.3331
+     10. BOS                                       -1.3279
+
+-- INTJ (3294 features) --
+  Top 20 POSITIVE features (evidence FOR INTJ):
+      1. BOS                                       +2.8407
+      2. word[-1:]:h                               +2.5991
+      3. word[:1]:h                                +2.3793
+      4. word[:4]:cong                             +2.3034
+      5. word[:5]:congr                            +2.3034
+      6. word[:3]:con                              +2.1545
+      7. word[:1]:o                                +1.9639
+      8. word[:1]:w                                +1.8686
+      9. word[-2:]:ge                              +1.8147
+     10. word.has_char_run                         +1.6791
+     11. word[:2]:pl                               +1.6598
+     12. word[-2:]:ah                              +1.6299
+     13. EOS                                       +1.6096
+     14. word.has_unit_repeat                      +1.4647
+     15. word[-2:]:ep                              +1.4646
+     16. word[-3:]:sus                             +1.4452
+     17. word[:5]:thank                            +1.4381
+     18. +2:word[:3]:tha                           +1.4318
+     19. word[:2]:ye                               +1.4316
+     20. word[:4]:than                             +1.4223
+  Top 10 NEGATIVE features (evidence AGAINST INTJ):
+      1. word[-1:]:g                               -1.4202
+      2. word[-1:]:n                               -1.1399
+      3. word.istitle()                            -1.1019
+      4. word[:1]:k                                -1.0395
+      5. +1:word[:2]:ma                            -0.9187
+      6. +2:word[:2]:sa                            -0.8582
+      7. word[:2]:pa                               -0.7885
+      8. -2:word[-2:]:an                           -0.7755
+      9. word.is_punctuation                       -0.7707
+     10. +2:word[-2:]:ya                           -0.7646
+
+-- NOUN (22334 features) --
+  Top 20 POSITIVE features (evidence FOR NOUN):
+      1. word[-4:]:syon                            +3.1931
+      2. word[:4]:magu                             +2.8438
+      3. word[:3]:pla                              +2.6738
+      4. word[:3]:may                              +2.6008
+      5. word[-5:]:inang                           +2.5748
+      6. +1:word.istitle()                         +2.5654
+      7. word[-2:]:ce                              +2.4797
+      8. word[:4]:grad                             +2.4472
+      9. word[-3:]:ion                             +2.3770
+     10. word[:3]:dis                              +2.3417
+     11. word[:2]:pg                               +2.3026
+     12. word[-1:]:s                               +2.1469
+     13. word[:3]:sal                              +2.1194
+     14. word[-1:]:b                               +2.1113
+     15. word[:4]:tula                             +2.0731
+     16. word[-3:]:syo                             +2.0235
+     17. -1:word[-3:]:ton                          +1.9659
+     18. word[-3:]:ola                             +1.9653
+     19. word[-3:]:dad                             +1.9478
+     20. -1:word[-3:]:may                          +1.9306
+  Top 10 NEGATIVE features (evidence AGAINST NOUN):
+      1. word[:3]:pig                              -2.6587
+      2. word[:2]:na                               -2.6496
+      3. word[:4]:pina                             -2.1967
+      4. word[-3:]:ton                             -2.1101
+      5. word[-2:]:os                              -2.0975
+      6. word[:3]:rin                              -1.9594
+      7. word[-4:]:apos                            -1.9385
+      8. word[:2]:ma                               -1.9014
+      9. word[-3:]:aya                             -1.8861
+     10. -1:word[-2:]|word[-2:]:a|ng               -1.8544
+
+-- NUM (1497 features) --
+  Top 20 POSITIVE features (evidence FOR NUM):
+      1. word.isdigit()                            +3.6950
+      2. word.shape:d                              +3.6950
+      3. word[-3:]:sad                             +2.7393
+      4. word[:1]:2                                +2.4000
+      5. word[-2:]:wa                              +2.3616
+      6. word[:4]:saro                             +2.3551
+      7. word[-3:]:rwa                             +2.1561
+      8. word.shape:dx                             +2.1439
+      9. word[:3]:tul                              +2.0855
+     10. word[:3]:dar                              +2.0196
+     11. word[:4]:lima                             +1.9735
+     12. word[-4:]:usad                            +1.8434
+     13. word[:1]:6                                +1.8025
+     14. word[:3]:lim                              +1.7896
+     15. word[-2:]|+1:word[-2:]:ad|na              +1.7863
+     16. -1:word.lower():alas                      +1.7754
+     17. word[:4]:darw                             +1.6423
+     18. word[:5]:darwa                            +1.6423
+     19. word[-5:]:rwang                           +1.5967
+     20. -1:word[-3:]:las                          +1.5852
+  Top 10 NEGATIVE features (evidence AGAINST NUM):
+      1. word.shape:x                              -2.2647
+      2. word.istitle()                            -1.1263
+      3. word[:1]:k                                -0.9414
+      4. word.shape:Xx                             -0.9335
+      5. word.has_unit_repeat                      -0.6662
+      6. -2:word[-2:]:ng                           -0.5555
+      7. -2:word[:2]:ma                            -0.5218
+      8. word[:1]:n                                -0.5156
+      9. +2:word[-2:]:ka                           -0.5022
+     10. +1:word[:2]:ba                            -0.4968
+
+-- PART (8279 features) --
+  Top 20 POSITIVE features (evidence FOR PART):
+      1. word[:3]:san                              +3.1269
+      2. word[-3:]:aya                             +2.5367
+      3. word[:3]:buk                              +2.4145
+      4. word[:4]:kuno                             +2.3139
+      5. word[:2]:po                               +2.2802
+      6. word[-2:]:ga                              +2.1785
+      7. word[:3]:dir                              +2.0371
+      8. word[:3]:kun                              +2.0252
+      9. word[-2:]:po                              +2.0126
+     10. word[-3:]:gad                             +1.9118
+     11. word[:4]:buko                             +1.8913
+     12. word[:3]:pal                              +1.8563
+     13. word.lower()|+1:word[-3:]:na|wan          +1.7630
+     14. -2:word[:2]:fa                            +1.7531
+     15. word.lower():palan                        +1.7527
+     16. word[-5:]:palan                           +1.7495
+     17. word[-4:]:unta                            +1.7221
+     18. word.lower():ngani                        +1.7101
+     19. word[-5:]:ngani                           +1.7101
+     20. -1:word[:2]:ay                            +1.7091
+  Top 10 NEGATIVE features (evidence AGAINST PART):
+      1. -1:word[:2]|word.lower():di|na            -2.0930
+      2. +1:word[:3]:pak                           -1.6773
+      3. word.lower()|+1:word[:3]:na|nga           -1.5676
+      4. -1:word[:2]:la                            -1.5330
+      5. -1:word[:3]:may                           -1.5286
+      6. -1:word[-2:]|word[-2:]:na|ga              -1.5068
+      7. word.lower()|+1:word[:3]:na|san           -1.5030
+      8. EOS                                       -1.4915
+      9. -1:word[-2:]|word[-2:]:da|na              -1.4654
+     10. word[-2:]|+1:word[-2:]:na|ga              -1.4466
+
+-- PRON (8215 features) --
+  Top 20 POSITIVE features (evidence FOR PRON):
+      1. word[-3:]:ini                             +3.5966
+      2. word[-3:]:ton                             +3.4681
+      3. word[-3:]:say                             +3.3625
+      4. word[-3:]:yan                             +3.3297
+      5. word[-2:]:mo                              +3.3149
+      6. word[-3:]:ira                             +3.2517
+      7. word[:3]:kam                              +3.0624
+      8. word[-1:]:u                               +3.0541
+      9. word[:3]:kan                              +3.0109
+     10. word[-2:]:mu                              +2.9071
+     11. word[-4:]:isay                            +2.8415
+     12. word[:4]:ngam                             +2.7575
+     13. word[:2]:ni                               +2.6818
+     14. word[-4:]:yang                            +2.6037
+     15. word[:2]:ny                               +2.5839
+     16. word[-3:]:ong                             +2.5458
+     17. word[-4:]:kong                            +2.4771
+     18. word[:2]:ad                               +2.4589
+     19. word[:3]:kit                              +2.4579
+     20. word[:2]:km                               +2.3736
+  Top 10 NEGATIVE features (evidence AGAINST PRON):
+      1. word[:1]:b                                -2.9081
+      2. word[:2]:ku                               -2.2077
+      3. word[:1]:p                                -2.1162
+      4. word[:3]:kin                              -1.7243
+      5. -2:word[-2:]:ba                           -1.7181
+      6. -1:word[:3]:buk                           -1.5637
+      7. -1:word[:2]:ay                            -1.5586
+      8. word[:2]:ma                               -1.4764
+      9. -2:word[:3]:mak                           -1.4370
+     10. -1:word[:2]:mg                            -1.4261
+
+-- PROPN (3198 features) --
+  Top 20 POSITIVE features (evidence FOR PROPN):
+      1. word.istitle()                            +6.5366
+      2. word.shape:Xx                             +5.1481
+      3. word[:1]:j                                +1.8354
+      4. word.isupper()                            +1.8093
+      5. -1:word[-2:]:si                           +1.6707
+      6. word[:2]:pe                               +1.5646
+      7. word.shape:X                              +1.3694
+      8. word[-2:]:en                              +1.3325
+      9. -2:word[:3]:sad                           +1.3013
+     10. -2:word[:2]:al                            +1.2029
+     11. word[-2:]|+1:word[-2:]:ng|,               +1.1676
+     12. word.shape:'x                             +1.1534
+     13. word[:1]:'                                +1.1407
+     14. -1:word[-3:]:ang                          +1.1239
+     15. +2:word[-3:]:dan                          +1.0813
+     16. -1:word[:3]:lol                           +1.0678
+     17. word[-4:]:mbre                            +1.0677
+     18. word[-5:]:embre                           +1.0602
+     19. -1:word[:2]:lo                            +1.0494
+     20. word[-3:]:bre                             +0.9985
+  Top 10 NEGATIVE features (evidence AGAINST PROPN):
+      1. BOS                                       -5.1706
+      2. word[:2]:pa                               -2.5089
+      3. -2:word[-2:]:un                           -1.8641
+      4. -1:word.istitle()                         -1.7517
+      5. word[:1]:k                                -1.7413
+      6. word[:2]:na                               -1.5727
+      7. word.is_full_repeat                       -1.5328
+      8. word[-1:]:g                               -1.4928
+      9. +2:word[-2:]:at                           -1.4711
+     10. word[-4:]:nang                            -1.4635
+
+-- PUNCT (123 features) --
+  Top 20 POSITIVE features (evidence FOR PUNCT):
+      1. word.is_punctuation                       +7.2135
+      2. word[-1:]:.                               +1.4946
+      3. word[:1]:.                                +1.4105
+      4. word.is_full_repeat                       +1.3696
+      5. word.shape:.                              +1.1996
+      6. word[:1]:,                                +1.1907
+      7. bias                                      +1.1214
+      8. word[-1:]:!                               +1.0936
+      9. word[:1]:!                                +1.0725
+     10. word.has_char_run                         +1.0403
+     11. word[-1:]:,                               +0.9328
+     12. word[-1:]:?                               +0.8627
+     13. word.shape:!                              +0.8527
+     14. word.shape:,                              +0.8056
+     15. word[:1]:?                                +0.7517
+     16. word.shape:?                              +0.5548
+     17. word.lower():,                            +0.5230
+     18. word[-2:]:,                               +0.5230
+     19. word[-3:]:,                               +0.5230
+     20. word[-4:]:,                               +0.5230
+  Top 1 NEGATIVE features (evidence AGAINST PUNCT):
+      1. word.len                                  -0.3479
+
+-- SCONJ (3524 features) --
+  Top 20 POSITIVE features (evidence FOR SCONJ):
+      1. word[-5:]:aning                           +3.0115
+      2. word[-3:]:pag                             +2.7028
+      3. word[:1]:k                                +2.6711
+      4. word[:5]:tanga                            +2.3091
+      5. +1:word[-3:]:san                          +2.1805
+      6. word[-4:]:ning                            +2.1790
+      7. word[:4]:mask                             +2.0786
+      8. word[-3:]:kin                             +2.0186
+      9. word[-2:]|+1:word[-2:]:sa|ng              +1.8987
+     10. word[:3]:pag                              +1.7912
+     11. word.lower():nganing                      +1.6883
+     12. word.lower():dawa                         +1.6317
+     13. word[-4:]:dawa                            +1.6317
+     14. word[:4]:dawa                             +1.6317
+     15. word[-5:]:dawa                            +1.6317
+     16. word[:5]:dawa                             +1.6317
+     17. word.lower()|+1:word[:3]:para|mak         +1.5654
+     18. word[:3]:kun                              +1.5582
+     19. word[-2:]:ta                              +1.5364
+     20. +1:word[:2]:el                            +1.4468
+  Top 10 NEGATIVE features (evidence AGAINST SCONJ):
+      1. EOS                                       -1.5685
+      2. -1:word.istitle()                         -1.4139
+      3. -1:word[:2]:pu                            -1.4012
+      4. +1:word[:2]:uu                            -1.3509
+      5. +1:word[:2]:ab                            -1.2413
+      6. +1:word[-2:]:at                           -1.1157
+      7. +2:word[:3]:bag                           -1.0862
+      8. -2:word[-2:]:ta                           -1.0794
+      9. word[-2:]|+1:word[-2:]:ta|an              -1.0711
+     10. -2:word[-3:]:mga                          -1.0625
+
+-- VERB (15526 features) --
+  Top 20 POSITIVE features (evidence FOR VERB):
+      1. word[:3]:nag                              +4.1516
+      2. word[:3]:mag                              +4.1453
+      3. word[:4]:sabi                             +3.6752
+      4. word[:3]:pig                              +3.5732
+      5. word[:3]:agk                              +3.5481
+      6. word[:3]:mig                              +3.5052
+      7. word[:3]:bum                              +3.0971
+      8. word[:3]:bin                              +2.8320
+      9. word[:2]:na                               +2.7511
+     10. word[:3]:gin                              +2.6430
+     11. word[:1]:i                                +2.5549
+     12. word[:4]:sina                             +2.5079
+     13. word[:3]:din                              +2.4872
+     14. word[:3]:tin                              +2.3356
+     15. word[-2:]|+1:word[-2:]:an|a               +2.3141
+     16. word[:2]:ag                               +2.2791
+     17. word[:3]:sin                              +2.2572
+     18. word[:2]:ud                               +2.2551
+     19. word[:2]:ip                               +2.2482
+     20. word[:2]:um                               +2.2030
+  Top 10 NEGATIVE features (evidence AGAINST VERB):
+      1. word[:2]:ka                               -2.6735
+      2. word[:5]:pinak                            -2.3417
+      3. word[:3]:nga                              -2.0719
+      4. word[-2:]|+1:word[-2:]:an|,               -2.0373
+      5. +1:word[-3:]:asa                          -2.0319
+      6. word[:5]:magay                            -2.0275
+      7. word[:3]:pan                              -1.9549
+      8. -1:word[-2:]|word[-2:]:ga|on              -1.9167
+      9. -2:word[:2]:se                            -1.8852
+     10. word[:4]:magu                             -1.8798
+
+-- TAG TRANSITIONS --
+  Top 20 transition weights (tag_from → tag_to):
+      1. PROPN    → NOUN      -2.6778
+      2. DET      → NOUN      +2.5036
+      3. INTJ     → INTJ      +2.4984
+      4. ADP      → PROPN     +2.3643
+      5. VERB     → PROPN     -2.3374
+      6. PROPN    → PROPN     +2.2425
+      7. VERB     → ADJ       -2.2345
+      8. ADP      → NOUN      +2.1699
+      9. AUX      → NOUN      -2.1220
+     10. AUX      → VERB      +2.0498
+     11. PROPN    → PRON      -1.9838
+     12. ADV      → PROPN     -1.9696
+     13. DET      → PROPN     +1.9681
+     14. ADP      → SCONJ     -1.9204
+     15. NUM      → VERB      -1.8532
+     16. NOUN     → PROPN     -1.7867
+     17. DET      → ADV       -1.7723
+     18. ADJ      → VERB      -1.7702
+     19. INTJ     → NOUN      -1.6784
+     20. ADP      → VERB      -1.6482
+
+======================================================================

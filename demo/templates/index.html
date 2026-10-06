@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RinTag | Rinconada Bikol POS Tagger</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=2) }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>RinTag</h1>
+            <p>Automated Part-of-Speech Tagger for the Rinconada Bikol Language</p>
+        </header>
+
+        <main>
+            <div class="glass-panel input-section">
+                <textarea id="textInput" placeholder="Type a Rinconada Bikol sentence here..."
+                    rows="3">nagdalagan su igin</textarea>
+                <div class="controls">
+                    <div class="examples">
+                        <span>Examples:</span>
+                        <button class="example-btn" onclick="setExample('nagdalagan su igin')">Basic</button>
+                        <button class="example-btn" onclick="setExample('nakabayad ako ning dakulong ayam sadto baloy ni Christian.')">Complex</button>
+                    </div>
+                    <button id="tagBtn" class="primary-btn">
+                        <span id="btnText">Analyze Sentence</span>
+                        <div id="loadingSpinner" class="spinner hidden"></div>
+                    </button>
+                </div>
+            </div>
+
+            <div id="errorMsg" class="error-msg hidden"></div>
+
+            <div id="resultSection" class="glass-panel result-section hidden">
+                <div class="result-header">
+                    <h2>Analysis Results</h2>
+                    <span class="hint">Hover over tags for details</span>
+                </div>
+                <div id="tokensContainer" class="tokens-container">
+                    <!-- Tokens will be injected here -->
+                </div>
+            </div>
+        </main>
+
+        <p class="input-note"><strong>Input note:</strong> Enter words with morphological affixes, including prefixes, suffixes, infixes, or circumfixes, as one joined word with the root (for example, <em>"nagdalagan"</em> or <em>"nag-dalagan"</em>, not <em>"nag dalagan"</em>).</p>
+    </div>
+
+    <!-- Tooltip Template -->
+    <div id="tooltip" class="tooltip hidden">
+        <div class="tooltip-header">
+            <span id="ttToken" class="tt-token">token</span>
+            <span id="ttTag" class="tt-tag tag-badge">TAG</span>
+        </div>
+        <div class="tt-section">
+            <div class="tt-label">Confidence</div>
+            <div class="confidence-bar-container">
+                <div id="ttConfidenceBar" class="confidence-fill"></div>
+                <span id="ttConfidenceText" class="confidence-text">90%</span>
+            </div>
+        </div>
+
+        <div class="tt-section">
+            <div class="tt-label">Top Alternatives</div>
+            <div id="ttAlternatives" class="alternatives-list">
+                <!-- Alternatives injected here -->
+            </div>
+        </div>
+
+        <div class="tt-section">
+            <div class="tt-label">Key Features</div>
+            <div id="ttFeatures" class="features-list">
+                <!-- Features injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const input = document.getElementById('textInput');
+        const tagBtn = document.getElementById('tagBtn');
+        const btnText = document.getElementById('btnText');
+        const spinner = document.getElementById('loadingSpinner');
+        const errorMsg = document.getElementById('errorMsg');
+        const resultSection = document.getElementById('resultSection');
+        const tokensContainer = document.getElementById('tokensContainer');
+        const tooltip = document.getElementById('tooltip');
+
+        let currentTokens = [];
+
+        function setExample(text) {
+            input.value = text;
+        }
+
+        tagBtn.addEventListener('click', async () => {
+            const text = input.value.trim();
+            if (!text) return;
+
+            // Loading state
+            btnText.classList.add('hidden');
+            spinner.classList.remove('hidden');
+            tagBtn.disabled = true;
+            errorMsg.classList.add('hidden');
+            resultSection.classList.add('hidden');
+
+            try {
+                const response = await fetch('/tag', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.error || 'Failed to tag text');
+                }
+
+                currentTokens = data.tokens;
+                renderTokens(currentTokens);
+                resultSection.classList.remove('hidden');
+
+            } catch (err) {
+                errorMsg.textContent = err.message;
+                errorMsg.classList.remove('hidden');
+            } finally {
+                btnText.classList.remove('hidden');
+                spinner.classList.add('hidden');
+                tagBtn.disabled = false;
+            }
+        });
+
+        function renderTokens(tokens) {
+            tokensContainer.innerHTML = '';
+            tokens.forEach((t, i) => {
+                const tokenWrapper = document.createElement('div');
+                tokenWrapper.className = 'token-wrapper';
+
+                const tokenText = document.createElement('span');
+                tokenText.className = 'token-text';
+                tokenText.textContent = t.token;
+
+                const tagBadge = document.createElement('span');
+                tagBadge.className = `tag-badge tag-${t.tag.toLowerCase()}`;
+                tagBadge.textContent = t.tag;
+
+                tokenWrapper.appendChild(tokenText);
+                tokenWrapper.appendChild(tagBadge);
+
+                tokenWrapper.addEventListener('mouseenter', (e) => showTooltip(e, t));
+                tokenWrapper.addEventListener('mouseleave', hideTooltip);
+                tokenWrapper.addEventListener('mousemove', moveTooltip);
+
+                tokensContainer.appendChild(tokenWrapper);
+            });
+        }
+
+        function getFullTagName(tag) {
+            const names = {
+                'ADJ': 'ADJECTIVE',
+                'ADP': 'ADPOSITION',
+                'ADV': 'ADVERB',
+                'AUX': 'AUXILIARY',
+                'CCONJ': 'COORDINATING CONJUNCTION',
+                'DET': 'DETERMINER',
+                'INTJ': 'INTERJECTION',
+                'NOUN': 'NOUN',
+                'NUM': 'NUMERAL',
+                'PART': 'PARTICLE',
+                'PRON': 'PRONOUN',
+                'PROPN': 'PROPER NOUN',
+                'PUNCT': 'PUNCTUATION',
+                'SCONJ': 'SUBORDINATING CONJUNCTION',
+                'SYM': 'SYMBOL',
+                'VERB': 'VERB',
+                'X': 'OTHERS'
+            };
+            return names[tag] || tag;
+        }
+
+        function showTooltip(e, data) {
+            document.getElementById('ttToken').textContent = data.token;
+            const ttTag = document.getElementById('ttTag');
+            ttTag.textContent = getFullTagName(data.tag);
+            ttTag.className = `tt-tag tag-badge tag-${data.tag.toLowerCase()}`;
+
+            const confPercent = (data.confidence * 100).toFixed(1);
+            document.getElementById('ttConfidenceText').textContent = `${confPercent}%`;
+            document.getElementById('ttConfidenceBar').style.width = `${confPercent}%`;
+            document.getElementById('ttConfidenceBar').style.backgroundColor = getTagColor(data.tag);
+
+            const altContainer = document.getElementById('ttAlternatives');
+            altContainer.innerHTML = '';
+            data.alternatives.forEach(alt => {
+                if (alt.tag === data.tag) return; // Skip the predicted tag
+                const p = (alt.probability * 100).toFixed(1);
+                altContainer.innerHTML += `
+                    <div class="alt-row">
+                        <span class="alt-tag">${getFullTagName(alt.tag)}</span>
+                        <div class="alt-bar-bg">
+                            <div class="alt-bar-fill" style="width: ${p}%; background-color: ${getTagColor(alt.tag)}"></div>
+                        </div>
+                        <span class="alt-p">${p}%</span>
+                    </div>
+                `;
+            });
+
+            const featContainer = document.getElementById('ttFeatures');
+            featContainer.innerHTML = '';
+            const keyFeatures = Object.entries(data.features)
+                .filter(([k, v]) => v && (k.includes('word[:') || k.includes('word[-') || k.includes('istitle')))
+                .slice(0, 5); // Just show a few interesting ones
+
+            if (keyFeatures.length === 0) {
+                featContainer.innerHTML = '<span class="feat-none">No distinctive morphological features</span>';
+            } else {
+                keyFeatures.forEach(([k, v]) => {
+                    featContainer.innerHTML += `<span class="feat-pill">${k.replace('word', '')} = ${v}</span>`;
+                });
+            }
+
+            tooltip.classList.remove('hidden');
+            moveTooltip(e);
+        }
+
+        function hideTooltip() {
+            tooltip.classList.add('hidden');
+        }
+
+        function moveTooltip(e) {
+            const x = e.clientX + 15;
+            const y = e.clientY + 15;
+
+            // Adjust if tooltip goes off screen
+            const rect = tooltip.getBoundingClientRect();
+            let finalX = x;
+            let finalY = y;
+
+            if (x + rect.width > window.innerWidth) {
+                finalX = e.clientX - rect.width - 15;
+            }
+            if (y + rect.height > window.innerHeight) {
+                finalY = e.clientY - rect.height - 15;
+            }
+
+            tooltip.style.left = `${finalX}px`;
+            tooltip.style.top = `${finalY}px`;
+        }
+
+        function getTagColor(tag) {
+            const colors = {
+                'NOUN': '#6366f1',
+                'VERB': '#10b981',
+                'ADJ': '#f59e0b',
+                'ADV': '#ec4899',
+                'PRON': '#06b6d4',
+                'DET': '#64748b',
+                'ADP': '#8b5cf6',
+                'CCONJ': '#f43f5e',
+                'NUM': '#14b8a6',
+                'PART': '#84cc16',
+                'INTJ': '#f97316',
+                'PROPN': '#3b82f6',
+                'PUNCT': '#9ca3af',
+                'SYM': '#d946ef',
+                'X': '#ef4444'
+            };
+            return colors[tag] || '#475569';
+        }
+    </script>
+</body>
+
+</html>

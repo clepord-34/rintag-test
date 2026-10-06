@@ -1,0 +1,9 @@
+Table 13: Pre-Annotator vs. Final Annotation Comparison
+=======================================================
+
+                         Metric  Count Percentage
+                   Total tokens  31035     100.0%
+Pre-annotator matched final tag   1971       6.4%
+     Labeled X (not in lexicon)  19982      64.4%
+     X → corrected to valid tag  19982      64.4%
+   Wrong tag (non-X, non-PUNCT)   7025      22.6%

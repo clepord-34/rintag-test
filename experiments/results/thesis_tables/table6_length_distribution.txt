@@ -1,0 +1,9 @@
+Table 6: Sentence Length Distribution by Stratum
+================================================
+
+ Stratum Word Range  Count  Min Words  Max Words  Mean Words  Median Words
+   Short        4–7    381          4          7         6.5           7.0
+  Medium       8–15   1014          8         15        12.9          13.0
+    Long      16–25    504         16         25        19.2          18.0
+Extended      26–40    101         26         41        33.8          34.0
+   Total       4–40   2000          4         41        14.3          14.0

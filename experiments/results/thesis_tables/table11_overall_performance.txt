@@ -1,0 +1,10 @@
+Table 11: Overall Model Performance Summary
+===========================================
+
+           Metric   Value Threshold  Met?
+         Accuracy    0.83         —     —
+         Macro F1  0.8193    ≥ 0.75 YES ✓
+      Weighted F1  0.8288         —     —
+     OOV Accuracy  0.6923         —     —
+       OOV Tokens 495/715         —     —
+Total Test Tokens    3183         —     —

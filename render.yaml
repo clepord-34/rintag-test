@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: rintag-demo
+    runtime: python
+    buildCommand: pip install -r demo/requirements.txt
+    startCommand: gunicorn --chdir demo app:app
+    plan: free

@@ -1,0 +1,5 @@
+﻿Partition,Sentences,Total Tokens,Word Tokens,Punctuation,Vocabulary Size,Avg Tokens/Sent
+Full Corpus,2000,31035,28432,2603,9036,15.5
+Train,1600,24862,22752,2110,7727,15.5
+Dev,200,2990,2734,256,1489,15.0
+Test,200,3183,2946,237,1563,15.9

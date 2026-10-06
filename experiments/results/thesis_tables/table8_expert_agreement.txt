@@ -1,0 +1,19 @@
+Table 8: Annotator-Expert Agreement per POS Tag
+===============================================
+
+POS Tag  Total Annotated  Expert Agreed Agreement Rate
+    ADJ              236            235          99.6%
+    ADP              358            344          96.1%
+    ADV              374            355          94.9%
+    AUX               26             24          92.3%
+  CCONJ              137            136          99.3%
+    DET              337            326          96.7%
+   INTJ               72             63          87.5%
+   NOUN              830            821          98.9%
+    NUM               51             51         100.0%
+   PART              319            309          96.9%
+   PRON              396            387          97.7%
+  PROPN              163            160          98.2%
+  PUNCT              383            383         100.0%
+  SCONJ              121             72          59.5%
+   VERB              647            633          97.8%

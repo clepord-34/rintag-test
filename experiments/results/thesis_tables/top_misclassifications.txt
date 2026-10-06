@@ -1,0 +1,24 @@
+Top 20 Misclassification Pairs (Off-Diagonal)
+=============================================
+
+True Tag Predicted As  Count  Rate
+    NOUN         VERB     40  6.4%
+     ADJ         NOUN     36 20.8%
+    VERB         NOUN     36  8.1%
+     ADV         PART     29 12.4%
+    NOUN          ADJ     23  3.7%
+    NOUN        PROPN     21  3.4%
+    PART          ADV     20  8.2%
+    VERB          ADJ     18  4.1%
+     ADV         NOUN     16  6.9%
+     DET          ADP     14  5.8%
+    VERB          ADV     13  2.9%
+     ADJ         VERB     13  7.5%
+    PRON          ADV     11  3.9%
+     ADV          ADP     10  4.3%
+     ADP          DET     10  3.5%
+     ADV         VERB     10  4.3%
+    PART          ADP     10  4.1%
+    INTJ         NOUN      9 23.1%
+     ADV         PRON      9  3.9%
+    PRON          ADP      8  2.8%
