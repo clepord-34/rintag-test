@@ -2,9 +2,9 @@ Cohen's Kappa Summary
 ========================================
 
 Total tokens in validation set : 4,450
-Blank validator tags (=agree)  : 1,412
-Observed agreement (Po)        : 0.9661
-Cohen's Kappa (κ)              : 0.9622
+Blank validator tags (=agree)  : 0
+Observed agreement (Po)        : 0.9753
+Cohen's Kappa (κ)              : 0.9725
 Landis-Koch interpretation     : Almost Perfect Agreement
 
 Threshold met (κ ≥ 0.61)?      : YES ✓

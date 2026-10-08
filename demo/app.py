@@ -16,8 +16,20 @@ def tag_text():
     if not text:
         return jsonify({"error": "No text provided"}), 400
     
-    results = rintag.tag_detailed(text, top_k=5)
-    return jsonify({"tokens": results})
+    result = rintag.tag(text)
+    
+    # Serialize the TagResult into a list of dicts for JSON
+    serialized = []
+    for tok in result:
+        serialized.append({
+            "token": tok.token,
+            "tag": tok.tag,
+            "confidence": tok.confidence,
+            "alternatives": tok.alternatives[:5],  # Just return top 5 in demo
+            "features": tok.features
+        })
+        
+    return jsonify({"tokens": serialized})
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", "5000")), debug=False)

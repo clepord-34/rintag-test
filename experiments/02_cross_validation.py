@@ -1,5 +1,7 @@
 import pandas as pd
 import sklearn_crfsuite
+import hashlib
+import json
 from sklearn.model_selection import ParameterGrid, cross_val_score
 from sklearn.metrics import make_scorer
 from sklearn_crfsuite.metrics import flat_f1_score
@@ -18,10 +20,43 @@ PARAMS_SPACE = {
 }
 
 
+def _cache_metadata(train_path):
+    train_hash = hashlib.sha256(train_path.read_bytes()).hexdigest()
+    return {
+        "training_data_sha256": train_hash,
+        "params_space": PARAMS_SPACE,
+        "max_iterations": MAX_ITERATIONS,
+        "folds": 5,
+        "algorithm": "lbfgs",
+        "all_possible_transitions": True,
+        "scoring": "flat_f1_macro",
+    }
+
+
+def _has_valid_cache(results_path, metadata_path, metadata):
+    if not results_path.is_file() or results_path.stat().st_size == 0:
+        return False
+    try:
+        with metadata_path.open(encoding="utf-8") as file:
+            return json.load(file) == metadata
+    except (OSError, json.JSONDecodeError):
+        return False
+
+
 def cross_validation():
+    train_path = PROJECT_ROOT / "data" / "processed" / "train.csv"
+    results_dir = PROJECT_ROOT / "experiments" / "results"
+    results_path = results_dir / "cv_results.csv"
+    metadata_path = results_dir / "cv_results.meta.json"
+    metadata = _cache_metadata(train_path)
+
+    if _has_valid_cache(results_path, metadata_path, metadata):
+        print("Training data and CV settings unchanged; reusing cv_results.csv.")
+        return
+
     print("Loading training data...")
     train_df = pd.read_csv(
-        PROJECT_ROOT / "data" / "processed" / "train.csv",
+        train_path,
         keep_default_na=False,
     )
     
@@ -58,11 +93,12 @@ def cross_validation():
             "macro_f1_std": scores.std(),
         })
 
-    results_dir = PROJECT_ROOT / "experiments" / "results"
     results_dir.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(rows).sort_values("macro_f1_mean", ascending=False).to_csv(
-        results_dir / "cv_results.csv", index=False
+        results_path, index=False
     )
+    with metadata_path.open("w", encoding="utf-8") as file:
+        json.dump(metadata, file, indent=2, sort_keys=True)
 
 if __name__ == "__main__":
     cross_validation()

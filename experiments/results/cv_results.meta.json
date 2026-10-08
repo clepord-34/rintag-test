@@ -1,0 +1,22 @@
+{
+  "algorithm": "lbfgs",
+  "all_possible_transitions": true,
+  "folds": 5,
+  "max_iterations": 200,
+  "params_space": {
+    "c1": [
+      0.01,
+      0.1,
+      0.5,
+      1.0
+    ],
+    "c2": [
+      0.01,
+      0.1,
+      0.5,
+      1.0
+    ]
+  },
+  "scoring": "flat_f1_macro",
+  "training_data_sha256": "fd3772751bb3ba185b1adc0e106920d0b568425287c63fdd7a4f8e730770d15e"
+}

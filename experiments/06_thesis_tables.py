@@ -29,6 +29,7 @@ Reference: Thesis Chapter 3, "Evaluation Metrics"
 
 import os
 import pickle
+import runpy
 import pandas as pd
 import numpy as np
 from sklearn.metrics import (
@@ -237,63 +238,32 @@ def table8_expert_agreement() -> None:
 def table9_grid_search() -> None:
     """Generate Table 9: Hyperparameter Grid Search Results.
 
-    This re-runs the grid search to capture per-combination results.
-    If CV results already exist, it loads them instead.
+    Reuse the cross-validation experiment's cached per-combination results.
     """
     print("\n-- Table 9: Hyperparameter Grid Search Results --")
 
-    import sklearn_crfsuite
-    from sklearn.model_selection import GridSearchCV
-    from sklearn.metrics import make_scorer
-    from sklearn_crfsuite.metrics import flat_f1_score
+    cross_validation = runpy.run_path(
+        os.path.join(os.path.dirname(__file__), "02_cross_validation.py")
+    )["cross_validation"]
+    cross_validation()
 
-    train_df = pd.read_csv(os.path.join(DATA_DIR, "processed/train.csv"), keep_default_na=False)
-
-    sentences = []
-    for _, group in train_df.groupby("sentence_id"):
-        sentences.append(list(zip(
-            group["word"].astype(str), group["pos_tag"].astype(str)
-        )))
-
-    X_train = [sent2features([w for w, _ in s]) for s in sentences]
-    y_train = [sent2labels(s) for s in sentences]
-    labels = list(set(tag for tags in y_train for tag in tags))
-
-    crf = sklearn_crfsuite.CRF(
-        algorithm="lbfgs",
-        max_iterations=200,
-        all_possible_transitions=True,
-    )
-
-    params = {
-        "c1": [0.01, 0.1, 0.5, 1.0],
-        "c2": [0.01, 0.1, 0.5, 1.0],
-    }
-    scorer = make_scorer(flat_f1_score, average="macro", labels=labels)
-
-    print("  Running 5-fold GridSearchCV (16 combinations × 5 folds = 80 fits) …")
-    gs = GridSearchCV(crf, params, cv=5, scoring=scorer, n_jobs=-1, verbose=0)
-    gs.fit(X_train, y_train)
-
-    # Extract results
-    results = pd.DataFrame(gs.cv_results_)
-    rows = []
-    for _, row in results.iterrows():
-        rows.append({
-            "c1":       row["param_c1"],
-            "c2":       row["param_c2"],
-            "Mean F1":  round(row["mean_test_score"], 4),
-            "Std F1":   round(row["std_test_score"], 4),
-            "Rank":     int(row["rank_test_score"]),
-        })
-
-    df_table = pd.DataFrame(rows).sort_values("Rank")
+    results = pd.read_csv("results/cv_results.csv")
+    df_table = results.rename(columns={
+        "macro_f1_mean": "Mean F1",
+        "macro_f1_std": "Std F1",
+    })[["c1", "c2", "Mean F1", "Std F1"]]
+    df_table["Mean F1"] = df_table["Mean F1"].round(4)
+    df_table["Std F1"] = df_table["Std F1"].round(4)
+    df_table["Rank"] = df_table["Mean F1"].rank(
+        method="min", ascending=False
+    ).astype(int)
+    df_table = df_table.sort_values("Rank")
     save_table(df_table, "table9_grid_search",
                "Table 9: Hyperparameter Grid Search Results (5-Fold CV)")
 
-    best = gs.best_params_
+    best = df_table.iloc[0]
     print(f"  Best: c1={best['c1']}, c2={best['c2']}, "
-          f"F1={gs.best_score_:.4f}")
+          f"F1={best['Mean F1']:.4f}")
 
 
 # ── TABLE 10: CLASSIFICATION REPORT ──────────────────────────────────────────
