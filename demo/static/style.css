@@ -79,6 +79,7 @@ body {
     width: 100%;
     max-width: 800px;
     z-index: 1;
+    min-width: 0;
 }
 
 header {
@@ -126,6 +127,7 @@ header p {
 
 textarea {
     width: 100%;
+    min-width: 0;
     background: rgba(15, 23, 42, 0.6);
     border: 1px solid var(--glass-border);
     border-radius: 8px;
@@ -151,6 +153,7 @@ textarea:focus {
 
 .examples {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
     align-items: center;
     font-size: 0.9rem;
@@ -256,6 +259,8 @@ textarea:focus {
 
 .token-wrapper {
     display: inline-flex;
+    min-width: 0;
+    max-width: 100%;
     align-items: center;
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid var(--glass-border);
@@ -350,7 +355,7 @@ textarea:focus {
 .tooltip {
     position: fixed;
     z-index: 1000;
-    width: 280px;
+    width: min(280px, calc(100vw - 2rem));
     background: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(8px);
     border: 1px solid var(--glass-border);
@@ -360,6 +365,17 @@ textarea:focus {
     pointer-events: none;
     /* Let mouse pass through */
     font-size: 0.9rem;
+}
+
+.tooltip.touch-tooltip {
+    left: 1rem !important;
+    right: 1rem;
+    top: auto !important;
+    bottom: 1rem;
+    width: auto;
+    max-height: 55vh;
+    overflow-y: auto;
+    pointer-events: auto;
 }
 
 .tooltip-header {
@@ -470,4 +486,71 @@ textarea:focus {
     font-size: 0.75rem;
     color: var(--text-muted);
     font-style: italic;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+
+    header {
+        margin-bottom: 2rem;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .glass-panel {
+        padding: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    textarea {
+        font-size: 16px;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .examples {
+        font-size: 0.85rem;
+    }
+
+    .example-btn {
+        min-height: 2.75rem;
+        padding-inline: 0.75rem;
+    }
+
+    .primary-btn {
+        width: 100%;
+        min-height: 2.75rem;
+    }
+
+    .result-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.35rem;
+        margin-bottom: 1rem;
+    }
+
+    .tokens-container {
+        gap: 0.5rem;
+    }
+
+    .token-text {
+        font-size: 1rem;
+        overflow-wrap: anywhere;
+    }
+
+    .input-note {
+        font-size: 0.8rem;
+    }
 }

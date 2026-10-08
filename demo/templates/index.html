@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RinTag | Rinconada Bikol POS Tagger</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=2) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=4) }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
@@ -43,7 +43,7 @@
             <div id="resultSection" class="glass-panel result-section hidden">
                 <div class="result-header">
                     <h2>Analysis Results</h2>
-                    <span class="hint">Hover over tags for details</span>
+                    <span class="hint">Tap or hover over tags for details</span>
                 </div>
                 <div id="tokensContainer" class="tokens-container">
                     <!-- Tokens will be injected here -->
@@ -94,6 +94,7 @@
         const tooltip = document.getElementById('tooltip');
 
         let currentTokens = [];
+        const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)');
 
         function setExample(text) {
             input.value = text;
@@ -142,6 +143,9 @@
             tokens.forEach((t, i) => {
                 const tokenWrapper = document.createElement('div');
                 tokenWrapper.className = 'token-wrapper';
+                tokenWrapper.tabIndex = 0;
+                tokenWrapper.setAttribute('role', 'button');
+                tokenWrapper.setAttribute('aria-label', `${t.token}, ${getFullTagName(t.tag)}. Show details`);
 
                 const tokenText = document.createElement('span');
                 tokenText.className = 'token-text';
@@ -154,9 +158,27 @@
                 tokenWrapper.appendChild(tokenText);
                 tokenWrapper.appendChild(tagBadge);
 
-                tokenWrapper.addEventListener('mouseenter', (e) => showTooltip(e, t));
-                tokenWrapper.addEventListener('mouseleave', hideTooltip);
-                tokenWrapper.addEventListener('mousemove', moveTooltip);
+                if (supportsHover.matches) {
+                    tokenWrapper.addEventListener('mouseenter', (e) => showTooltip(e, t));
+                    tokenWrapper.addEventListener('mouseleave', hideTooltip);
+                    tokenWrapper.addEventListener('mousemove', moveTooltip);
+                } else {
+                    tokenWrapper.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        if (!tooltip.classList.contains('hidden') && tooltip.dataset.token === t.token) {
+                            hideTooltip();
+                        } else {
+                            showTooltip(e, t);
+                        }
+                    });
+                }
+
+                tokenWrapper.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        showTooltip(e, t);
+                    }
+                });
 
                 tokensContainer.appendChild(tokenWrapper);
             });
@@ -186,6 +208,7 @@
         }
 
         function showTooltip(e, data) {
+            tooltip.dataset.token = data.token;
             document.getElementById('ttToken').textContent = data.token;
             const ttTag = document.getElementById('ttTag');
             ttTag.textContent = getFullTagName(data.tag);
@@ -235,8 +258,15 @@
         }
 
         function moveTooltip(e) {
-            const x = e.clientX + 15;
-            const y = e.clientY + 15;
+            if (!supportsHover.matches) {
+                tooltip.classList.add('touch-tooltip');
+                return;
+            }
+
+            tooltip.classList.remove('touch-tooltip');
+            const tokenRect = e.type === 'keydown' ? e.currentTarget.getBoundingClientRect() : null;
+            const x = tokenRect ? tokenRect.left : e.clientX + 15;
+            const y = tokenRect ? tokenRect.bottom + 15 : e.clientY + 15;
 
             // Adjust if tooltip goes off screen
             const rect = tooltip.getBoundingClientRect();
@@ -253,6 +283,16 @@
             tooltip.style.left = `${finalX}px`;
             tooltip.style.top = `${finalY}px`;
         }
+
+        document.addEventListener('click', (e) => {
+            if (!supportsHover.matches && !e.target.closest('.token-wrapper') && !e.target.closest('#tooltip')) {
+                hideTooltip();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') hideTooltip();
+        });
 
         function getTagColor(tag) {
             const colors = {
