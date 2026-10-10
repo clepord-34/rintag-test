@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RinTag | Rinconada Bikol POS Tagger</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=4) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=8) }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
@@ -16,49 +16,289 @@
     </div>
 
     <div class="container">
-        <header>
-            <h1>RinTag</h1>
-            <p>Automated Part-of-Speech Tagger for the Rinconada Bikol Language</p>
-        </header>
+        <!-- Hero Section: Fills Viewport -->
+        <section class="hero-section">
+            <div class="hero-main">
+                <header>
+                    <h1>RinTag</h1>
+                    <p>Automated part-of-speech tagger for the Rinconada Bikol language</p>
+                </header>
 
-        <main>
-            <div class="glass-panel input-section">
-                <textarea id="textInput" placeholder="Type a Rinconada Bikol sentence here..."
-                    rows="3">nagdalagan su igin</textarea>
-                <div class="controls">
-                    <div class="examples">
-                        <span>Examples:</span>
-                        <button class="example-btn" onclick="setExample('nagdalagan su igin')">Basic</button>
-                        <button class="example-btn" onclick="setExample('nakabayad ako sa dakulong ayam sadto baloy ni Christian.')">Complex</button>
+                <main>
+                    <div class="glass-panel input-section">
+                        <textarea id="textInput" placeholder="Type a Rinconada Bikol sentence here..."
+                            rows="3">nagdalagan su igin</textarea>
+                        <div class="controls">
+                            <div class="examples">
+                                <span>Examples:</span>
+                                <button type="button" class="example-btn"
+                                    onclick="setExample('nagdalagan su igin')">Basic</button>
+                                <button type="button" class="example-btn"
+                                    onclick="setExample('nakabayad ako sa dakulong ayam sadto baloy ni Christian.')">Complex</button>
+                            </div>
+                            <button id="tagBtn" class="primary-btn" type="button">
+                                <span id="btnText">Analyze Sentence</span>
+                                <div id="loadingSpinner" class="spinner hidden"></div>
+                            </button>
+                        </div>
                     </div>
-                    <button id="tagBtn" class="primary-btn">
-                        <span id="btnText">Analyze Sentence</span>
-                        <div id="loadingSpinner" class="spinner hidden"></div>
-                    </button>
+
+                    <div id="errorMsg" class="error-msg hidden"></div>
+
+                    <div id="resultSection" class="glass-panel result-section hidden">
+                        <div class="result-header">
+                            <h2>Analysis Results</h2>
+                            <button type="button" id="showLegendBtn" class="legend-btn">
+                                <svg class="legend-btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                </svg>
+                                <span>Tag Legend</span>
+                            </button>
+                        </div>
+                        <div class="result-hint">Tap or hover over tags for details</div>
+                        <div id="tokensContainer" class="tokens-container">
+                            <!-- Tokens will be injected here -->
+                        </div>
+                    </div>
+                </main>
+
+                <p class="input-note">Enter affixed words as one joined word, e.g. <em>"nagdalagan"</em>, not <em>"nag
+                        dalagan"</em>.</p>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <button id="scrollIndicator" class="scroll-indicator" type="button" aria-label="Scroll to documentation">
+                <span class="scroll-label">About Rinconada &amp; RinTag</span>
+                <span class="scroll-arrow" aria-hidden="true">↓</span>
+            </button>
+        </section>
+
+        <!-- Documentation & References Section -->
+        <section id="aboutSection" class="about-section">
+            <div class="section-title-wrap">
+                <span class="section-badge">Documentation &amp; Context</span>
+                <h2 class="section-title">About Rinconada &amp; RinTag</h2>
+                <p class="section-subtitle">Understanding the language, morphological complexity, and the computational
+                    model</p>
+            </div>
+
+            <!-- Card 1: What is Rinconada Bikol? -->
+            <div class="glass-panel doc-card">
+                <div class="doc-card-header">
+                    <div class="doc-icon">🗣️</div>
+                    <div>
+                        <h3>What is Rinconada Bikol?</h3>
+                        <span class="doc-meta">ISO 639-3: <code>bto</code> • Glottolog: <code>irig1242</code></span>
+                    </div>
+                </div>
+                <div class="doc-content">
+                    <p>
+                        <strong>Rinconada Bikol</strong> (also known as <em>Riŋkonāda</em> or Inland Bikol) is an
+                        Austronesian language belonging to the Malayo-Polynesian branch, spoken by approximately 385,000
+                        people primarily in the Rinconada district of Camarines Sur, Philippines. It serves as the
+                        primary language in Iriga City and the municipalities of Nabua, Baao, Bato, Bula, and Balatan.
+                    </p>
+                    <div class="doc-features-grid">
+                        <div class="feature-item">
+                            <span class="feature-label">Dialectal Variants</span>
+                            <span class="feature-value"><strong>Sinaranəw</strong> (Lakeside/Lowland) and
+                                <strong>Sinabukid</strong> (Highland)</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Phonology &amp; Vowels</span>
+                            <span class="feature-value">Distinguished by a high central/mid vowel <strong>/ə/ or
+                                    /ɨ/</strong> (often written as <em>e</em> or <em>ə</em>) distinct from Coastal
+                                Bikol</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Morphological System</span>
+                            <span class="feature-value">Highly agglutinative with rich prefixation, infixation,
+                                suffixation, circumfixation, and partial/full reduplication</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Vitality &amp; Status</span>
+                            <span class="feature-value">Classified as stable/safe by the <em>Komisyon sa Wikang Filipino
+                                    (KWF)</em>, but categorized as low-resource in computational linguistics</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div id="errorMsg" class="error-msg hidden"></div>
-
-            <div id="resultSection" class="glass-panel result-section hidden">
-                <div class="result-header">
-                    <h2>Analysis Results</h2>
-                    <span class="hint">Tap or hover over tags for details</span>
+            <!-- Card 2: What is RinTag? -->
+            <div class="glass-panel doc-card">
+                <div class="doc-card-header">
+                    <div class="doc-icon">🏷️</div>
+                    <div>
+                        <h3>What is RinTag?</h3>
+                        <span class="doc-meta">Automated Part-of-Speech Tagger &amp; Morphological Feature Engine</span>
+                    </div>
                 </div>
-                <div id="tokensContainer" class="tokens-container">
-                    <!-- Tokens will be injected here -->
+                <div class="doc-content">
+                    <p>
+                        <strong>RinTag</strong> is a Python library and automated Part-of-Speech (POS) tagger specifically developed by our team for
+                        the Rinconada Bikol language. Powered by a <strong>Conditional Random Field (CRF)</strong> model trained on Rinconada Bikol syntactic and morphological sequential patterns, it is designed to address the digital underrepresentation of regional Philippine languages. RinTag analyzes tokens within context, predicts grammatical categories, computes confidence scores, and outputs morphological feature clues.
+                    </p>
+                    <div class="doc-features-grid">
+                        <div class="feature-item">
+                            <span class="feature-label">Tagset Standard</span>
+                            <span class="feature-value">17 <strong>Universal Dependencies (UPOS)</strong> tags:
+                                <code>ADJ</code>, <code>ADP</code>, <code>ADV</code>, <code>AUX</code>,
+                                <code>CCONJ</code>, <code>DET</code>, <code>INTJ</code>, <code>NOUN</code>,
+                                <code>NUM</code>, <code>PART</code>, <code>PRON</code>, <code>PROPN</code>,
+                                <code>PUNCT</code>, <code>SCONJ</code>, <code>SYM</code>, <code>VERB</code>,
+                                <code>X</code></span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">CRF Probabilities</span>
+                            <span class="feature-value">Computes token-level confidence scores and top alternative POS candidate distributions</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Affix-Aware Analysis</span>
+                            <span class="feature-value">Inspects morphological prefixes (e.g., <em>nag-</em>,
+                                <em>naka-</em>, <em>mag-</em>), suffixes, and infixes to disambiguate verbs and
+                                nominals</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Accessible Evaluation</span>
+                            <span class="feature-value">Interactive inspection UI designed for linguists, researchers,
+                                and native speakers on both desktop and mobile</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </main>
 
-        <p class="input-note"><strong>Input note:</strong> Enter words with morphological affixes, including prefixes, suffixes, infixes, or circumfixes, as one joined word with the root (for example, <em>"nagdalagan"</em> or <em>"nag-dalagan"</em>, not <em>"nag dalagan"</em>).</p>
+            <!-- Card 3: Academic References -->
+            <div class="glass-panel doc-card references-card">
+                <div class="doc-card-header">
+                    <div class="doc-icon">📚</div>
+                    <div>
+                        <h3>References &amp; Citations</h3>
+                        <span class="doc-meta">Linguistic databases, published papers, and framework standards</span>
+                    </div>
+                </div>
+                <div class="references-list">
+                    <div class="ref-item">
+                        <span class="ref-num">1</span>
+                        <div class="ref-body">
+                            <div class="ref-title">
+                                <a href="https://www.ethnologue.com/language/bto/" target="_blank"
+                                    rel="noopener noreferrer">
+                                    Ethnologue: Languages of the World — Rinconada Bikol (bto) ↗
+                                </a>
+                            </div>
+                            <div class="ref-desc">Eberhard, D. M., Simons, G. F., &amp; Fennig, C. D. (Eds.). SIL
+                                International. Comprehensive profile on language classification, speakers, and vitality.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ref-item">
+                        <span class="ref-num">2</span>
+                        <div class="ref-body">
+                            <div class="ref-title">
+                                <a href="https://glottolog.org/resource/languoid/id/irig1242" target="_blank"
+                                    rel="noopener noreferrer">
+                                    Glottolog 5.0 — Languoid: Iriga Bicolano (irig1242) ↗
+                                </a>
+                            </div>
+                            <div class="ref-desc">Hammarström, H., Forkel, R., Haspelmath, M., &amp; Bank, S. Max Planck
+                                Institute for Evolutionary Anthropology. Genealogical hierarchy and bibliographic
+                                catalog.</div>
+                        </div>
+                    </div>
+                    <div class="ref-item">
+                        <span class="ref-num">3</span>
+                        <div class="ref-body">
+                            <div class="ref-title">
+                                <a href="https://iso639-3.sil.org/code/bto" target="_blank" rel="noopener noreferrer">
+                                    ISO 639-3 Language Code: bto ↗
+                                </a>
+                            </div>
+                            <div class="ref-desc">SIL International. Official ISO 639-3 identifier and macrolanguage
+                                relationship mapping under Bikol (bik).</div>
+                        </div>
+                    </div>
+                    <div class="ref-item">
+                        <span class="ref-num">4</span>
+                        <div class="ref-body">
+                            <div class="ref-title">
+                                <a href="https://en.wikipedia.org/wiki/Rinconada_Bikol_language" target="_blank"
+                                    rel="noopener noreferrer">
+                                    Rinconada Bikol Language — Wikipedia ↗
+                                </a>
+                            </div>
+                            <div class="ref-desc">Wikipedia, The Free Encyclopedia. General overview of the Rinconada Bikol language, its dialects, phonology, and grammar.</div>
+                        </div>
+                    </div>
+                    <div class="ref-item">
+                        <span class="ref-num">5</span>
+                        <div class="ref-body">
+                            <div class="ref-title">
+                                <a href="https://aclanthology.org/2021.cl-2.11/" target="_blank"
+                                    rel="noopener noreferrer">
+                                    Universal Dependencies (de Marneffe et al., 2021) ↗
+                                </a>
+                            </div>
+                            <div class="ref-desc">de Marneffe, M. C., Manning, C. D., Nivre, J., &amp; Zeman, D.
+                                <em>Computational Linguistics</em>, 47(2), 255–308. Foundational standard for
+                                cross-linguistically consistent grammatical annotation and the 17 UPOS categories.</div>
+                        </div>
+                    </div>
+                    <div class="ref-item">
+                        <span class="ref-num">6</span>
+                        <div class="ref-body">
+                            <div class="ref-title">
+                                <a href="https://universaldependencies.org/u/pos/index.html" target="_blank"
+                                    rel="noopener noreferrer">
+                                    Universal POS Tags (UPOS) Reference Documentation ↗
+                                </a>
+                            </div>
+                            <div class="ref-desc">Universal Dependencies Consortium. Taxonomy and syntactic guidelines
+                                for universal grammatical word classes.</div>
+                        </div>
+                    </div>
+                    <div class="ref-item">
+                        <span class="ref-num">7</span>
+                        <div class="ref-body">
+                            <div class="ref-title">
+                                <a href="https://library.apsce.net/index.php/ICCE/article/view/4922" target="_blank" rel="noopener noreferrer">
+                                    Mapping Morphological Patterns: A Framework for Rinconada Bikol Language
+                                    Morphological Analysis and Stemming (Pandes &amp; Martinez, 2024) ↗
+                                </a>
+                            </div>
+                            <div class="ref-desc">Pandes, T. L., &amp; Martinez, J. <em>Proceedings of the 32nd
+                                    International Conference on Computers in Education (ICCE 2024)</em>. Recent
+                                computational work exploring morphological analysis for Rinconada Bikol.</div>
+                        </div>
+                    </div>
+                    <div class="ref-item">
+                        <span class="ref-num">8</span>
+                        <div class="ref-body">
+                            <div class="ref-title">
+                                <a href="https://doi.org/10.1007/s10579-024-09782-4" target="_blank"
+                                    rel="noopener noreferrer">
+                                    Exploratory Analysis of Rinconada Bikol Language-Nabua Text Corpus (Oñate &amp; Pandes, 2024) ↗
+                                </a>
+                            </div>
+                            <div class="ref-desc"><em>Language Resources and Evaluation</em>. Corpus development,
+                                tokenization, and baseline part-of-speech annotation for the Nabua dialect of Rinconada
+                                Bikol.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <!-- Tooltip Template -->
     <div id="tooltip" class="tooltip hidden">
         <div class="tooltip-header">
-            <span id="ttToken" class="tt-token">token</span>
-            <span id="ttTag" class="tt-tag tag-badge">TAG</span>
+            <div class="tt-header-left">
+                <span id="ttToken" class="tt-token">token</span>
+                <span id="ttTag" class="tt-tag tag-badge">TAG</span>
+            </div>
+            <button id="ttCloseBtn" class="tt-close-btn" type="button" aria-label="Close details">✕</button>
         </div>
         <div class="tt-section">
             <div class="tt-label">Confidence</div>
@@ -79,6 +319,35 @@
             <div class="tt-label">Key Features</div>
             <div id="ttFeatures" class="features-list">
                 <!-- Features injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Legend Modal -->
+    <div id="legendModalOverlay" class="modal-overlay hidden">
+        <div class="legend-modal glass-panel">
+            <div class="modal-header">
+                <h3>UPOS Tag Legend</h3>
+                <button id="closeLegendBtn" class="tt-close-btn" style="display: flex;" type="button" aria-label="Close legend">✕</button>
+            </div>
+            <div class="legend-grid">
+                <div class="legend-item"><span class="tag-badge tag-adj">ADJ</span><span class="legend-item-label">Adjective</span></div>
+                <div class="legend-item"><span class="tag-badge tag-adp">ADP</span><span class="legend-item-label">Adposition</span></div>
+                <div class="legend-item"><span class="tag-badge tag-adv">ADV</span><span class="legend-item-label">Adverb</span></div>
+                <div class="legend-item"><span class="tag-badge tag-aux">AUX</span><span class="legend-item-label">Auxiliary</span></div>
+                <div class="legend-item"><span class="tag-badge tag-cconj">CCONJ</span><span class="legend-item-label">Coordinating Conjunction</span></div>
+                <div class="legend-item"><span class="tag-badge tag-det">DET</span><span class="legend-item-label">Determiner</span></div>
+                <div class="legend-item"><span class="tag-badge tag-intj">INTJ</span><span class="legend-item-label">Interjection</span></div>
+                <div class="legend-item"><span class="tag-badge tag-noun">NOUN</span><span class="legend-item-label">Noun</span></div>
+                <div class="legend-item"><span class="tag-badge tag-num">NUM</span><span class="legend-item-label">Numeral</span></div>
+                <div class="legend-item"><span class="tag-badge tag-part">PART</span><span class="legend-item-label">Particle</span></div>
+                <div class="legend-item"><span class="tag-badge tag-pron">PRON</span><span class="legend-item-label">Pronoun</span></div>
+                <div class="legend-item"><span class="tag-badge tag-propn">PROPN</span><span class="legend-item-label">Proper Noun</span></div>
+                <div class="legend-item"><span class="tag-badge tag-punct">PUNCT</span><span class="legend-item-label">Punctuation</span></div>
+                <div class="legend-item"><span class="tag-badge tag-sconj">SCONJ</span><span class="legend-item-label">Subordinating Conjunction</span></div>
+                <div class="legend-item"><span class="tag-badge tag-sym">SYM</span><span class="legend-item-label">Symbol</span></div>
+                <div class="legend-item"><span class="tag-badge tag-verb">VERB</span><span class="legend-item-label">Verb</span></div>
+                <div class="legend-item"><span class="tag-badge tag-x">X</span><span class="legend-item-label">Other</span></div>
             </div>
         </div>
     </div>
@@ -296,23 +565,77 @@
 
         function getTagColor(tag) {
             const colors = {
-                'NOUN': '#6366f1',
-                'VERB': '#10b981',
-                'ADJ': '#f59e0b',
-                'ADV': '#ec4899',
-                'PRON': '#06b6d4',
-                'DET': '#64748b',
-                'ADP': '#8b5cf6',
-                'CCONJ': '#f43f5e',
-                'NUM': '#14b8a6',
-                'PART': '#84cc16',
-                'INTJ': '#f97316',
-                'PROPN': '#3b82f6',
-                'PUNCT': '#9ca3af',
-                'SYM': '#d946ef',
-                'X': '#ef4444'
+                'NOUN': '#4338ca',
+                'VERB': '#059669',
+                'ADJ': '#b45309',
+                'ADV': '#be185d',
+                'PRON': '#0e7490',
+                'DET': '#475569',
+                'ADP': '#6d28d9',
+                'CCONJ': '#be123c',
+                'NUM': '#0f766e',
+                'PART': '#4d7c0f',
+                'INTJ': '#c2410c',
+                'PROPN': '#1d4ed8',
+                'PUNCT': '#4b5563',
+                'SYM': '#a21caf',
+                'X': '#b91c1c',
+                'AUX': '#7e22ce',
+                'SCONJ': '#9a3412'
             };
             return colors[tag] || '#475569';
+        }
+
+        // Tooltip close button for mobile / touch
+        const ttCloseBtn = document.getElementById('ttCloseBtn');
+        if (ttCloseBtn) {
+            ttCloseBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                hideTooltip();
+            });
+        }
+
+        // Scroll indicator: smooth scroll and fade out on scroll
+        const scrollIndicator = document.getElementById('scrollIndicator');
+        const aboutSection = document.getElementById('aboutSection');
+        if (scrollIndicator && aboutSection) {
+            scrollIndicator.addEventListener('click', () => {
+                aboutSection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 30) {
+                    scrollIndicator.classList.add('scrolled');
+                } else {
+                    scrollIndicator.classList.remove('scrolled');
+                }
+            }, { passive: true });
+        }
+
+        // Legend Modal Logic
+        const showLegendBtn = document.getElementById('showLegendBtn');
+        const closeLegendBtn = document.getElementById('closeLegendBtn');
+        const legendModalOverlay = document.getElementById('legendModalOverlay');
+
+        if (showLegendBtn && legendModalOverlay) {
+            showLegendBtn.addEventListener('click', () => {
+                legendModalOverlay.classList.remove('hidden');
+            });
+        }
+
+        if (closeLegendBtn && legendModalOverlay) {
+            closeLegendBtn.addEventListener('click', () => {
+                legendModalOverlay.classList.add('hidden');
+            });
+        }
+
+        // Close when clicking outside modal
+        if (legendModalOverlay) {
+            legendModalOverlay.addEventListener('click', (e) => {
+                if (e.target === legendModalOverlay) {
+                    legendModalOverlay.classList.add('hidden');
+                }
+            });
         }
     </script>
 </body>
