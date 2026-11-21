@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RinTag | Rinconada Bikol POS Tagger</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=8) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=12) }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
@@ -49,7 +49,9 @@
                         <div class="result-header">
                             <h2>Analysis Results</h2>
                             <button type="button" id="showLegendBtn" class="legend-btn">
-                                <svg class="legend-btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <svg class="legend-btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                                    stroke-linejoin="round">
                                     <circle cx="12" cy="12" r="10"></circle>
                                     <line x1="12" y1="16" x2="12" y2="12"></line>
                                     <line x1="12" y1="8" x2="12.01" y2="8"></line>
@@ -57,9 +59,28 @@
                                 <span>Tag Legend</span>
                             </button>
                         </div>
-                        <div class="result-hint">Tap or hover over tags for details</div>
+                        <div class="result-hint">Click a tag to inspect details or suggest corrections</div>
                         <div id="tokensContainer" class="tokens-container">
                             <!-- Tokens will be injected here -->
+                        </div>
+                        <div id="correctionBar" class="correction-bar hidden">
+                            <div class="correction-bar-top">
+                                <div class="correction-bar-header">
+                                    <svg class="correction-bar-header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    <span id="correctionCountText">0 corrections ready</span>
+                                </div>
+                            </div>
+                            <div id="correctionDetails" class="correction-details">
+                                <!-- Injected items: token: OLD → NEW -->
+                            </div>
+                            <div class="correction-bar-bottom">
+                                <button id="submitCorrectionsBtn" class="primary-btn sm-btn" type="button">
+                                    Submit Feedback
+                                </button>
+                                <span id="correctionStatus" class="correction-status"></span>
+                            </div>
                         </div>
                     </div>
                 </main>
@@ -137,8 +158,13 @@
                 </div>
                 <div class="doc-content">
                     <p>
-                        <strong>RinTag</strong> is a Python library and automated Part-of-Speech (POS) tagger specifically developed by our team for
-                        the Rinconada Bikol language. Powered by a <strong>Conditional Random Field (CRF)</strong> model trained on Rinconada Bikol syntactic and morphological sequential patterns, it is designed to address the digital underrepresentation of regional Philippine languages. RinTag analyzes tokens within context, predicts grammatical categories, computes confidence scores, and outputs morphological feature clues.
+                        <strong>RinTag</strong> is a Python library and automated Part-of-Speech (POS) tagger
+                        specifically developed by our team for
+                        the Rinconada Bikol language. Powered by a <strong>Conditional Random Field (CRF)</strong> model
+                        trained on Rinconada Bikol syntactic and morphological sequential patterns, it is designed to
+                        address the digital underrepresentation of regional Philippine languages. RinTag analyzes tokens
+                        within context, predicts grammatical categories, computes confidence scores, and outputs
+                        morphological feature clues.
                     </p>
                     <div class="doc-features-grid">
                         <div class="feature-item">
@@ -152,7 +178,8 @@
                         </div>
                         <div class="feature-item">
                             <span class="feature-label">CRF Probabilities</span>
-                            <span class="feature-value">Computes token-level confidence scores and top alternative POS candidate distributions</span>
+                            <span class="feature-value">Computes token-level confidence scores and top alternative POS
+                                candidate distributions</span>
                         </div>
                         <div class="feature-item">
                             <span class="feature-label">Affix-Aware Analysis</span>
@@ -228,7 +255,8 @@
                                     Rinconada Bikol Language — Wikipedia ↗
                                 </a>
                             </div>
-                            <div class="ref-desc">Wikipedia, The Free Encyclopedia. General overview of the Rinconada Bikol language, its dialects, phonology, and grammar.</div>
+                            <div class="ref-desc">Wikipedia, The Free Encyclopedia. General overview of the Rinconada
+                                Bikol language, its dialects, phonology, and grammar.</div>
                         </div>
                     </div>
                     <div class="ref-item">
@@ -242,7 +270,8 @@
                             </div>
                             <div class="ref-desc">de Marneffe, M. C., Manning, C. D., Nivre, J., &amp; Zeman, D.
                                 <em>Computational Linguistics</em>, 47(2), 255–308. Foundational standard for
-                                cross-linguistically consistent grammatical annotation and the 17 UPOS categories.</div>
+                                cross-linguistically consistent grammatical annotation and the 17 UPOS categories.
+                            </div>
                         </div>
                     </div>
                     <div class="ref-item">
@@ -262,7 +291,8 @@
                         <span class="ref-num">7</span>
                         <div class="ref-body">
                             <div class="ref-title">
-                                <a href="https://library.apsce.net/index.php/ICCE/article/view/4922" target="_blank" rel="noopener noreferrer">
+                                <a href="https://library.apsce.net/index.php/ICCE/article/view/4922" target="_blank"
+                                    rel="noopener noreferrer">
                                     Mapping Morphological Patterns: A Framework for Rinconada Bikol Language
                                     Morphological Analysis and Stemming (Pandes &amp; Martinez, 2024) ↗
                                 </a>
@@ -278,7 +308,8 @@
                             <div class="ref-title">
                                 <a href="https://doi.org/10.1007/s10579-024-09782-4" target="_blank"
                                     rel="noopener noreferrer">
-                                    Exploratory Analysis of Rinconada Bikol Language-Nabua Text Corpus (Oñate &amp; Pandes, 2024) ↗
+                                    Exploratory Analysis of Rinconada Bikol Language-Nabua Text Corpus (Oñate &amp;
+                                    Pandes, 2024) ↗
                                 </a>
                             </div>
                             <div class="ref-desc"><em>Language Resources and Evaluation</em>. Corpus development,
@@ -289,6 +320,14 @@
                 </div>
             </div>
         </section>
+    </div>
+
+    <!-- Mini Hover Preview -->
+    <div id="miniPreview" class="mini-preview hidden" aria-hidden="true">
+        <span id="mpToken" class="mp-token"></span>
+        <span id="mpTag" class="mp-tag tag-badge"></span>
+        <span id="mpConf" class="mp-conf"></span>
+        <span class="mp-hint">Click to edit</span>
     </div>
 
     <!-- Tooltip Template -->
@@ -315,6 +354,27 @@
             </div>
         </div>
 
+        <div id="ttOovSection" class="tt-section hidden">
+            <div class="tt-label" style="color: #facc15;">🟡 Out of Vocabulary (OOV)</div>
+            <div style="font-size: 0.8rem; color: #94a3b8;">This word was not seen in the original training corpus.
+            </div>
+        </div>
+
+        <div id="ttCorrectionSection" class="tt-section">
+            <div id="ttCorrectionLabel" class="tt-label">Suggest Correction (optional)</div>
+            <div id="ttCorrectionDropdown" class="custom-dropdown">
+                <button type="button" id="ttDropdownTrigger" class="dropdown-trigger" aria-haspopup="listbox" aria-expanded="false">
+                    <span id="ttDropdownLabel">Keep predicted</span>
+                    <svg class="dropdown-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div id="ttDropdownMenu" class="dropdown-menu hidden" role="listbox">
+                    <!-- Options injected dynamically -->
+                </div>
+            </div>
+        </div>
+
         <div class="tt-section">
             <div class="tt-label">Key Features</div>
             <div id="ttFeatures" class="features-list">
@@ -328,26 +388,44 @@
         <div class="legend-modal glass-panel">
             <div class="modal-header">
                 <h3>UPOS Tag Legend</h3>
-                <button id="closeLegendBtn" class="tt-close-btn" style="display: flex;" type="button" aria-label="Close legend">✕</button>
+                <button id="closeLegendBtn" class="tt-close-btn" style="display: flex;" type="button"
+                    aria-label="Close legend">✕</button>
             </div>
             <div class="legend-grid">
-                <div class="legend-item"><span class="tag-badge tag-adj">ADJ</span><span class="legend-item-label">Adjective</span></div>
-                <div class="legend-item"><span class="tag-badge tag-adp">ADP</span><span class="legend-item-label">Adposition</span></div>
-                <div class="legend-item"><span class="tag-badge tag-adv">ADV</span><span class="legend-item-label">Adverb</span></div>
-                <div class="legend-item"><span class="tag-badge tag-aux">AUX</span><span class="legend-item-label">Auxiliary</span></div>
-                <div class="legend-item"><span class="tag-badge tag-cconj">CCONJ</span><span class="legend-item-label">Coordinating Conjunction</span></div>
-                <div class="legend-item"><span class="tag-badge tag-det">DET</span><span class="legend-item-label">Determiner</span></div>
-                <div class="legend-item"><span class="tag-badge tag-intj">INTJ</span><span class="legend-item-label">Interjection</span></div>
-                <div class="legend-item"><span class="tag-badge tag-noun">NOUN</span><span class="legend-item-label">Noun</span></div>
-                <div class="legend-item"><span class="tag-badge tag-num">NUM</span><span class="legend-item-label">Numeral</span></div>
-                <div class="legend-item"><span class="tag-badge tag-part">PART</span><span class="legend-item-label">Particle</span></div>
-                <div class="legend-item"><span class="tag-badge tag-pron">PRON</span><span class="legend-item-label">Pronoun</span></div>
-                <div class="legend-item"><span class="tag-badge tag-propn">PROPN</span><span class="legend-item-label">Proper Noun</span></div>
-                <div class="legend-item"><span class="tag-badge tag-punct">PUNCT</span><span class="legend-item-label">Punctuation</span></div>
-                <div class="legend-item"><span class="tag-badge tag-sconj">SCONJ</span><span class="legend-item-label">Subordinating Conjunction</span></div>
-                <div class="legend-item"><span class="tag-badge tag-sym">SYM</span><span class="legend-item-label">Symbol</span></div>
-                <div class="legend-item"><span class="tag-badge tag-verb">VERB</span><span class="legend-item-label">Verb</span></div>
-                <div class="legend-item"><span class="tag-badge tag-x">X</span><span class="legend-item-label">Other</span></div>
+                <div class="legend-item"><span class="tag-badge tag-adj">ADJ</span><span
+                        class="legend-item-label">Adjective</span></div>
+                <div class="legend-item"><span class="tag-badge tag-adp">ADP</span><span
+                        class="legend-item-label">Adposition</span></div>
+                <div class="legend-item"><span class="tag-badge tag-adv">ADV</span><span
+                        class="legend-item-label">Adverb</span></div>
+                <div class="legend-item"><span class="tag-badge tag-aux">AUX</span><span
+                        class="legend-item-label">Auxiliary</span></div>
+                <div class="legend-item"><span class="tag-badge tag-cconj">CCONJ</span><span
+                        class="legend-item-label">Coordinating Conjunction</span></div>
+                <div class="legend-item"><span class="tag-badge tag-det">DET</span><span
+                        class="legend-item-label">Determiner</span></div>
+                <div class="legend-item"><span class="tag-badge tag-intj">INTJ</span><span
+                        class="legend-item-label">Interjection</span></div>
+                <div class="legend-item"><span class="tag-badge tag-noun">NOUN</span><span
+                        class="legend-item-label">Noun</span></div>
+                <div class="legend-item"><span class="tag-badge tag-num">NUM</span><span
+                        class="legend-item-label">Numeral</span></div>
+                <div class="legend-item"><span class="tag-badge tag-part">PART</span><span
+                        class="legend-item-label">Particle</span></div>
+                <div class="legend-item"><span class="tag-badge tag-pron">PRON</span><span
+                        class="legend-item-label">Pronoun</span></div>
+                <div class="legend-item"><span class="tag-badge tag-propn">PROPN</span><span
+                        class="legend-item-label">Proper Noun</span></div>
+                <div class="legend-item"><span class="tag-badge tag-punct">PUNCT</span><span
+                        class="legend-item-label">Punctuation</span></div>
+                <div class="legend-item"><span class="tag-badge tag-sconj">SCONJ</span><span
+                        class="legend-item-label">Subordinating Conjunction</span></div>
+                <div class="legend-item"><span class="tag-badge tag-sym">SYM</span><span
+                        class="legend-item-label">Symbol</span></div>
+                <div class="legend-item"><span class="tag-badge tag-verb">VERB</span><span
+                        class="legend-item-label">Verb</span></div>
+                <div class="legend-item"><span class="tag-badge tag-x">X</span><span
+                        class="legend-item-label">Other</span></div>
             </div>
         </div>
     </div>
@@ -407,14 +485,239 @@
             }
         });
 
+        const miniPreview = document.getElementById('miniPreview');
+        const mpToken = document.getElementById('mpToken');
+        const mpTag = document.getElementById('mpTag');
+        const mpConf = document.getElementById('mpConf');
+
+        const ttDropdownTrigger = document.getElementById('ttDropdownTrigger');
+        const ttDropdownLabel = document.getElementById('ttDropdownLabel');
+        const ttDropdownMenu = document.getElementById('ttDropdownMenu');
+
+        const LOW_CONFIDENCE_THRESHOLD = 0.75;
+        const ALL_UPOS_TAGS = [
+            'ADJ', 'ADP', 'ADV', 'AUX', 'CCONJ', 'DET', 'INTJ',
+            'NOUN', 'NUM', 'PART', 'PRON', 'PROPN', 'PUNCT',
+            'SCONJ', 'SYM', 'VERB', 'X'
+        ];
+
+        // Map token index -> correction record { index, token, original_tag, corrected_tag, confidence, is_oov }
+        let pendingCorrections = {};
+        let activeTooltipIndex = null;
+        let isPinned = false;
+        let isHoveringTooltip = false;
+        let hideTimer = null;
+        let activeCustomDropdown = null;
+
+        function showMiniPreview(targetEl, data) {
+            if (isPinned) return;
+            mpToken.textContent = data.token;
+            mpTag.textContent = getFullTagName(data.tag);
+            mpTag.className = `mp-tag tag-badge tag-${data.tag.toLowerCase()}`;
+            const confPct = (data.confidence * 100).toFixed(1);
+            mpConf.textContent = `${confPct}%`;
+
+            miniPreview.classList.remove('hidden');
+            const rect = targetEl.getBoundingClientRect();
+            const mpRect = miniPreview.getBoundingClientRect();
+
+            let left = rect.left + (rect.width / 2) - (mpRect.width / 2);
+            let top = rect.top - mpRect.height - 8;
+
+            if (left < 10) left = 10;
+            if (left + mpRect.width > window.innerWidth - 10) {
+                left = window.innerWidth - mpRect.width - 10;
+            }
+            if (top < 10) {
+                top = rect.bottom + 8;
+            }
+
+            miniPreview.style.left = `${left}px`;
+            miniPreview.style.top = `${top}px`;
+        }
+
+        function hideMiniPreview() {
+            miniPreview.classList.add('hidden');
+        }
+
+        // Custom Dropdown Open/Close
+        function toggleDropdown(forceState) {
+            const shouldOpen = typeof forceState === 'boolean' ? forceState : ttDropdownMenu.classList.contains('hidden');
+            if (shouldOpen) {
+                ttDropdownMenu.classList.remove('hidden');
+                ttDropdownTrigger.classList.add('open');
+                ttDropdownTrigger.setAttribute('aria-expanded', 'true');
+            } else {
+                ttDropdownMenu.classList.add('hidden');
+                ttDropdownTrigger.classList.remove('open');
+                ttDropdownTrigger.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        ttDropdownTrigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleDropdown();
+        });
+
+        // Close dropdown when clicking outside of it
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('#ttCorrectionDropdown')) {
+                toggleDropdown(false);
+            }
+        });
+
+        // Keep tooltip open when hovering over tooltip itself
+        tooltip.addEventListener('mouseenter', () => {
+            isHoveringTooltip = true;
+            if (hideTimer) clearTimeout(hideTimer);
+        });
+
+        tooltip.addEventListener('mouseleave', () => {
+            isHoveringTooltip = false;
+            if (!isPinned) {
+                hideTooltip();
+            }
+        });
+
+        tooltip.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+        tooltip.addEventListener('mousedown', (e) => {
+            e.stopPropagation();
+        });
+
+        function updateCorrectionBar() {
+            const corrections = Object.values(pendingCorrections);
+            const count = corrections.length;
+            const bar = document.getElementById('correctionBar');
+            const details = document.getElementById('correctionDetails');
+
+            if (count > 0) {
+                bar.classList.remove('hidden');
+                document.getElementById('correctionCountText').textContent =
+                    `${count} correction${count > 1 ? 's' : ''} ready`;
+
+                details.innerHTML = '';
+                corrections.forEach(c => {
+                    const item = document.createElement('div');
+                    item.className = 'correction-detail-item';
+                    item.innerHTML = `
+                        <span class="cd-token">${c.token}</span>
+                        <div class="cd-arrow-wrap">
+                            <span class="cd-old tag-badge tag-${c.original_tag.toLowerCase()}">${getFullTagName(c.original_tag)}</span>
+                            <span class="cd-arrow">➔</span>
+                            <span class="cd-new tag-badge tag-${c.corrected_tag.toLowerCase()}">${getFullTagName(c.corrected_tag)}</span>
+                        </div>
+                        <button type="button" class="cd-remove-btn" title="Undo correction">✕</button>
+                    `;
+
+                    // Undo handler from summary item
+                    item.querySelector('.cd-remove-btn').addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        revertCorrection(c.index);
+                    });
+
+                    details.appendChild(item);
+                });
+
+                document.getElementById('correctionStatus').textContent = '';
+            } else {
+                bar.classList.add('hidden');
+                details.innerHTML = '';
+            }
+        }
+
+        function revertCorrection(index) {
+            delete pendingCorrections[index];
+            const tokenEl = tokensContainer.children[index];
+            const originalData = currentTokens[index];
+            if (tokenEl && originalData) {
+                tokenEl.classList.remove('corrected');
+                const badge = tokenEl.querySelector('.tag-badge');
+                if (badge) {
+                    badge.textContent = originalData.tag;
+                    badge.className = `tag-badge tag-${originalData.tag.toLowerCase()}`;
+                }
+                const check = tokenEl.querySelector('.corrected-check');
+                if (check) check.remove();
+            }
+
+            // If active in opened detail tooltip, refresh dropdown label
+            if (activeTooltipIndex === index && originalData) {
+                renderCorrectionDropdown(originalData, index, tokenEl);
+            }
+
+            updateCorrectionBar();
+        }
+
+        function applyCorrection(index, newTag) {
+            const tokenEl = tokensContainer.children[index];
+            const originalData = currentTokens[index];
+            if (!originalData) return;
+
+            if (newTag && newTag !== originalData.tag) {
+                pendingCorrections[index] = {
+                    index: index,
+                    token: originalData.token,
+                    original_tag: originalData.tag,
+                    corrected_tag: newTag,
+                    confidence: originalData.confidence,
+                    is_oov: !!originalData.is_oov,
+                };
+
+                if (tokenEl) {
+                    tokenEl.classList.add('corrected');
+                    const badge = tokenEl.querySelector('.tag-badge');
+                    if (badge) {
+                        badge.textContent = newTag;
+                        badge.className = `tag-badge tag-${newTag.toLowerCase()}`;
+                    }
+                    let check = tokenEl.querySelector('.corrected-check');
+                    if (!check) {
+                        check = document.createElement('span');
+                        check.className = 'corrected-check';
+                        check.textContent = '✓';
+                        tokenEl.appendChild(check);
+                    }
+                    check.title = `Corrected from ${getFullTagName(originalData.tag)}`;
+                }
+            } else {
+                // Reverted back to original
+                revertCorrection(index);
+                return;
+            }
+
+            if (activeTooltipIndex === index) {
+                renderCorrectionDropdown(originalData, index, tokenEl);
+            }
+
+            updateCorrectionBar();
+        }
+
         function renderTokens(tokens) {
             tokensContainer.innerHTML = '';
+            pendingCorrections = {};
+            updateCorrectionBar();
+            hideTooltip();
+            hideMiniPreview();
+
             tokens.forEach((t, i) => {
                 const tokenWrapper = document.createElement('div');
                 tokenWrapper.className = 'token-wrapper';
+                tokenWrapper.dataset.idx = i;
                 tokenWrapper.tabIndex = 0;
                 tokenWrapper.setAttribute('role', 'button');
-                tokenWrapper.setAttribute('aria-label', `${t.token}, ${getFullTagName(t.tag)}. Show details`);
+                tokenWrapper.setAttribute('aria-label', `${t.token}, ${getFullTagName(t.tag)}. Click to inspect and correct`);
+
+                // Highlight low confidence in red
+                if (t.confidence < LOW_CONFIDENCE_THRESHOLD) {
+                    tokenWrapper.classList.add('low-confidence');
+                }
+
+                // Highlight OOV in yellow
+                if (t.is_oov) {
+                    tokenWrapper.classList.add('oov-token');
+                }
 
                 const tokenText = document.createElement('span');
                 tokenText.className = 'token-text';
@@ -427,25 +730,43 @@
                 tokenWrapper.appendChild(tokenText);
                 tokenWrapper.appendChild(tagBadge);
 
-                if (supportsHover.matches) {
-                    tokenWrapper.addEventListener('mouseenter', (e) => showTooltip(e, t));
-                    tokenWrapper.addEventListener('mouseleave', hideTooltip);
-                    tokenWrapper.addEventListener('mousemove', moveTooltip);
-                } else {
-                    tokenWrapper.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        if (!tooltip.classList.contains('hidden') && tooltip.dataset.token === t.token) {
-                            hideTooltip();
-                        } else {
-                            showTooltip(e, t);
-                        }
-                    });
-                }
+                // Hover: Mini Preview (non-locking)
+                tokenWrapper.addEventListener('mouseenter', () => {
+                    if (!isPinned) {
+                        showMiniPreview(tokenWrapper, t);
+                    }
+                });
+
+                tokenWrapper.addEventListener('mouseleave', () => {
+                    if (!isPinned) {
+                        hideMiniPreview();
+                    }
+                });
+
+                // Click: Locks/Pins Full Detail Inspection Panel
+                tokenWrapper.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    hideMiniPreview();
+                    if (hideTimer) clearTimeout(hideTimer);
+
+                    if (isPinned && activeTooltipIndex === i) {
+                        hideTooltip();
+                    } else {
+                        showTooltipForElement(tokenWrapper, t, i);
+                        isPinned = true;
+                        document.querySelectorAll('.token-wrapper').forEach(el => el.classList.remove('active-token'));
+                        tokenWrapper.classList.add('active-token');
+                    }
+                });
 
                 tokenWrapper.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault();
-                        showTooltip(e, t);
+                        hideMiniPreview();
+                        showTooltipForElement(tokenWrapper, t, i);
+                        isPinned = true;
+                        document.querySelectorAll('.token-wrapper').forEach(el => el.classList.remove('active-token'));
+                        tokenWrapper.classList.add('active-token');
                     }
                 });
 
@@ -476,8 +797,130 @@
             return names[tag] || tag;
         }
 
-        function showTooltip(e, data) {
+        function positionTooltip(targetElement) {
+            if (!supportsHover.matches) {
+                tooltip.classList.add('touch-tooltip');
+                return;
+            }
+
+            tooltip.classList.remove('touch-tooltip');
+            const rect = targetElement.getBoundingClientRect();
+            const ttRect = tooltip.getBoundingClientRect();
+
+            let left = rect.left;
+            let top = rect.bottom + 8;
+
+            if (left + ttRect.width > window.innerWidth - 16) {
+                left = window.innerWidth - ttRect.width - 16;
+            }
+            if (left < 16) left = 16;
+
+            if (top + ttRect.height > window.innerHeight - 16) {
+                top = rect.top - ttRect.height - 8;
+                if (top < 16) top = 16;
+            }
+
+            tooltip.style.left = `${left}px`;
+            tooltip.style.top = `${top}px`;
+        }
+
+        function renderCorrectionDropdown(data, tokenIndex, targetElement) {
+            toggleDropdown(false);
+            ttDropdownMenu.innerHTML = '';
+
+            const currentSelectedTag = pendingCorrections[tokenIndex] ? pendingCorrections[tokenIndex].corrected_tag : '';
+
+            // Update trigger label
+            if (currentSelectedTag) {
+                ttDropdownLabel.innerHTML = `<span class="tag-dot" style="background:${getTagColor(currentSelectedTag)}; display:inline-block; margin-right:6px;"></span> Corrected to "${getFullTagName(currentSelectedTag)}"`;
+            } else {
+                ttDropdownLabel.innerHTML = `Keep predicted "${getFullTagName(data.tag)}"`;
+            }
+
+            // Option 1: Keep predicted
+            const keepOption = document.createElement('div');
+            keepOption.className = `dropdown-option ${!currentSelectedTag ? 'selected' : ''}`;
+            keepOption.innerHTML = `
+                <span class="tag-dot" style="background: ${getTagColor(data.tag)}"></span>
+                <span class="opt-label">Keep predicted "${getFullTagName(data.tag)}"</span>
+                <span class="opt-check">✓</span>
+            `;
+            keepOption.addEventListener('click', (e) => {
+                e.stopPropagation();
+                applyCorrection(tokenIndex, '');
+                toggleDropdown(false);
+            });
+            ttDropdownMenu.appendChild(keepOption);
+
+            // Suggested alternatives group
+            const altMap = {};
+            data.alternatives.forEach(a => { altMap[a.tag] = a.probability; });
+
+            const sortedAlternatives = data.alternatives.filter(a => a.tag !== data.tag);
+            if (sortedAlternatives.length > 0) {
+                const altHeader = document.createElement('div');
+                altHeader.className = 'dropdown-group-label';
+                altHeader.textContent = 'Top Alternative Predictions';
+                ttDropdownMenu.appendChild(altHeader);
+
+                sortedAlternatives.forEach(alt => {
+                    const opt = document.createElement('div');
+                    const isSelected = currentSelectedTag === alt.tag;
+                    opt.className = `dropdown-option ${isSelected ? 'selected' : ''}`;
+                    const pct = (alt.probability * 100).toFixed(1);
+                    opt.innerHTML = `
+                        <span class="tag-dot" style="background: ${getTagColor(alt.tag)}"></span>
+                        <span class="opt-label">${getFullTagName(alt.tag)}</span>
+                        <span class="opt-prob">${pct}%</span>
+                        <span class="opt-check">✓</span>
+                    `;
+                    opt.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        applyCorrection(tokenIndex, alt.tag);
+                        toggleDropdown(false);
+                    });
+                    ttDropdownMenu.appendChild(opt);
+                });
+            }
+
+            // Divider
+            const divider = document.createElement('div');
+            divider.className = 'dropdown-divider';
+            ttDropdownMenu.appendChild(divider);
+
+            // All remaining UPOS tags group
+            const allHeader = document.createElement('div');
+            allHeader.className = 'dropdown-group-label';
+            allHeader.textContent = 'All POS Tags';
+            ttDropdownMenu.appendChild(allHeader);
+
+            const altTagSet = new Set(sortedAlternatives.map(a => a.tag));
+            altTagSet.add(data.tag);
+
+            ALL_UPOS_TAGS.forEach(tag => {
+                if (altTagSet.has(tag)) return;
+                const opt = document.createElement('div');
+                const isSelected = currentSelectedTag === tag;
+                opt.className = `dropdown-option ${isSelected ? 'selected' : ''}`;
+                opt.innerHTML = `
+                    <span class="tag-dot" style="background: ${getTagColor(tag)}"></span>
+                    <span class="opt-label">${getFullTagName(tag)}</span>
+                    <span class="opt-check">✓</span>
+                `;
+                opt.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    applyCorrection(tokenIndex, tag);
+                    toggleDropdown(false);
+                });
+                ttDropdownMenu.appendChild(opt);
+            });
+        }
+
+        function showTooltipForElement(targetElement, data, tokenIndex) {
+            activeTooltipIndex = tokenIndex;
             tooltip.dataset.token = data.token;
+            tooltip.dataset.idx = tokenIndex;
+
             document.getElementById('ttToken').textContent = data.token;
             const ttTag = document.getElementById('ttTag');
             ttTag.textContent = getFullTagName(data.tag);
@@ -488,10 +931,19 @@
             document.getElementById('ttConfidenceBar').style.width = `${confPercent}%`;
             document.getElementById('ttConfidenceBar').style.backgroundColor = getTagColor(data.tag);
 
+            // OOV Notice
+            const oovSection = document.getElementById('ttOovSection');
+            if (data.is_oov) {
+                oovSection.classList.remove('hidden');
+            } else {
+                oovSection.classList.add('hidden');
+            }
+
+            // Top Alternatives
             const altContainer = document.getElementById('ttAlternatives');
             altContainer.innerHTML = '';
             data.alternatives.forEach(alt => {
-                if (alt.tag === data.tag) return; // Skip the predicted tag
+                if (alt.tag === data.tag) return;
                 const p = (alt.probability * 100).toFixed(1);
                 altContainer.innerHTML += `
                     <div class="alt-row">
@@ -504,11 +956,22 @@
                 `;
             });
 
+            // Correction Dropdown
+            const corrLabel = document.getElementById('ttCorrectionLabel');
+            if (data.confidence < LOW_CONFIDENCE_THRESHOLD) {
+                corrLabel.innerHTML = '<span style="color: #f87171;">⚠ Low Confidence (&lt;75%) — Suggest Correction</span>';
+            } else {
+                corrLabel.textContent = 'Suggest Correction (optional)';
+            }
+
+            renderCorrectionDropdown(data, tokenIndex, targetElement);
+
+            // Key Features
             const featContainer = document.getElementById('ttFeatures');
             featContainer.innerHTML = '';
-            const keyFeatures = Object.entries(data.features)
+            const keyFeatures = Object.entries(data.features || {})
                 .filter(([k, v]) => v && (k.includes('word[:') || k.includes('word[-') || k.includes('istitle')))
-                .slice(0, 5); // Just show a few interesting ones
+                .slice(0, 5);
 
             if (keyFeatures.length === 0) {
                 featContainer.innerHTML = '<span class="feat-none">No distinctive morphological features</span>';
@@ -519,124 +982,151 @@
             }
 
             tooltip.classList.remove('hidden');
-            moveTooltip(e);
+            positionTooltip(targetElement);
         }
 
         function hideTooltip() {
             tooltip.classList.add('hidden');
+            toggleDropdown(false);
+            isPinned = false;
+            activeTooltipIndex = null;
+            document.querySelectorAll('.token-wrapper').forEach(el => el.classList.remove('active-token'));
         }
 
-        function moveTooltip(e) {
-            if (!supportsHover.matches) {
-                tooltip.classList.add('touch-tooltip');
-                return;
-            }
+        // Submit feedback handler
+        document.getElementById('submitCorrectionsBtn').addEventListener('click', async () => {
+            const btn = document.getElementById('submitCorrectionsBtn');
+            const status = document.getElementById('correctionStatus');
+            btn.disabled = true;
+            status.textContent = 'Submitting to Google Sheet...';
+            status.style.color = '#94a3b8';
 
-            tooltip.classList.remove('touch-tooltip');
-            const tokenRect = e.type === 'keydown' ? e.currentTarget.getBoundingClientRect() : null;
-            const x = tokenRect ? tokenRect.left : e.clientX + 15;
-            const y = tokenRect ? tokenRect.bottom + 15 : e.clientY + 15;
-
-            // Adjust if tooltip goes off screen
-            const rect = tooltip.getBoundingClientRect();
-            let finalX = x;
-            let finalY = y;
-
-            if (x + rect.width > window.innerWidth) {
-                finalX = e.clientX - rect.width - 15;
-            }
-            if (y + rect.height > window.innerHeight) {
-                finalY = e.clientY - rect.height - 15;
-            }
-
-            tooltip.style.left = `${finalX}px`;
-            tooltip.style.top = `${finalY}px`;
-        }
-
-        document.addEventListener('click', (e) => {
-            if (!supportsHover.matches && !e.target.closest('.token-wrapper') && !e.target.closest('#tooltip')) {
-                hideTooltip();
-            }
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') hideTooltip();
-        });
-
-        function getTagColor(tag) {
-            const colors = {
-                'NOUN': '#4338ca',
-                'VERB': '#059669',
-                'ADJ': '#b45309',
-                'ADV': '#be185d',
-                'PRON': '#0e7490',
-                'DET': '#475569',
-                'ADP': '#6d28d9',
-                'CCONJ': '#be123c',
-                'NUM': '#0f766e',
-                'PART': '#4d7c0f',
-                'INTJ': '#c2410c',
-                'PROPN': '#1d4ed8',
-                'PUNCT': '#4b5563',
-                'SYM': '#a21caf',
-                'X': '#b91c1c',
-                'AUX': '#7e22ce',
-                'SCONJ': '#9a3412'
-            };
-            return colors[tag] || '#475569';
-        }
-
-        // Tooltip close button for mobile / touch
-        const ttCloseBtn = document.getElementById('ttCloseBtn');
-        if (ttCloseBtn) {
-            ttCloseBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                hideTooltip();
-            });
-        }
-
-        // Scroll indicator: smooth scroll and fade out on scroll
-        const scrollIndicator = document.getElementById('scrollIndicator');
-        const aboutSection = document.getElementById('aboutSection');
-        if (scrollIndicator && aboutSection) {
-            scrollIndicator.addEventListener('click', () => {
-                aboutSection.scrollIntoView({ behavior: 'smooth' });
+            const sentenceTokens = currentTokens.map((tok, idx) => {
+                const corr = pendingCorrections[idx];
+                return {
+                    token: tok.token,
+                    tag: tok.tag,
+                    corrected_tag: corr ? corr.corrected_tag : tok.tag,
+                    confidence: tok.confidence,
+                    is_oov: tok.is_oov,
+                    was_corrected: !!corr,
+                };
             });
 
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 30) {
-                    scrollIndicator.classList.add('scrolled');
-                } else {
-                    scrollIndicator.classList.remove('scrolled');
-                }
-            }, { passive: true });
-        }
+                        try {
+                            const response = await fetch('/feedback', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    original_text: input.value.trim(),
+                                    tokens: sentenceTokens,
+                                })
+                            });
 
-        // Legend Modal Logic
-        const showLegendBtn = document.getElementById('showLegendBtn');
-        const closeLegendBtn = document.getElementById('closeLegendBtn');
-        const legendModalOverlay = document.getElementById('legendModalOverlay');
+                            const data = await response.json();
+                            if (!response.ok) {
+                                throw new Error(data.error || 'Failed to submit feedback');
+                            }
 
-        if (showLegendBtn && legendModalOverlay) {
-            showLegendBtn.addEventListener('click', () => {
-                legendModalOverlay.classList.remove('hidden');
-            });
-        }
+                            status.textContent = `✓ Feedback saved (${data.tokens_saved} tokens)!`;
+                            status.style.color = '#4ade80';
+                            pendingCorrections = {};
 
-        if (closeLegendBtn && legendModalOverlay) {
-            closeLegendBtn.addEventListener('click', () => {
-                legendModalOverlay.classList.add('hidden');
-            });
-        }
+                            setTimeout(() => {
+                                document.getElementById('correctionBar').classList.add('hidden');
+                            }, 3500);
+                        } catch (err) {
+                            status.textContent = `Error: ${err.message}`;
+                            status.style.color = '#f87171';
+                        } finally {
+                            btn.disabled = false;
+                        }
+                    });
 
-        // Close when clicking outside modal
-        if (legendModalOverlay) {
-            legendModalOverlay.addEventListener('click', (e) => {
-                if (e.target === legendModalOverlay) {
-                    legendModalOverlay.classList.add('hidden');
-                }
-            });
-        }
+                    document.addEventListener('click', (e) => {
+                        if (!e.target.closest('.token-wrapper') && !e.target.closest('#tooltip')) {
+                            hideTooltip();
+                        }
+                    });
+
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'Escape') hideTooltip();
+                    });
+
+                    function getTagColor(tag) {
+                        const colors = {
+                            'NOUN': '#4338ca',
+                            'VERB': '#059669',
+                            'ADJ': '#b45309',
+                            'ADV': '#be185d',
+                            'PRON': '#0e7490',
+                            'DET': '#475569',
+                            'ADP': '#6d28d9',
+                            'CCONJ': '#be123c',
+                            'NUM': '#0f766e',
+                            'PART': '#4d7c0f',
+                            'INTJ': '#c2410c',
+                            'PROPN': '#1d4ed8',
+                            'PUNCT': '#4b5563',
+                            'SYM': '#a21caf',
+                            'X': '#b91c1c',
+                            'AUX': '#7e22ce',
+                            'SCONJ': '#9a3412'
+                        };
+                        return colors[tag] || '#475569';
+                    }
+
+                    // Tooltip close button for mobile / touch
+                    const ttCloseBtn = document.getElementById('ttCloseBtn');
+                    if (ttCloseBtn) {
+                        ttCloseBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            hideTooltip();
+                        });
+                    }
+
+                    // Scroll indicator: smooth scroll and fade out on scroll
+                    const scrollIndicator = document.getElementById('scrollIndicator');
+                    const aboutSection = document.getElementById('aboutSection');
+                    if (scrollIndicator && aboutSection) {
+                        scrollIndicator.addEventListener('click', () => {
+                            aboutSection.scrollIntoView({ behavior: 'smooth' });
+                        });
+
+                        window.addEventListener('scroll', () => {
+                            if (window.scrollY > 30) {
+                                scrollIndicator.classList.add('scrolled');
+                            } else {
+                                scrollIndicator.classList.remove('scrolled');
+                            }
+                        }, { passive: true });
+                    }
+
+                    // Legend Modal Logic
+                    const showLegendBtn = document.getElementById('showLegendBtn');
+                    const closeLegendBtn = document.getElementById('closeLegendBtn');
+                    const legendModalOverlay = document.getElementById('legendModalOverlay');
+
+                    if (showLegendBtn && legendModalOverlay) {
+                        showLegendBtn.addEventListener('click', () => {
+                            legendModalOverlay.classList.remove('hidden');
+                        });
+                    }
+
+                    if (closeLegendBtn && legendModalOverlay) {
+                        closeLegendBtn.addEventListener('click', () => {
+                            legendModalOverlay.classList.add('hidden');
+                        });
+                    }
+
+                    // Close when clicking outside modal
+                    if (legendModalOverlay) {
+                        legendModalOverlay.addEventListener('click', (e) => {
+                            if (e.target === legendModalOverlay) {
+                                legendModalOverlay.classList.add('hidden');
+                            }
+                        });
+                    }
     </script>
 </body>
 

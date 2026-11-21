@@ -1,0 +1,13 @@
+{
+  "active_version": 1,
+  "versions": [
+    {
+      "version": 1,
+      "timestamp": "2026-10-03T13:46:00Z",
+      "dev_macro_f1": 0.751,
+      "source": "initial_training",
+      "corrections_applied": 0,
+      "notes": "Original baseline model"
+    }
+  ]
+}

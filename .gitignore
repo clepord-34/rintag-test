@@ -6,7 +6,14 @@ build/
 .venv/
 *.pkl
 !src/rintag/models/crf_model.pkl
+!src/rintag/models/vocab.pkl
 data/raw/*.csv
 data/lexicon/*.csv
 demo/.venv
 demo/try_lang1.py
+.env
+.env.*
+!.env.example
+
+# HITL showcase generated output
+demo/hitl_showcase/output/

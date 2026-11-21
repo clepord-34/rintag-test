@@ -5,3 +5,8 @@ services:
     buildCommand: pip install -r demo/requirements.txt
     startCommand: gunicorn --chdir demo app:app
     plan: free
+    envVars:
+      - key: GOOGLE_CREDENTIALS
+        sync: false
+      - key: FEEDBACK_SHEET_URL
+        sync: false

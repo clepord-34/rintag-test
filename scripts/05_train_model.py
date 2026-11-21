@@ -208,6 +208,17 @@ def train_model():
         pickle.dump(best_crf, f)
     print(f"Model saved successfully ({MODEL_PATH.stat().st_size / 1e6:.1f} MB).")
 
+    # Save training vocabulary for OOV detection
+    train_vocab = set(
+        w.lower()
+        for sent in sentences
+        for w, _ in sent
+    )
+    vocab_path = MODEL_PATH.parent / "vocab.pkl"
+    with open(vocab_path, "wb") as f:
+        pickle.dump(train_vocab, f)
+    print(f"Vocabulary saved ({len(train_vocab):,} unique words) to {vocab_path}.")
+
     banner("TIMING SUMMARY")
     print(f"Feature extraction : {fmt_time(feature_time)}")
     print(f"Parameter search   : {fmt_time(search_time)} ({total} combinations x {CV_FOLDS} folds)")
