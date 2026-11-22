@@ -4,9 +4,6 @@ __pycache__/
 dist/
 build/
 .venv/
-*.pkl
-!src/rintag/models/crf_model.pkl
-!src/rintag/models/vocab.pkl
 data/raw/*.csv
 data/lexicon/*.csv
 demo/.venv

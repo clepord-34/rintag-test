@@ -4,7 +4,23 @@
     {
       "version": 1,
       "timestamp": "2026-10-03T13:46:00Z",
-      "dev_macro_f1": 0.751,
+      "dev_macro_f1": 0.8354,
+      "test_accuracy": 0.83,
+      "test_macro_f1": 0.8193,
+      "test_weighted_f1": 0.8288,
+      "test_tokens": 3183,
+      "oov_accuracy": 0.6923,
+      "oov_correct": 495,
+      "oov_total": 715,
+      "cv_macro_f1": 0.820725529584666,
+      "cv_macro_f1_std": 0.00762358238929699,
+      "best_c1": 0.01,
+      "best_c2": 0.01,
+      "cv_folds": 5,
+      "artifact_sha256": {
+        "crf_model": "1f4104b691cba3869355cec2be922738989a45e150998f899b54a4ef8682ab17",
+        "vocab": "f4bd52d95c9f39b00937cc70606c05e02fe671fa654360b5b84fd5f48622156d"
+      },
       "source": "initial_training",
       "corrections_applied": 0,
       "notes": "Original baseline model"

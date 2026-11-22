@@ -1,10 +1,14 @@
 import pickle
 import time
+import json
+import hashlib
+import shutil
+from datetime import datetime, timezone
 from pathlib import Path
 
 import pandas as pd
 import sklearn_crfsuite
-from sklearn.metrics import make_scorer
+from sklearn.metrics import accuracy_score, f1_score, make_scorer
 from sklearn_crfsuite.metrics import flat_f1_score, flat_classification_report
 from sklearn.model_selection import ParameterGrid, cross_val_score
 import sys
@@ -16,6 +20,9 @@ from rintag.features import sent2features, sent2labels, resolve_groups
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
 MODEL_PATH = PROJECT_ROOT / "src" / "rintag" / "models" / "crf_model.pkl"
+VOCAB_PATH = MODEL_PATH.parent / "vocab.pkl"
+REGISTRY_PATH = PROJECT_ROOT / "models" / "model_registry.json"
+MODEL_ARCHIVE_DIR = PROJECT_ROOT / "models"
 
 # ── Training configuration (record these in the thesis) ──
 ALGORITHM = "lbfgs"
@@ -38,6 +45,78 @@ def fmt_time(seconds):
         return f"{minutes}m {secs:02d}s"
     hours, minutes = divmod(minutes, 60)
     return f"{hours}h {minutes:02d}m {secs:02d}s"
+
+
+def sha256(path):
+    digest = hashlib.sha256()
+    with open(path, "rb") as file:
+        for chunk in iter(lambda: file.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def update_model_registry(
+    dev_f1,
+    test_f1,
+    test_accuracy,
+    test_weighted_f1,
+    oov_accuracy,
+    oov_correct,
+    oov_total,
+    test_tokens,
+    cv_score,
+    cv_std,
+    best_params,
+):
+    if REGISTRY_PATH.exists():
+        with open(REGISTRY_PATH, "r", encoding="utf-8") as file:
+            registry = json.load(file)
+    else:
+        registry = {"active_version": 0, "versions": []}
+
+    versions = registry.get("versions", [])
+    version = max(
+        [entry["version"] for entry in versions] + [registry.get("active_version", 0)]
+    ) + 1
+
+    archived_model = MODEL_ARCHIVE_DIR / f"crf_model_v{version}.pkl"
+    archived_vocab = MODEL_ARCHIVE_DIR / f"vocab_v{version}.pkl"
+    shutil.copy2(MODEL_PATH, archived_model)
+    shutil.copy2(VOCAB_PATH, archived_vocab)
+
+    entry = {
+        "version": version,
+        "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
+        "dev_macro_f1": round(float(dev_f1), 4),
+        "test_accuracy": round(float(test_accuracy), 4),
+        "test_macro_f1": round(float(test_f1), 4),
+        "test_weighted_f1": round(float(test_weighted_f1), 4),
+        "test_tokens": int(test_tokens),
+        "oov_accuracy": round(float(oov_accuracy), 4) if oov_total else None,
+        "oov_correct": int(oov_correct),
+        "oov_total": int(oov_total),
+        "cv_macro_f1": round(float(cv_score), 12),
+        "cv_macro_f1_std": round(float(cv_std), 12),
+        "best_c1": best_params["c1"],
+        "best_c2": best_params["c2"],
+        "cv_folds": CV_FOLDS,
+        "artifact_sha256": {
+            "crf_model": sha256(archived_model),
+            "vocab": sha256(archived_vocab),
+        },
+        "source": "initial_training" if version == 1 else "retraining",
+        "corrections_applied": 0,
+        "notes": "Original baseline model" if version == 1 else "Retrained model",
+    }
+
+    versions.append(entry)
+    registry["active_version"] = version
+    registry["versions"] = versions
+    MODEL_ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
+    with open(REGISTRY_PATH, "w", encoding="utf-8") as file:
+        json.dump(registry, file, indent=2)
+        file.write("\n")
+    print(f"Model registry updated ({REGISTRY_PATH}, active version {version}).")
 
 
 def banner(title):
@@ -153,13 +232,13 @@ def train_model():
         )
         print(f"[{combination_number}/{total}] Time: {fmt_time(combo_time)} | "
               f"elapsed: {fmt_time(elapsed)} ")
-        results.append((mean_score, params))
+        results.append((mean_score, scores.std(ddof=1), params))
     search_time = time.perf_counter() - search_start
 
     banner("SEARCH RESULTS (best first)")
-    for rank, (score, params) in enumerate(sorted(results, key=lambda r: r[0], reverse=True), 1):
+    for rank, (score, std, params) in enumerate(sorted(results, key=lambda r: r[0], reverse=True), 1):
         print(f"{rank:>2}. macro F1 {score:.4f}  {params}")
-    best_score, best_params = max(results, key=lambda result: result[0])
+    best_score, best_std, best_params = max(results, key=lambda result: result[0])
     print("\nBest parameters:", best_params)
     print(f"Best CV Macro F1: {best_score:.4f}")
     print(f"Parameter search took {fmt_time(search_time)}")
@@ -218,6 +297,51 @@ def train_model():
     with open(vocab_path, "wb") as f:
         pickle.dump(train_vocab, f)
     print(f"Vocabulary saved ({len(train_vocab):,} unique words) to {vocab_path}.")
+
+    banner("TEST SET EVALUATION")
+    test_sentences = load_sentences(PROCESSED_DIR / "test.csv")
+    X_test = [sent2features([word for word, _ in sent]) for sent in test_sentences]
+    y_test = [sent2labels(sent) for sent in test_sentences]
+    y_test_pred = best_crf.predict(X_test)
+
+    y_test_flat = [tag for tags in y_test for tag in tags]
+    y_test_pred_flat = [tag for tags in y_test_pred for tag in tags]
+    test_accuracy = accuracy_score(y_test_flat, y_test_pred_flat)
+    test_f1 = f1_score(y_test_flat, y_test_pred_flat, average="macro", labels=labels)
+    test_weighted_f1 = f1_score(
+        y_test_flat,
+        y_test_pred_flat,
+        average="weighted",
+        labels=labels,
+    )
+
+    oov_correct = 0
+    oov_total = 0
+    for sentence, predictions in zip(test_sentences, y_test_pred):
+        for (word, true_tag), predicted_tag in zip(sentence, predictions):
+            if word.lower() not in train_vocab:
+                oov_total += 1
+                oov_correct += int(true_tag == predicted_tag)
+    oov_accuracy = oov_correct / oov_total if oov_total else 0.0
+
+    print(f"Test Accuracy: {test_accuracy:.4f}")
+    print(f"Test Macro F1: {test_f1:.4f}")
+    print(f"Test Weighted F1: {test_weighted_f1:.4f}")
+    print(f"OOV Accuracy: {oov_accuracy:.4f} ({oov_correct}/{oov_total})")
+
+    update_model_registry(
+        dev_f1=dev_f1,
+        test_f1=test_f1,
+        test_accuracy=test_accuracy,
+        test_weighted_f1=test_weighted_f1,
+        oov_accuracy=oov_accuracy,
+        oov_correct=oov_correct,
+        oov_total=oov_total,
+        test_tokens=len(y_test_flat),
+        cv_score=best_score,
+        cv_std=best_std,
+        best_params=best_params,
+    )
 
     banner("TIMING SUMMARY")
     print(f"Feature extraction : {fmt_time(feature_time)}")
