@@ -96,7 +96,7 @@ def main():
     print(f"  Exported -> {export_path.relative_to(PROJECT_ROOT)}")
     print(f"  Schema: sentence_id, timestamp, full_sentence, token_index, token,")
     print(f"          model_tag, top_alternative, user-corrected_tag, confidence, is_oov")
-    print("  (Ready for review and retraining)")
+    print("  (Ready for review and corpus curation)")
 
     # ──────────────────────────────────────────────────────────────────
     # Step 4: Context manager usage (alternative for batch jobs)
@@ -122,7 +122,7 @@ def main():
     print("\n" + "=" * 68)
     print("  Summary: Zero developer friction.")
     print("  Library users simply use rintag.tag().")
-    print("  Uncertain predictions are silently collected for HITL retraining.")
+    print("  Uncertain predictions are silently collected for human review.")
     print("=" * 68)
 
 

@@ -89,10 +89,5 @@ Export top-N feedback CSV (Google Sheets schema)
        ↓  share with linguists / native speakers
 Expert reviews → fills user-corrected_tag
        ↓  submit via Google Sheets, GitHub Issue, or CSV
-Retrain with validated corrections:
-
-  python scripts/06_retrain_with_feedback.py retrain \
-      --source csv --csv-path demo/hitl_showcase/output/hitl_feedback_top25.csv
-
-New model version → loop with updated rankings
+Use reviewed corrections for manual corpus curation and analysis.
 ```

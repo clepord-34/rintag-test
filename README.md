@@ -88,25 +88,6 @@ python demo/hitl_showcase/demo_passive_feedback.py
 
 See [`demo/hitl_showcase/`](demo/hitl_showcase/) for full documentation.
 
-### Retraining with Feedback
-
-```bash
-# Preview validated corrections without retraining:
-python scripts/06_retrain_with_feedback.py retrain --source sheets --dry-run
-
-# Retrain using validated Google Sheets feedback:
-python scripts/06_retrain_with_feedback.py retrain --source sheets
-
-# Retrain using a community CSV file:
-python scripts/06_retrain_with_feedback.py retrain --source csv --csv-path rintag_feedback.csv
-
-# List all versioned models:
-python scripts/06_retrain_with_feedback.py list
-
-# Roll back to any previous version:
-python scripts/06_retrain_with_feedback.py rollback --version 1
-```
-
 ## Authors
 - Vince Clifford C. Aguilar
 - Nhel Adam S. Benosa

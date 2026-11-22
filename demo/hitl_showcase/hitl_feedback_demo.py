@@ -327,19 +327,9 @@ def print_loop_summary(feedback_path: Path, corrected_path: Path):
   │       ↓  share with linguists / native speakers                 │
   │  4. Expert review: fill user-corrected_tag column               │
   │       ↓  submit via GitHub Issue or send CSV to developers       │
-  │  5. Retrain the model with validated corrections                 │
-  │       ↓  new model version, improved accuracy                   │
-  │  6. Loop: re-rank unseen pool with new model                    │
+  │  5. Review and curate exported corrections                      │
+  │  6. Loop: re-rank unseen pool with current model                │
   └─────────────────────────────────────────────────────────────────┘
-
-  To retrain immediately with the simulated corrected CSV:
-
-    python scripts/06_retrain_with_feedback.py retrain \\
-        --source csv \\
-        --csv-path {corrected_path.relative_to(PROJECT_ROOT)} \\
-        --dry-run
-
-  (remove --dry-run to actually retrain and version the model)
 
   To submit real corrections via GitHub:
     → Open an Issue using .github/ISSUE_TEMPLATE/tag-correction.md
