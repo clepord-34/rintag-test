@@ -73,7 +73,7 @@ with rintag.collect_feedback("audit.csv"):
         rintag.tag(doc)
 ```
 
-The passive-feedback threshold defaults to `0.75`, and OOV logging is enabled by default for both APIs; either option can be configured explicitly. Captured token rows include `top_alternative`, the highest-probability tag other than the model prediction whenever one is available, regardless of confidence. Passive-feedback exports omit the validator-only `validator_tag` column.
+The passive-feedback threshold defaults to `0.75`, and OOV logging is enabled by default for both APIs; either option can be configured explicitly. Captured token rows include `top_alternative`, the highest-probability tag other than the model prediction whenever one is available, regardless of confidence. Library feedback exports contain no validator-only fields.
 
 ### 2. Maintainer Active Learning (Uncertainty Sampling Showcase)
 For dataset curators and researchers: batch-tag unseen raw corpus sentences, rank them by model uncertainty, and export the hardest samples for expert annotation:

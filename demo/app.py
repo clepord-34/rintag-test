@@ -149,7 +149,7 @@ def submit_feedback():
             t.get("confidence", 0.0),
             t.get("is_oov", False),
             was_corrected,
-            "",  # validator_tag — left blank (considered as agree)
+            "",  # validator_tag is maintained separately from user feedback
         ])
 
     sheet.append_rows(rows, value_input_option="RAW")

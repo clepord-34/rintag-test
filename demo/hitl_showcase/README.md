@@ -35,16 +35,14 @@ python demo/hitl_showcase/demo_passive_feedback.py
 | `--threshold T` | `0.75` | Confidence threshold for flagging tokens |
 | `--min-words N` | `3` | Minimum sentence length (words) |
 | `--max-words N` | `30` | Maximum sentence length (words) |
-| `--no-simulate` | off | Skip the simulated corrections step |
-
 Examples:
 
 ```bash
 # Export top 50, stricter threshold
 python demo/hitl_showcase/hitl_feedback_demo.py --top-n 50 --threshold 0.75
 
-# Longer sentences only, no simulation
-python demo/hitl_showcase/hitl_feedback_demo.py --min-words 8 --max-words 20 --no-simulate
+# Longer sentences only
+python demo/hitl_showcase/hitl_feedback_demo.py --min-words 8 --max-words 20
 ```
 
 ## Output Files
@@ -55,11 +53,10 @@ Generated in `output/` on each run (gitignored):
 |---|---|
 | `ranked_unseen.csv` | All unseen sentences ranked by mean confidence |
 | `hitl_feedback_top{N}.csv` | Top-N export — blank `user-corrected_tag` for experts |
-| `hitl_feedback_top{N}_corrected.csv` | Simulated corrections (auto-filled from top alternative) |
 | `passive_feedback_captured.csv` | Passive library feedback from the demo sentences |
 | `batch_audit.csv` | Passive feedback captured within the scoped batch example |
 
-Passive feedback uses a `0.75` confidence threshold by default; set `threshold` to override it. Its CSV includes `top_alternative` for every token when another tag is available, including high-confidence tokens. This library-user schema omits `validator_tag`.
+Passive feedback uses a `0.75` confidence threshold by default; set `threshold` to override it. Its CSV includes `top_alternative` for every token when another tag is available, including high-confidence tokens. Feedback exports contain only prediction and user-correction fields; validator annotations are handled separately by maintainers.
 
 ## Schema: `hitl_feedback_top{N}.csv`
 
@@ -76,7 +73,6 @@ The maintainer active-learning export matches the column naming convention used 
 | `user-corrected_tag` | **Fill this in** with the correct tag |
 | `confidence` | Model's confidence for this token (0–1) |
 | `is_oov` | `True` if word not seen in training vocabulary |
-| `validator_tag` | Expert/validator tag override (leave blank = agree) |
 
 ## Full HITL Loop
 

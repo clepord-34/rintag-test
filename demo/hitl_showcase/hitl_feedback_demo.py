@@ -19,7 +19,6 @@ Usage
   python demo/hitl_showcase/hitl_feedback_demo.py                   # defaults
   python demo/hitl_showcase/hitl_feedback_demo.py --top-n 50
   python demo/hitl_showcase/hitl_feedback_demo.py --top-n 25 --min-words 5 --max-words 20
-  python demo/hitl_showcase/hitl_feedback_demo.py --no-simulate     # skip simulated corrections
 """
 
 import argparse
@@ -165,7 +164,7 @@ def batch_tag_and_rank(sentences: list[str]) -> list[dict]:
 # STEP 3 — Export ranked list + top-N feedback CSV
 # ══════════════════════════════════════════════════════════════════════════════
 
-def export_ranked(ranked: list[dict], top_n: int, threshold: float) -> tuple[Path, Path, list[str]]:
+def export_ranked(ranked: list[dict], top_n: int, threshold: float) -> tuple[Path, Path]:
     """Save the full ranked list and the top-N HITL feedback CSV."""
     step_header(3, f"Exporting ranked results & top-{top_n} HITL feedback CSV")
 
@@ -190,19 +189,17 @@ def export_ranked(ranked: list[dict], top_n: int, threshold: float) -> tuple[Pat
             })
     print(f"\n  [OK] Full ranked list -> {ranked_path.relative_to(PROJECT_ROOT)}")
 
-    # ── 3b. Top-N HITL feedback CSV (matches Google Sheets schema) ────────────
-    # Headers match demo/app.py FEEDBACK_HEADERS exactly:
+    # ── 3b. Top-N HITL feedback CSV for expert review ─────────────────────────
+    # Headers match the user-facing feedback fields in demo/app.py:
     #   sentence_id, timestamp, full_sentence, token_index, token,
-    #   model_tag, user-corrected_tag, confidence, is_oov,
-    #   validator_tag
+    #   model_tag, user-corrected_tag, confidence, is_oov
     FEEDBACK_HEADERS = [
         "sentence_id", "timestamp", "full_sentence", "token_index",
         "token", "model_tag", "user-corrected_tag", "confidence",
-        "is_oov", "validator_tag"
+        "is_oov"
     ]
     feedback_path = OUTPUT_DIR / f"hitl_feedback_top{top_n}.csv"
     rows = []
-    top_alts = []
     top = ranked[:top_n]
     now_iso = datetime.now(timezone.utc).isoformat()
 
@@ -211,12 +208,6 @@ def export_ranked(ranked: list[dict], top_n: int, threshold: float) -> tuple[Pat
             zip(r["tokens"], r["tags"], r["marginals"])
         ):
             conf = marg.get(tag, 0.0)
-            sorted_alts = sorted(marg.items(), key=lambda x: -x[1])
-            top_alt = next(
-                ((t, p) for t, p in sorted_alts if t != tag),
-                (tag, 0.0)
-            )
-            top_alts.append(top_alt[0])
             rows.append({
                 "sentence_id":        sid,
                 "timestamp":          now_iso,
@@ -227,7 +218,6 @@ def export_ranked(ranked: list[dict], top_n: int, threshold: float) -> tuple[Pat
                 "user-corrected_tag": "",
                 "confidence":         round(conf, 4),
                 "is_oov":             tok.lower() not in vocab,
-                "validator_tag":      "",
             })
 
     with open(feedback_path, "w", newline="", encoding="utf-8") as f:
@@ -253,67 +243,14 @@ def export_ranked(ranked: list[dict], top_n: int, threshold: float) -> tuple[Pat
     print(f"    'user-corrected_tag' column:       blank  ← fill in to submit feedback")
     print(f"\n  [OK] Feedback CSV -> {feedback_path.relative_to(PROJECT_ROOT)}")
 
-    return ranked_path, feedback_path, top_alts
-
-
-# ══════════════════════════════════════════════════════════════════════════════
-# STEP 4 — Simulate expert corrections (optional)
-# ══════════════════════════════════════════════════════════════════════════════
-
-def simulate_corrections(feedback_path: Path, top_alts: list[str], threshold: float) -> Path:
-    """Simulate a linguist filling in user-corrected_tag for flagged tokens.
-
-    In reality a human expert opens the CSV, reviews each flagged row,
-    and writes the correct POS tag in the user-corrected_tag column.
-    Here we auto-fill flagged tokens with their top alternative as a stand-in.
-    """
-    step_header(4, "Simulating expert corrections (auto-fill flagged tokens)")
-
-    with open(feedback_path, encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        rows = list(reader)
-        fieldnames = reader.fieldnames
-
-    corrected = 0
-    for row, top_alt in zip(rows, top_alts):
-        conf = float(row.get("confidence", 1.0))
-        is_oov = str(row.get("is_oov", "False")).lower() == "true"
-        if conf < threshold or is_oov:
-            # Stand-in for a human decision: use top alternative if available
-            row["user-corrected_tag"] = top_alt or row["model_tag"]
-            corrected += 1
-
-    corrected_path = feedback_path.with_name(
-        feedback_path.stem + "_corrected" + feedback_path.suffix
-    )
-    with open(corrected_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(rows)
-
-    total = len(rows)
-    print(f"\n  {corrected:,} / {total:,} tokens received a simulated correction.")
-    print(f"  ({corrected/total:.0%} of tokens flagged for review)")
-    print(f"\n  [OK] Corrected CSV -> {corrected_path.relative_to(PROJECT_ROOT)}")
-
-    # Show before/after for a few tokens
-    changed = [r for r in rows if r["user-corrected_tag"] and
-               r["user-corrected_tag"] != r["model_tag"]][:5]
-    if changed:
-        print(f"\n  Sample corrections (token: original → corrected):")
-        for r in changed:
-            print(f"    {r['token']:<20}  "
-                  f"{r['model_tag']:<8} → {r['user-corrected_tag']:<8}  "
-                  f"(conf: {float(r['confidence']):.1%})")
-
-    return corrected_path
+    return ranked_path, feedback_path
 
 
 # ══════════════════════════════════════════════════════════════════════════════
 # STEP 5 — Full loop summary
 # ══════════════════════════════════════════════════════════════════════════════
 
-def print_loop_summary(feedback_path: Path, corrected_path: Path):
+def print_loop_summary(feedback_path: Path):
     step_header(5, "HITL Feedback Loop — Summary")
     print(f"""
   How this connects to the full HITL pipeline:
@@ -361,10 +298,6 @@ def main():
         "--max-words", type=int, default=30,
         help="Max word count for unseen sentences to include (default: 30)",
     )
-    parser.add_argument(
-        "--no-simulate", action="store_true",
-        help="Skip the simulated expert corrections step",
-    )
     args = parser.parse_args()
 
     print(f"\nRinTag HITL Feedback Showcase")
@@ -384,17 +317,10 @@ def main():
     ranked = batch_tag_and_rank(unseen)
 
     # Step 3 — Export
-    ranked_path, feedback_path, top_alts = export_ranked(ranked, args.top_n, args.threshold)
+    ranked_path, feedback_path = export_ranked(ranked, args.top_n, args.threshold)
 
-    # Step 4 — Simulate (optional)
-    corrected_path = None
-    if not args.no_simulate:
-        corrected_path = simulate_corrections(feedback_path, top_alts, args.threshold)
-    else:
-        corrected_path = feedback_path  # point at uncorrected for summary
-
-    # Step 5 — Loop summary
-    print_loop_summary(feedback_path, corrected_path)
+    # Step 4 — Loop summary
+    print_loop_summary(feedback_path)
 
     print(f"\nDone! Output files in: {OUTPUT_DIR.relative_to(PROJECT_ROOT)}/\n")
 

@@ -105,7 +105,6 @@ def update_model_registry(
             "vocab": sha256(archived_vocab),
         },
         "source": "initial_training" if version == 1 else "retraining",
-        "corrections_applied": 0,
         "notes": "Original baseline model" if version == 1 else "Retrained model",
     }
 
