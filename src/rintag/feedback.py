@@ -18,7 +18,7 @@ DEFAULT_THRESHOLD = 0.75
 
 FEEDBACK_HEADERS = [
     "sentence_id", "timestamp", "full_sentence", "token_index",
-    "token", "model_tag", "top_alternative", "user-corrected_tag",
+    "token", "model_tag", "user-corrected_tag",
     "confidence", "is_oov"
 ]
 
@@ -84,10 +84,6 @@ class FeedbackCollector:
 
         rows = []
         for idx, tok in enumerate(result):
-            top_alternative = next(
-                (alt["tag"] for alt in tok.alternatives if alt["tag"] != tok.tag),
-                "",
-            )
             rows.append({
                 "sentence_id":        self._sentence_counter,
                 "timestamp":          now_iso,
@@ -95,7 +91,6 @@ class FeedbackCollector:
                 "token_index":        idx,
                 "token":              tok.token,
                 "model_tag":          tok.tag,
-                "top_alternative":    top_alternative,
                 "user-corrected_tag": "",
                 "confidence":         round(tok.confidence, 4),
                 "is_oov":             tok.is_oov,
@@ -239,21 +234,15 @@ def collect_feedback(
 def flag_low_confidence(result: TagResult, threshold: float = DEFAULT_THRESHOLD) -> list[dict]:
     """Return info dicts for tokens whose confidence is below the threshold.
     
-    Includes token, predicted tag, confidence, top alternative, and OOV status.
+    Includes token, predicted tag, confidence, and OOV status.
     """
     flagged = []
     for tok in result:
         if tok.confidence < threshold:
-            top_alt = next(
-                (a for a in tok.alternatives if a["tag"] != tok.tag),
-                {"tag": "N/A", "probability": 0.0}
-            )
             flagged.append({
                 "token": tok.token,
                 "predicted_tag": tok.tag,
                 "confidence": round(tok.confidence, 4),
-                "top_alternative": top_alt["tag"],
-                "alt_probability": round(top_alt["probability"], 4),
                 "is_oov": tok.is_oov,
             })
     return flagged
@@ -281,12 +270,7 @@ def export_feedback(
         Resolved Path to the written CSV file.
     """
     output_path = Path(output_path)
-
-    fieldnames = [
-        "sentence_id", "sentence", "token_index", "token", "predicted_tag",
-        "confidence", "low_confidence", "is_oov", "top_alternative",
-        "alt_probability", "user_correction",
-    ]
+    now_iso = datetime.now(timezone.utc).isoformat()
 
     rows = []
     current_sid = start_sentence_id
@@ -297,27 +281,21 @@ def export_feedback(
             continue
 
         for idx, tok in enumerate(result):
-            top_alt = next(
-                (a for a in tok.alternatives if a["tag"] != tok.tag),
-                {"tag": "", "probability": 0.0}
-            )
             rows.append({
-                "sentence_id": current_sid,
-                "sentence": sentence,
-                "token_index": idx,
-                "token": tok.token,
-                "predicted_tag": tok.tag,
-                "confidence": round(tok.confidence, 4),
-                "low_confidence": tok.confidence < threshold,
-                "is_oov": tok.is_oov,
-                "top_alternative": top_alt["tag"],
-                "alt_probability": round(top_alt["probability"], 4),
-                "user_correction": "",
+                "sentence_id":        current_sid,
+                "timestamp":          now_iso,
+                "full_sentence":      sentence,
+                "token_index":        idx,
+                "token":              tok.token,
+                "model_tag":          tok.tag,
+                "user-corrected_tag": "",
+                "confidence":         round(tok.confidence, 4),
+                "is_oov":             tok.is_oov,
             })
         current_sid += 1
 
     with open(output_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=FEEDBACK_HEADERS)
         writer.writeheader()
         writer.writerows(rows)
 

@@ -63,13 +63,19 @@ class TestExportFeedback:
             rows = list(reader)
 
         assert "sentence_id" in fieldnames
+        assert "timestamp" in fieldnames
+        assert "full_sentence" in fieldnames
+        assert "token_index" in fieldnames
+        assert "token" in fieldnames
+        assert "model_tag" in fieldnames
+        assert "user-corrected_tag" in fieldnames
+        assert "confidence" in fieldnames
         assert "is_oov" in fieldnames
-        assert "low_confidence" in fieldnames
-        assert "user_correction" in fieldnames
+        assert "top_alternative" not in fieldnames
 
         assert len(rows) == 3
         assert rows[0]["sentence_id"] == "42"
-        assert rows[0]["sentence"] == "nagdalagan su igin"
+        assert rows[0]["full_sentence"] == "nagdalagan su igin"
         assert rows[0]["token_index"] == "0"
         assert rows[0]["token"] == "nagdalagan"
         assert rows[1]["sentence_id"] == "42"
@@ -101,29 +107,24 @@ class TestPassiveFeedback:
         assert len(get_passive_feedback()) == 0
 
     def test_enable_and_capture_uncertain_sentence(self):
-        enable_passive_feedback(threshold=0.90)
-        result = tag("wagas na sasalan")
+        enable_passive_feedback(threshold=1.0)
+        result = tag("wagas na sasalan xyz123")
         records = get_passive_feedback()
         assert len(records) > 0
-        assert records[0]["full_sentence"] == "wagas na sasalan"
+        assert records[0]["full_sentence"] == "wagas na sasalan xyz123"
         assert "sentence_id" in records[0]
         assert "token" in records[0]
         assert "confidence" in records[0]
         assert "user-corrected_tag" in records[0]
         assert "validator_tag" not in records[0]
         assert "was_corrected" not in records[0]
-        for token, record in zip(result, records):
-            expected = next(
-                (alt["tag"] for alt in token.alternatives if alt["tag"] != token.tag),
-                "",
-            )
-            assert record["top_alternative"] == expected
+        assert "top_alternative" not in records[0]
 
     def test_passive_feedback_defaults_to_75_percent_threshold(self):
         collector = enable_passive_feedback()
         assert collector.threshold == 0.75
 
-    def test_top_alternative_is_included_for_high_confidence_tokens(self):
+    def test_feedback_headers_schema(self):
         collector = FeedbackCollector(enabled=True, threshold=0.75)
         result = TagResult([
             TaggedToken(
@@ -144,8 +145,10 @@ class TestPassiveFeedback:
 
         assert collector.record("certain uncertain", result)
         records = collector.get_buffer()
-        assert records[0]["top_alternative"] == "VERB"
-        assert records[1]["top_alternative"] == "NOUN"
+        assert len(records) == 2
+        for r in records:
+            assert set(r.keys()) == set(FEEDBACK_HEADERS)
+            assert "top_alternative" not in r
 
     def test_export_passive_feedback(self, tmp_path):
         out = tmp_path / "passive_out.csv"

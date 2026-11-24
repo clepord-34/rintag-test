@@ -22,7 +22,7 @@ The groups below add to them and can be switched on/off for ablation:
 IMPORTANT: a trained model only works with the same groups it was trained
 with. The library's tag() must call sent2features() with the same groups
 used at training time. DEFAULT_GROUPS is what the library uses; do not edit
-it after the final model is trained, or retrain.
+it after the final model is trained.
 """
 
 import re

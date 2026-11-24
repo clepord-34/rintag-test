@@ -32,6 +32,14 @@ def _load_vocab() -> set:
     return _vocab
 
 
+def reload_model() -> None:
+    """Clear cached model and vocab, forcing reload from disk on next tag() call.
+    """
+    global _model, _vocab
+    _model = None
+    _vocab = None
+
+
 class TaggedToken:
     __slots__ = ('token', 'tag', 'confidence', 'alternatives', 'features', 'is_oov')
 

@@ -62,7 +62,6 @@ Open the exported CSV in a spreadsheet editor and review the `user-corrected_tag
 
 - Leave `user-corrected_tag` blank when you agree with `model_tag`.
 - If the prediction is wrong, enter the correct UPOS tag in `user-corrected_tag`.
-- Treat `top_alternative` as a model suggestion, not as a verified correction.
 - Keep the sentence and token fields intact so each correction retains its context.
 
 When convenient, share the reviewed CSV with the RinTag developers to contribute corrections for future model improvements. You can also scope collection to a specific batch using a context manager:
@@ -73,7 +72,7 @@ with rintag.collect_feedback("audit.csv"):
         rintag.tag(doc)
 ```
 
-The passive-feedback threshold defaults to `0.75`, and OOV logging is enabled by default for both APIs; either option can be configured explicitly. Captured token rows include `top_alternative`, the highest-probability tag other than the model prediction whenever one is available, regardless of confidence. Library feedback exports contain no validator-only fields.
+The passive-feedback threshold defaults to `0.75`, and OOV logging is enabled by default for both APIs; either option can be configured explicitly. Library feedback exports contain no validator-only fields.
 
 ### 2. Maintainer Active Learning (Uncertainty Sampling Showcase)
 For dataset curators and researchers: batch-tag unseen raw corpus sentences, rank them by model uncertainty, and export the hardest samples for expert annotation:

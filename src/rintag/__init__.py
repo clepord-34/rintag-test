@@ -1,6 +1,6 @@
 """RinTag — POS tagger for the Rinconada Bikol Language."""
 
-from rintag.tagger import tag, TagResult, TaggedToken
+from rintag.tagger import tag, TagResult, TaggedToken, reload_model
 from rintag.feedback import (
     flag_low_confidence,
     export_feedback,
@@ -19,6 +19,7 @@ __all__ = [
     "tag",
     "TagResult",
     "TaggedToken",
+    "reload_model",
     "flag_low_confidence",
     "export_feedback",
     "FeedbackCollector",

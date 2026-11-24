@@ -1,0 +1,852 @@
+sentence_id,timestamp,full_sentence,token_index,token,model_tag,user-corrected_tag,confidence,is_oov
+v2_rank_00051,2026-11-23T08:39:17+00:00,Dawa ngani maali Kakaunun sigi sigi.,0,Dawa,SCONJ,,0.998,False
+v2_rank_00051,2026-11-23T08:39:17+00:00,Dawa ngani maali Kakaunun sigi sigi.,1,ngani,PART,,0.9982,False
+v2_rank_00051,2026-11-23T08:39:17+00:00,Dawa ngani maali Kakaunun sigi sigi.,2,maali,ADJ,,0.4639,True
+v2_rank_00051,2026-11-23T08:39:17+00:00,Dawa ngani maali Kakaunun sigi sigi.,3,Kakaunun,ADJ,,0.3677,True
+v2_rank_00051,2026-11-23T08:39:17+00:00,Dawa ngani maali Kakaunun sigi sigi.,4,sigi,ADJ,,0.1941,False
+v2_rank_00051,2026-11-23T08:39:17+00:00,Dawa ngani maali Kakaunun sigi sigi.,5,sigi,NOUN,,0.5025,False
+v2_rank_00051,2026-11-23T08:39:17+00:00,Dawa ngani maali Kakaunun sigi sigi.,6,.,PUNCT,,0.9999,False
+v2_rank_00095,2026-11-23T08:39:17+00:00,aroroy baga kuno adi,0,aroroy,INTJ,,0.6043,True
+v2_rank_00095,2026-11-23T08:39:17+00:00,aroroy baga kuno adi,1,baga,ADV,,0.5422,False
+v2_rank_00095,2026-11-23T08:39:17+00:00,aroroy baga kuno adi,2,kuno,PART,,0.5318,False
+v2_rank_00095,2026-11-23T08:39:17+00:00,aroroy baga kuno adi,3,adi,PRON,,0.9994,False
+v2_rank_00412,2026-11-23T08:39:17+00:00,Sigurado mamumuya kita sadtu.,0,Sigurado,ADV,,0.4149,False
+v2_rank_00412,2026-11-23T08:39:17+00:00,Sigurado mamumuya kita sadtu.,1,mamumuya,VERB,,0.865,False
+v2_rank_00412,2026-11-23T08:39:17+00:00,Sigurado mamumuya kita sadtu.,2,kita,PRON,,0.9987,False
+v2_rank_00412,2026-11-23T08:39:17+00:00,Sigurado mamumuya kita sadtu.,3,sadtu,ADV,,0.4558,False
+v2_rank_00412,2026-11-23T08:39:17+00:00,Sigurado mamumuya kita sadtu.,4,.,PUNCT,,0.999,False
+v2_rank_00509,2026-11-23T08:39:17+00:00,sari paiyan ading baga na uda,0,sari,ADV,,0.8312,False
+v2_rank_00509,2026-11-23T08:39:17+00:00,sari paiyan ading baga na uda,1,paiyan,ADV,,0.6198,False
+v2_rank_00509,2026-11-23T08:39:17+00:00,sari paiyan ading baga na uda,2,ading,PRON,,0.9692,False
+v2_rank_00509,2026-11-23T08:39:17+00:00,sari paiyan ading baga na uda,3,baga,PART,,0.6296,False
+v2_rank_00509,2026-11-23T08:39:17+00:00,sari paiyan ading baga na uda,4,na,ADV,,0.5714,False
+v2_rank_00509,2026-11-23T08:39:17+00:00,sari paiyan ading baga na uda,5,uda,VERB,,0.9239,False
+v2_rank_00546,2026-11-23T08:39:17+00:00,"Mayna, usaya na ding lamisa ta magkaun na kita",0,Mayna,VERB,,0.6181,False
+v2_rank_00546,2026-11-23T08:39:17+00:00,"Mayna, usaya na ding lamisa ta magkaun na kita",1,",",PUNCT,,0.9999,False
+v2_rank_00546,2026-11-23T08:39:17+00:00,"Mayna, usaya na ding lamisa ta magkaun na kita",2,usaya,VERB,,0.417,True
+v2_rank_00546,2026-11-23T08:39:17+00:00,"Mayna, usaya na ding lamisa ta magkaun na kita",3,na,ADV,,0.6657,False
+v2_rank_00546,2026-11-23T08:39:17+00:00,"Mayna, usaya na ding lamisa ta magkaun na kita",4,ding,ADV,,0.3566,False
+v2_rank_00546,2026-11-23T08:39:17+00:00,"Mayna, usaya na ding lamisa ta magkaun na kita",5,lamisa,NOUN,,0.7048,True
+v2_rank_00546,2026-11-23T08:39:17+00:00,"Mayna, usaya na ding lamisa ta magkaun na kita",6,ta,SCONJ,,0.9746,False
+v2_rank_00546,2026-11-23T08:39:17+00:00,"Mayna, usaya na ding lamisa ta magkaun na kita",7,magkaun,VERB,,0.8955,False
+v2_rank_00546,2026-11-23T08:39:17+00:00,"Mayna, usaya na ding lamisa ta magkaun na kita",8,na,ADV,,0.981,False
+v2_rank_00546,2026-11-23T08:39:17+00:00,"Mayna, usaya na ding lamisa ta magkaun na kita",9,kita,PRON,,0.9983,False
+v2_rank_00548,2026-11-23T08:39:17+00:00,sa arog ngane kading paagi nagibo su unang bubon.,0,sa,ADP,,0.9992,False
+v2_rank_00548,2026-11-23T08:39:17+00:00,sa arog ngane kading paagi nagibo su unang bubon.,1,arog,ADP,,0.5167,False
+v2_rank_00548,2026-11-23T08:39:17+00:00,sa arog ngane kading paagi nagibo su unang bubon.,2,ngane,PART,,0.3355,False
+v2_rank_00548,2026-11-23T08:39:17+00:00,sa arog ngane kading paagi nagibo su unang bubon.,3,kading,DET,,0.3023,False
+v2_rank_00548,2026-11-23T08:39:17+00:00,sa arog ngane kading paagi nagibo su unang bubon.,4,paagi,NOUN,,0.4994,False
+v2_rank_00548,2026-11-23T08:39:17+00:00,sa arog ngane kading paagi nagibo su unang bubon.,5,nagibo,VERB,,0.9996,False
+v2_rank_00548,2026-11-23T08:39:17+00:00,sa arog ngane kading paagi nagibo su unang bubon.,6,su,DET,,0.993,False
+v2_rank_00548,2026-11-23T08:39:17+00:00,sa arog ngane kading paagi nagibo su unang bubon.,7,unang,ADJ,,0.9745,False
+v2_rank_00548,2026-11-23T08:39:17+00:00,sa arog ngane kading paagi nagibo su unang bubon.,8,bubon,NOUN,,0.9925,False
+v2_rank_00548,2026-11-23T08:39:17+00:00,sa arog ngane kading paagi nagibo su unang bubon.,9,.,PUNCT,,1.0,False
+v2_rank_00660,2026-11-23T08:39:17+00:00,Mudtu na ku inabut sira sadtu iiyanan.,0,Mudtu,VERB,,0.5017,True
+v2_rank_00660,2026-11-23T08:39:17+00:00,Mudtu na ku inabut sira sadtu iiyanan.,1,na,ADV,,0.8259,False
+v2_rank_00660,2026-11-23T08:39:17+00:00,Mudtu na ku inabut sira sadtu iiyanan.,2,ku,SCONJ,,0.3566,False
+v2_rank_00660,2026-11-23T08:39:17+00:00,Mudtu na ku inabut sira sadtu iiyanan.,3,inabut,VERB,,0.6062,False
+v2_rank_00660,2026-11-23T08:39:17+00:00,Mudtu na ku inabut sira sadtu iiyanan.,4,sira,PRON,,0.9961,False
+v2_rank_00660,2026-11-23T08:39:17+00:00,Mudtu na ku inabut sira sadtu iiyanan.,5,sadtu,ADP,,0.9746,False
+v2_rank_00660,2026-11-23T08:39:17+00:00,Mudtu na ku inabut sira sadtu iiyanan.,6,iiyanan,NOUN,,0.9108,True
+v2_rank_00660,2026-11-23T08:39:17+00:00,Mudtu na ku inabut sira sadtu iiyanan.,7,.,PUNCT,,0.9999,False
+v2_rank_00792,2026-11-23T08:39:17+00:00,baga na uda na basang bagang natutuda,0,baga,PART,,0.741,False
+v2_rank_00792,2026-11-23T08:39:17+00:00,baga na uda na basang bagang natutuda,1,na,PART,,0.455,False
+v2_rank_00792,2026-11-23T08:39:17+00:00,baga na uda na basang bagang natutuda,2,uda,VERB,,0.6412,False
+v2_rank_00792,2026-11-23T08:39:17+00:00,baga na uda na basang bagang natutuda,3,na,ADV,,0.9044,False
+v2_rank_00792,2026-11-23T08:39:17+00:00,baga na uda na basang bagang natutuda,4,basang,ADV,,0.9909,False
+v2_rank_00792,2026-11-23T08:39:17+00:00,baga na uda na basang bagang natutuda,5,bagang,ADV,,0.7261,False
+v2_rank_00792,2026-11-23T08:39:17+00:00,baga na uda na basang bagang natutuda,6,natutuda,VERB,,0.9986,True
+v2_rank_00970,2026-11-23T08:39:17+00:00,"magbayle kang baga na uda udma,",0,magbayle,VERB,,0.9652,True
+v2_rank_00970,2026-11-23T08:39:17+00:00,"magbayle kang baga na uda udma,",1,kang,PRON,,0.5986,False
+v2_rank_00970,2026-11-23T08:39:17+00:00,"magbayle kang baga na uda udma,",2,baga,PART,,0.6192,False
+v2_rank_00970,2026-11-23T08:39:17+00:00,"magbayle kang baga na uda udma,",3,na,ADV,,0.7197,False
+v2_rank_00970,2026-11-23T08:39:17+00:00,"magbayle kang baga na uda udma,",4,uda,VERB,,0.94,False
+v2_rank_00970,2026-11-23T08:39:17+00:00,"magbayle kang baga na uda udma,",5,udma,NOUN,,0.6958,False
+v2_rank_00970,2026-11-23T08:39:17+00:00,"magbayle kang baga na uda udma,",6,",",PUNCT,,1.0,False
+v2_rank_01174,2026-11-23T08:39:17+00:00,Kiisay Adi  Iton  Adto na kapot kapot kong papel,0,Kiisay,PRON,,0.8114,False
+v2_rank_01174,2026-11-23T08:39:17+00:00,Kiisay Adi  Iton  Adto na kapot kapot kong papel,1,Adi,PRON,,0.9623,False
+v2_rank_01174,2026-11-23T08:39:17+00:00,Kiisay Adi  Iton  Adto na kapot kapot kong papel,2,Iton,PRON,,0.9402,False
+v2_rank_01174,2026-11-23T08:39:17+00:00,Kiisay Adi  Iton  Adto na kapot kapot kong papel,3,Adto,PRON,,0.5054,False
+v2_rank_01174,2026-11-23T08:39:17+00:00,Kiisay Adi  Iton  Adto na kapot kapot kong papel,4,na,PART,,0.973,False
+v2_rank_01174,2026-11-23T08:39:17+00:00,Kiisay Adi  Iton  Adto na kapot kapot kong papel,5,kapot,NOUN,,0.532,True
+v2_rank_01174,2026-11-23T08:39:17+00:00,Kiisay Adi  Iton  Adto na kapot kapot kong papel,6,kapot,ADP,,0.6054,True
+v2_rank_01174,2026-11-23T08:39:17+00:00,Kiisay Adi  Iton  Adto na kapot kapot kong papel,7,kong,PRON,,0.9363,False
+v2_rank_01174,2026-11-23T08:39:17+00:00,Kiisay Adi  Iton  Adto na kapot kapot kong papel,8,papel,NOUN,,0.9532,False
+v2_rank_01400,2026-11-23T08:39:17+00:00,Adi ritratu di pirmi ding nababayad dawa sari,0,Adi,PRON,,0.9875,False
+v2_rank_01400,2026-11-23T08:39:17+00:00,Adi ritratu di pirmi ding nababayad dawa sari,1,ritratu,VERB,,0.5993,False
+v2_rank_01400,2026-11-23T08:39:17+00:00,Adi ritratu di pirmi ding nababayad dawa sari,2,di,PART,,0.9854,False
+v2_rank_01400,2026-11-23T08:39:17+00:00,Adi ritratu di pirmi ding nababayad dawa sari,3,pirmi,ADV,,0.9987,False
+v2_rank_01400,2026-11-23T08:39:17+00:00,Adi ritratu di pirmi ding nababayad dawa sari,4,ding,PRON,,0.3792,False
+v2_rank_01400,2026-11-23T08:39:17+00:00,Adi ritratu di pirmi ding nababayad dawa sari,5,nababayad,VERB,,0.9999,False
+v2_rank_01400,2026-11-23T08:39:17+00:00,Adi ritratu di pirmi ding nababayad dawa sari,6,dawa,SCONJ,,0.9974,False
+v2_rank_01400,2026-11-23T08:39:17+00:00,Adi ritratu di pirmi ding nababayad dawa sari,7,sari,ADV,,0.5457,False
+v2_rank_01475,2026-11-23T08:39:17+00:00,Diri rarayu ta agku nananaklut na Agila,0,Diri,PART,,0.993,False
+v2_rank_01475,2026-11-23T08:39:17+00:00,Diri rarayu ta agku nananaklut na Agila,1,rarayu,VERB,,0.4466,True
+v2_rank_01475,2026-11-23T08:39:17+00:00,Diri rarayu ta agku nananaklut na Agila,2,ta,SCONJ,,0.9939,False
+v2_rank_01475,2026-11-23T08:39:17+00:00,Diri rarayu ta agku nananaklut na Agila,3,agku,VERB,,0.9972,False
+v2_rank_01475,2026-11-23T08:39:17+00:00,Diri rarayu ta agku nananaklut na Agila,4,nananaklut,VERB,,0.5139,True
+v2_rank_01475,2026-11-23T08:39:17+00:00,Diri rarayu ta agku nananaklut na Agila,5,na,PART,,0.8014,False
+v2_rank_01475,2026-11-23T08:39:17+00:00,Diri rarayu ta agku nananaklut na Agila,6,Agila,PROPN,,0.9559,True
+v2_rank_01491,2026-11-23T08:39:17+00:00,"amu, pariyo kitang sadi, ag nganing makalikay kita sadi",0,amu,PRON,,0.4673,False
+v2_rank_01491,2026-11-23T08:39:17+00:00,"amu, pariyo kitang sadi, ag nganing makalikay kita sadi",1,",",PUNCT,,0.9999,False
+v2_rank_01491,2026-11-23T08:39:17+00:00,"amu, pariyo kitang sadi, ag nganing makalikay kita sadi",2,pariyo,ADV,,0.4672,False
+v2_rank_01491,2026-11-23T08:39:17+00:00,"amu, pariyo kitang sadi, ag nganing makalikay kita sadi",3,kitang,PRON,,0.98,False
+v2_rank_01491,2026-11-23T08:39:17+00:00,"amu, pariyo kitang sadi, ag nganing makalikay kita sadi",4,sadi,PRON,,0.5822,False
+v2_rank_01491,2026-11-23T08:39:17+00:00,"amu, pariyo kitang sadi, ag nganing makalikay kita sadi",5,",",PUNCT,,0.9999,False
+v2_rank_01491,2026-11-23T08:39:17+00:00,"amu, pariyo kitang sadi, ag nganing makalikay kita sadi",6,ag,CCONJ,,0.9998,False
+v2_rank_01491,2026-11-23T08:39:17+00:00,"amu, pariyo kitang sadi, ag nganing makalikay kita sadi",7,nganing,SCONJ,,0.9924,False
+v2_rank_01491,2026-11-23T08:39:17+00:00,"amu, pariyo kitang sadi, ag nganing makalikay kita sadi",8,makalikay,VERB,,0.9993,False
+v2_rank_01491,2026-11-23T08:39:17+00:00,"amu, pariyo kitang sadi, ag nganing makalikay kita sadi",9,kita,PRON,,0.9987,False
+v2_rank_01491,2026-11-23T08:39:17+00:00,"amu, pariyo kitang sadi, ag nganing makalikay kita sadi",10,sadi,ADP,,0.4804,False
+v2_rank_01719,2026-11-23T08:39:17+00:00,nag anniningal adto sadto kadlagan.,0,nag,VERB,,0.5537,True
+v2_rank_01719,2026-11-23T08:39:17+00:00,nag anniningal adto sadto kadlagan.,1,anniningal,ADJ,,0.4636,True
+v2_rank_01719,2026-11-23T08:39:17+00:00,nag anniningal adto sadto kadlagan.,2,adto,PRON,,0.9337,False
+v2_rank_01719,2026-11-23T08:39:17+00:00,nag anniningal adto sadto kadlagan.,3,sadto,ADP,,0.9995,False
+v2_rank_01719,2026-11-23T08:39:17+00:00,nag anniningal adto sadto kadlagan.,4,kadlagan,NOUN,,0.9954,False
+v2_rank_01719,2026-11-23T08:39:17+00:00,nag anniningal adto sadto kadlagan.,5,.,PUNCT,,0.9999,False
+v2_rank_01815,2026-11-23T08:39:17+00:00,Lukso sadi  lukso sadtu,0,Lukso,NOUN,,0.7444,True
+v2_rank_01815,2026-11-23T08:39:17+00:00,Lukso sadi  lukso sadtu,1,sadi,ADP,,0.8445,False
+v2_rank_01815,2026-11-23T08:39:17+00:00,Lukso sadi  lukso sadtu,2,lukso,NOUN,,0.9633,True
+v2_rank_01815,2026-11-23T08:39:17+00:00,Lukso sadi  lukso sadtu,3,sadtu,ADP,,0.7588,False
+v2_rank_02034,2026-11-23T08:39:17+00:00,ta ono uda ta sadi ta pirme kitang nagtatanaw,0,ta,SCONJ,,0.9984,False
+v2_rank_02034,2026-11-23T08:39:17+00:00,ta ono uda ta sadi ta pirme kitang nagtatanaw,1,ono,PRON,,0.9869,False
+v2_rank_02034,2026-11-23T08:39:17+00:00,ta ono uda ta sadi ta pirme kitang nagtatanaw,2,uda,VERB,,0.9934,False
+v2_rank_02034,2026-11-23T08:39:17+00:00,ta ono uda ta sadi ta pirme kitang nagtatanaw,3,ta,SCONJ,,0.455,False
+v2_rank_02034,2026-11-23T08:39:17+00:00,ta ono uda ta sadi ta pirme kitang nagtatanaw,4,sadi,PRON,,0.5799,False
+v2_rank_02034,2026-11-23T08:39:17+00:00,ta ono uda ta sadi ta pirme kitang nagtatanaw,5,ta,SCONJ,,0.6187,False
+v2_rank_02034,2026-11-23T08:39:17+00:00,ta ono uda ta sadi ta pirme kitang nagtatanaw,6,pirme,ADV,,0.8862,False
+v2_rank_02034,2026-11-23T08:39:17+00:00,ta ono uda ta sadi ta pirme kitang nagtatanaw,7,kitang,PRON,,0.9935,False
+v2_rank_02034,2026-11-23T08:39:17+00:00,ta ono uda ta sadi ta pirme kitang nagtatanaw,8,nagtatanaw,VERB,,0.9999,False
+v2_rank_02389,2026-11-23T08:39:17+00:00,ngalas su sawa ku kusog na dara kadi.,0,ngalas,ADV,,0.4449,False
+v2_rank_02389,2026-11-23T08:39:17+00:00,ngalas su sawa ku kusog na dara kadi.,1,su,DET,,0.9964,False
+v2_rank_02389,2026-11-23T08:39:17+00:00,ngalas su sawa ku kusog na dara kadi.,2,sawa,NOUN,,0.8401,False
+v2_rank_02389,2026-11-23T08:39:17+00:00,ngalas su sawa ku kusog na dara kadi.,3,ku,ADP,,0.9349,False
+v2_rank_02389,2026-11-23T08:39:17+00:00,ngalas su sawa ku kusog na dara kadi.,4,kusog,NOUN,,0.9851,False
+v2_rank_02389,2026-11-23T08:39:17+00:00,ngalas su sawa ku kusog na dara kadi.,5,na,PART,,0.8176,False
+v2_rank_02389,2026-11-23T08:39:17+00:00,ngalas su sawa ku kusog na dara kadi.,6,dara,NOUN,,0.5826,False
+v2_rank_02389,2026-11-23T08:39:17+00:00,ngalas su sawa ku kusog na dara kadi.,7,kadi,PRON,,0.9935,False
+v2_rank_02389,2026-11-23T08:39:17+00:00,ngalas su sawa ku kusog na dara kadi.,8,.,PUNCT,,0.9999,False
+v2_rank_02524,2026-11-23T08:39:17+00:00,Purbaran ta adi sunod na gigibuwun,0,Purbaran,VERB,,0.941,False
+v2_rank_02524,2026-11-23T08:39:17+00:00,Purbaran ta adi sunod na gigibuwun,1,ta,PRON,,0.6484,False
+v2_rank_02524,2026-11-23T08:39:17+00:00,Purbaran ta adi sunod na gigibuwun,2,adi,PRON,,0.9909,False
+v2_rank_02524,2026-11-23T08:39:17+00:00,Purbaran ta adi sunod na gigibuwun,3,sunod,ADJ,,0.9098,False
+v2_rank_02524,2026-11-23T08:39:17+00:00,Purbaran ta adi sunod na gigibuwun,4,na,PART,,0.9897,False
+v2_rank_02524,2026-11-23T08:39:17+00:00,Purbaran ta adi sunod na gigibuwun,5,gigibuwun,VERB,,0.6077,False
+v2_rank_02626,2026-11-23T08:39:17+00:00,Siisay su naunang nagdadarang marigus,0,Siisay,PRON,,0.9538,False
+v2_rank_02626,2026-11-23T08:39:17+00:00,Siisay su naunang nagdadarang marigus,1,su,DET,,0.9984,False
+v2_rank_02626,2026-11-23T08:39:17+00:00,Siisay su naunang nagdadarang marigus,2,naunang,ADJ,,0.7655,False
+v2_rank_02626,2026-11-23T08:39:17+00:00,Siisay su naunang nagdadarang marigus,3,nagdadarang,VERB,,0.9899,True
+v2_rank_02626,2026-11-23T08:39:17+00:00,Siisay su naunang nagdadarang marigus,4,marigus,VERB,,0.5434,False
+v2_rank_02770,2026-11-23T08:39:17+00:00,bagana adto langit kanako,0,bagana,ADV,,0.9788,False
+v2_rank_02770,2026-11-23T08:39:17+00:00,bagana adto langit kanako,1,adto,PRON,,0.9152,False
+v2_rank_02770,2026-11-23T08:39:17+00:00,bagana adto langit kanako,2,langit,ADJ,,0.5207,False
+v2_rank_02770,2026-11-23T08:39:17+00:00,bagana adto langit kanako,3,kanako,PRON,,0.9995,False
+v2_rank_03122,2026-11-23T08:39:17+00:00,Mayna! Ta mag adal kita.,0,Mayna,INTJ,,0.9436,False
+v2_rank_03122,2026-11-23T08:39:17+00:00,Mayna! Ta mag adal kita.,1,!,PUNCT,,0.9994,False
+v2_rank_03122,2026-11-23T08:39:17+00:00,Mayna! Ta mag adal kita.,2,Ta,SCONJ,,0.959,False
+v2_rank_03122,2026-11-23T08:39:17+00:00,Mayna! Ta mag adal kita.,3,mag,PART,,0.6024,False
+v2_rank_03122,2026-11-23T08:39:17+00:00,Mayna! Ta mag adal kita.,4,adal,ADJ,,0.5282,False
+v2_rank_03122,2026-11-23T08:39:17+00:00,Mayna! Ta mag adal kita.,5,kita,PRON,,0.993,False
+v2_rank_03122,2026-11-23T08:39:17+00:00,Mayna! Ta mag adal kita.,6,.,PUNCT,,1.0,False
+v2_rank_03330,2026-11-23T08:39:17+00:00,Alduw nagkaraanap sira.,0,Alduw,NOUN,,0.4597,False
+v2_rank_03330,2026-11-23T08:39:17+00:00,Alduw nagkaraanap sira.,1,nagkaraanap,VERB,,1.0,True
+v2_rank_03330,2026-11-23T08:39:17+00:00,Alduw nagkaraanap sira.,2,sira,PRON,,0.9982,False
+v2_rank_03330,2026-11-23T08:39:17+00:00,Alduw nagkaraanap sira.,3,.,PUNCT,,0.9999,False
+v2_rank_03347,2026-11-23T08:39:17+00:00,Pauno nira adto isasagibo,0,Pauno,ADV,,0.9278,False
+v2_rank_03347,2026-11-23T08:39:17+00:00,Pauno nira adto isasagibo,1,nira,PRON,,0.9832,False
+v2_rank_03347,2026-11-23T08:39:17+00:00,Pauno nira adto isasagibo,2,adto,PRON,,0.7362,False
+v2_rank_03347,2026-11-23T08:39:17+00:00,Pauno nira adto isasagibo,3,isasagibo,VERB,,0.8117,True
+v2_rank_03467,2026-11-23T08:39:17+00:00,"Sa init ka alduw giyapun, liwanag galin sadi.",0,Sa,ADP,,1.0,False
+v2_rank_03467,2026-11-23T08:39:17+00:00,"Sa init ka alduw giyapun, liwanag galin sadi.",1,init,NOUN,,0.9898,False
+v2_rank_03467,2026-11-23T08:39:17+00:00,"Sa init ka alduw giyapun, liwanag galin sadi.",2,ka,ADP,,0.9981,False
+v2_rank_03467,2026-11-23T08:39:17+00:00,"Sa init ka alduw giyapun, liwanag galin sadi.",3,alduw,NOUN,,0.9974,False
+v2_rank_03467,2026-11-23T08:39:17+00:00,"Sa init ka alduw giyapun, liwanag galin sadi.",4,giyapun,VERB,,0.5479,True
+v2_rank_03467,2026-11-23T08:39:17+00:00,"Sa init ka alduw giyapun, liwanag galin sadi.",5,",",PUNCT,,0.9998,False
+v2_rank_03467,2026-11-23T08:39:17+00:00,"Sa init ka alduw giyapun, liwanag galin sadi.",6,liwanag,NOUN,,0.6846,False
+v2_rank_03467,2026-11-23T08:39:17+00:00,"Sa init ka alduw giyapun, liwanag galin sadi.",7,galin,VERB,,0.8786,False
+v2_rank_03467,2026-11-23T08:39:17+00:00,"Sa init ka alduw giyapun, liwanag galin sadi.",8,sadi,ADV,,0.5774,False
+v2_rank_03467,2026-11-23T08:39:17+00:00,"Sa init ka alduw giyapun, liwanag galin sadi.",9,.,PUNCT,,0.9999,False
+v2_rank_03473,2026-11-23T08:39:17+00:00,libro ngani agko nalulumos sa tubig paraw na matuod,0,libro,NOUN,,0.627,False
+v2_rank_03473,2026-11-23T08:39:17+00:00,libro ngani agko nalulumos sa tubig paraw na matuod,1,ngani,PART,,0.9883,False
+v2_rank_03473,2026-11-23T08:39:17+00:00,libro ngani agko nalulumos sa tubig paraw na matuod,2,agko,VERB,,0.9991,False
+v2_rank_03473,2026-11-23T08:39:17+00:00,libro ngani agko nalulumos sa tubig paraw na matuod,3,nalulumos,VERB,,0.9837,True
+v2_rank_03473,2026-11-23T08:39:17+00:00,libro ngani agko nalulumos sa tubig paraw na matuod,4,sa,ADP,,0.999,False
+v2_rank_03473,2026-11-23T08:39:17+00:00,libro ngani agko nalulumos sa tubig paraw na matuod,5,tubig,NOUN,,0.9984,False
+v2_rank_03473,2026-11-23T08:39:17+00:00,libro ngani agko nalulumos sa tubig paraw na matuod,6,paraw,NOUN,,0.7243,True
+v2_rank_03473,2026-11-23T08:39:17+00:00,libro ngani agko nalulumos sa tubig paraw na matuod,7,na,PART,,0.9965,False
+v2_rank_03473,2026-11-23T08:39:17+00:00,libro ngani agko nalulumos sa tubig paraw na matuod,8,matuod,VERB,,0.4914,False
+v2_rank_03546,2026-11-23T08:39:17+00:00,Kanako su papel na binakal ni Nanay,0,Kanako,PRON,,0.998,False
+v2_rank_03546,2026-11-23T08:39:17+00:00,Kanako su papel na binakal ni Nanay,1,su,DET,,0.9966,False
+v2_rank_03546,2026-11-23T08:39:17+00:00,Kanako su papel na binakal ni Nanay,2,papel,NOUN,,0.9452,False
+v2_rank_03546,2026-11-23T08:39:17+00:00,Kanako su papel na binakal ni Nanay,3,na,PART,,0.9994,False
+v2_rank_03546,2026-11-23T08:39:17+00:00,Kanako su papel na binakal ni Nanay,4,binakal,VERB,,0.507,False
+v2_rank_03546,2026-11-23T08:39:17+00:00,Kanako su papel na binakal ni Nanay,5,ni,DET,,0.6777,False
+v2_rank_03546,2026-11-23T08:39:17+00:00,Kanako su papel na binakal ni Nanay,6,Nanay,PROPN,,0.9574,False
+v2_rank_03729,2026-11-23T08:39:17+00:00,Mayna ta magpuun na kita,0,Mayna,INTJ,,0.4465,False
+v2_rank_03729,2026-11-23T08:39:17+00:00,Mayna ta magpuun na kita,1,ta,SCONJ,,0.9448,False
+v2_rank_03729,2026-11-23T08:39:17+00:00,Mayna ta magpuun na kita,2,magpuun,VERB,,0.9927,False
+v2_rank_03729,2026-11-23T08:39:17+00:00,Mayna ta magpuun na kita,3,na,ADV,,0.9783,False
+v2_rank_03729,2026-11-23T08:39:17+00:00,Mayna ta magpuun na kita,4,kita,PRON,,0.9984,False
+v2_rank_03773,2026-11-23T08:39:17+00:00,Diri nagibu sa tama Uda sinurat,0,Diri,PART,,0.995,False
+v2_rank_03773,2026-11-23T08:39:17+00:00,Diri nagibu sa tama Uda sinurat,1,nagibu,VERB,,1.0,False
+v2_rank_03773,2026-11-23T08:39:17+00:00,Diri nagibu sa tama Uda sinurat,2,sa,ADP,,0.9993,False
+v2_rank_03773,2026-11-23T08:39:17+00:00,Diri nagibu sa tama Uda sinurat,3,tama,ADJ,,0.8564,False
+v2_rank_03773,2026-11-23T08:39:17+00:00,Diri nagibu sa tama Uda sinurat,4,Uda,VERB,,0.8032,False
+v2_rank_03773,2026-11-23T08:39:17+00:00,Diri nagibu sa tama Uda sinurat,5,sinurat,NOUN,,0.5838,False
+v2_rank_03791,2026-11-23T08:39:17+00:00,kamaturan saka paggibo ka promesa usad uyan na dahilan ngani kita ngamin padagos na mabuway kin maray.,0,kamaturan,NOUN,,0.9369,False
+v2_rank_03791,2026-11-23T08:39:17+00:00,kamaturan saka paggibo ka promesa usad uyan na dahilan ngani kita ngamin padagos na mabuway kin maray.,1,saka,CCONJ,,0.9985,False
+v2_rank_03791,2026-11-23T08:39:17+00:00,kamaturan saka paggibo ka promesa usad uyan na dahilan ngani kita ngamin padagos na mabuway kin maray.,2,paggibo,NOUN,,0.9296,False
+v2_rank_03791,2026-11-23T08:39:17+00:00,kamaturan saka paggibo ka promesa usad uyan na dahilan ngani kita ngamin padagos na mabuway kin maray.,3,ka,ADP,,0.9518,False
+v2_rank_03791,2026-11-23T08:39:17+00:00,kamaturan saka paggibo ka promesa usad uyan na dahilan ngani kita ngamin padagos na mabuway kin maray.,4,promesa,NOUN,,0.9979,True
+v2_rank_03791,2026-11-23T08:39:17+00:00,kamaturan saka paggibo ka promesa usad uyan na dahilan ngani kita ngamin padagos na mabuway kin maray.,5,usad,NUM,,0.976,False
+v2_rank_03791,2026-11-23T08:39:17+00:00,kamaturan saka paggibo ka promesa usad uyan na dahilan ngani kita ngamin padagos na mabuway kin maray.,6,uyan,PRON,,0.877,False
+v2_rank_03791,2026-11-23T08:39:17+00:00,kamaturan saka paggibo ka promesa usad uyan na dahilan ngani kita ngamin padagos na mabuway kin maray.,7,na,ADV,,0.4862,False
+v2_rank_03791,2026-11-23T08:39:17+00:00,kamaturan saka paggibo ka promesa usad uyan na dahilan ngani kita ngamin padagos na mabuway kin maray.,8,dahilan,PRON,,0.4536,False
+v2_rank_03791,2026-11-23T08:39:17+00:00,kamaturan saka paggibo ka promesa usad uyan na dahilan ngani kita ngamin padagos na mabuway kin maray.,9,ngani,PART,,0.9943,False
+v2_rank_03791,2026-11-23T08:39:17+00:00,kamaturan saka paggibo ka promesa usad uyan na dahilan ngani kita ngamin padagos na mabuway kin maray.,10,kita,PRON,,0.9932,False
+v2_rank_03791,2026-11-23T08:39:17+00:00,kamaturan saka paggibo ka promesa usad uyan na dahilan ngani kita ngamin padagos na mabuway kin maray.,11,ngamin,PRON,,0.9371,False
+v2_rank_03791,2026-11-23T08:39:17+00:00,kamaturan saka paggibo ka promesa usad uyan na dahilan ngani kita ngamin padagos na mabuway kin maray.,12,padagos,ADV,,0.9004,False
+v2_rank_03791,2026-11-23T08:39:17+00:00,kamaturan saka paggibo ka promesa usad uyan na dahilan ngani kita ngamin padagos na mabuway kin maray.,13,na,PART,,0.9991,False
+v2_rank_03791,2026-11-23T08:39:17+00:00,kamaturan saka paggibo ka promesa usad uyan na dahilan ngani kita ngamin padagos na mabuway kin maray.,14,mabuway,VERB,,0.609,False
+v2_rank_03791,2026-11-23T08:39:17+00:00,kamaturan saka paggibo ka promesa usad uyan na dahilan ngani kita ngamin padagos na mabuway kin maray.,15,kin,SCONJ,,0.9901,False
+v2_rank_03791,2026-11-23T08:39:17+00:00,kamaturan saka paggibo ka promesa usad uyan na dahilan ngani kita ngamin padagos na mabuway kin maray.,16,maray,ADJ,,0.689,False
+v2_rank_03791,2026-11-23T08:39:17+00:00,kamaturan saka paggibo ka promesa usad uyan na dahilan ngani kita ngamin padagos na mabuway kin maray.,17,.,PUNCT,,0.9999,False
+v2_rank_03833,2026-11-23T08:39:17+00:00,Isay su ngud niyang nagtatrabawo?,0,Isay,PRON,,0.9318,False
+v2_rank_03833,2026-11-23T08:39:17+00:00,Isay su ngud niyang nagtatrabawo?,1,su,DET,,0.9987,False
+v2_rank_03833,2026-11-23T08:39:17+00:00,Isay su ngud niyang nagtatrabawo?,2,ngud,ADV,,0.3161,False
+v2_rank_03833,2026-11-23T08:39:17+00:00,Isay su ngud niyang nagtatrabawo?,3,niyang,PRON,,0.9993,False
+v2_rank_03833,2026-11-23T08:39:17+00:00,Isay su ngud niyang nagtatrabawo?,4,nagtatrabawo,VERB,,1.0,True
+v2_rank_03833,2026-11-23T08:39:17+00:00,Isay su ngud niyang nagtatrabawo?,5,?,PUNCT,,0.9992,False
+v2_rank_03872,2026-11-23T08:39:17+00:00,Amay ining nasabak sa trabawo ta nagraan tulos si tatay nira.,0,Amay,ADV,,0.215,False
+v2_rank_03872,2026-11-23T08:39:17+00:00,Amay ining nasabak sa trabawo ta nagraan tulos si tatay nira.,1,ining,VERB,,0.3593,False
+v2_rank_03872,2026-11-23T08:39:17+00:00,Amay ining nasabak sa trabawo ta nagraan tulos si tatay nira.,2,nasabak,VERB,,0.9325,True
+v2_rank_03872,2026-11-23T08:39:17+00:00,Amay ining nasabak sa trabawo ta nagraan tulos si tatay nira.,3,sa,ADP,,0.9999,False
+v2_rank_03872,2026-11-23T08:39:17+00:00,Amay ining nasabak sa trabawo ta nagraan tulos si tatay nira.,4,trabawo,NOUN,,0.9996,True
+v2_rank_03872,2026-11-23T08:39:17+00:00,Amay ining nasabak sa trabawo ta nagraan tulos si tatay nira.,5,ta,SCONJ,,0.9965,False
+v2_rank_03872,2026-11-23T08:39:17+00:00,Amay ining nasabak sa trabawo ta nagraan tulos si tatay nira.,6,nagraan,VERB,,0.9999,False
+v2_rank_03872,2026-11-23T08:39:17+00:00,Amay ining nasabak sa trabawo ta nagraan tulos si tatay nira.,7,tulos,ADV,,0.9985,False
+v2_rank_03872,2026-11-23T08:39:17+00:00,Amay ining nasabak sa trabawo ta nagraan tulos si tatay nira.,8,si,DET,,0.9991,False
+v2_rank_03872,2026-11-23T08:39:17+00:00,Amay ining nasabak sa trabawo ta nagraan tulos si tatay nira.,9,tatay,NOUN,,0.9993,False
+v2_rank_03872,2026-11-23T08:39:17+00:00,Amay ining nasabak sa trabawo ta nagraan tulos si tatay nira.,10,nira,PRON,,0.9983,False
+v2_rank_03872,2026-11-23T08:39:17+00:00,Amay ining nasabak sa trabawo ta nagraan tulos si tatay nira.,11,.,PUNCT,,1.0,False
+v2_rank_04060,2026-11-23T08:39:17+00:00,Naisiyan niyang uda gagamiton si John sadto programang aatendiran,0,Naisiyan,VERB,,0.99,False
+v2_rank_04060,2026-11-23T08:39:17+00:00,Naisiyan niyang uda gagamiton si John sadto programang aatendiran,1,niyang,PRON,,0.9887,False
+v2_rank_04060,2026-11-23T08:39:17+00:00,Naisiyan niyang uda gagamiton si John sadto programang aatendiran,2,uda,VERB,,0.959,False
+v2_rank_04060,2026-11-23T08:39:17+00:00,Naisiyan niyang uda gagamiton si John sadto programang aatendiran,3,gagamiton,VERB,,0.7102,False
+v2_rank_04060,2026-11-23T08:39:17+00:00,Naisiyan niyang uda gagamiton si John sadto programang aatendiran,4,si,DET,,0.8234,False
+v2_rank_04060,2026-11-23T08:39:17+00:00,Naisiyan niyang uda gagamiton si John sadto programang aatendiran,5,John,PROPN,,0.9998,True
+v2_rank_04060,2026-11-23T08:39:17+00:00,Naisiyan niyang uda gagamiton si John sadto programang aatendiran,6,sadto,ADP,,0.9771,False
+v2_rank_04060,2026-11-23T08:39:17+00:00,Naisiyan niyang uda gagamiton si John sadto programang aatendiran,7,programang,NOUN,,0.5526,True
+v2_rank_04060,2026-11-23T08:39:17+00:00,Naisiyan niyang uda gagamiton si John sadto programang aatendiran,8,aatendiran,NOUN,,0.8984,True
+v2_rank_04136,2026-11-23T08:39:17+00:00,baga na uda kita utang na boot,0,baga,PART,,0.7353,False
+v2_rank_04136,2026-11-23T08:39:17+00:00,baga na uda kita utang na boot,1,na,ADV,,0.6588,False
+v2_rank_04136,2026-11-23T08:39:17+00:00,baga na uda kita utang na boot,2,uda,VERB,,0.9666,False
+v2_rank_04136,2026-11-23T08:39:17+00:00,baga na uda kita utang na boot,3,kita,PRON,,0.9765,False
+v2_rank_04136,2026-11-23T08:39:17+00:00,baga na uda kita utang na boot,4,utang,NOUN,,0.8858,False
+v2_rank_04136,2026-11-23T08:39:17+00:00,baga na uda kita utang na boot,5,na,PART,,0.9418,False
+v2_rank_04136,2026-11-23T08:39:17+00:00,baga na uda kita utang na boot,6,boot,NOUN,,0.9868,False
+v2_rank_04165,2026-11-23T08:39:17+00:00,Silngan ta adi ritratu.,0,Silngan,VERB,,0.9272,False
+v2_rank_04165,2026-11-23T08:39:17+00:00,Silngan ta adi ritratu.,1,ta,PRON,,0.7573,False
+v2_rank_04165,2026-11-23T08:39:17+00:00,Silngan ta adi ritratu.,2,adi,PRON,,0.9038,False
+v2_rank_04165,2026-11-23T08:39:17+00:00,Silngan ta adi ritratu.,3,ritratu,NOUN,,0.8081,False
+v2_rank_04165,2026-11-23T08:39:17+00:00,Silngan ta adi ritratu.,4,.,PUNCT,,0.9999,False
+v2_rank_04297,2026-11-23T08:39:17+00:00,diri payka nakaiyan sadtu pitong dagat ag magbaklay kanda sari,0,diri,PART,,0.9943,False
+v2_rank_04297,2026-11-23T08:39:17+00:00,diri payka nakaiyan sadtu pitong dagat ag magbaklay kanda sari,1,payka,ADV,,0.368,True
+v2_rank_04297,2026-11-23T08:39:17+00:00,diri payka nakaiyan sadtu pitong dagat ag magbaklay kanda sari,2,nakaiyan,VERB,,0.9999,False
+v2_rank_04297,2026-11-23T08:39:17+00:00,diri payka nakaiyan sadtu pitong dagat ag magbaklay kanda sari,3,sadtu,ADP,,0.9796,False
+v2_rank_04297,2026-11-23T08:39:17+00:00,diri payka nakaiyan sadtu pitong dagat ag magbaklay kanda sari,4,pitong,NOUN,,0.9585,True
+v2_rank_04297,2026-11-23T08:39:17+00:00,diri payka nakaiyan sadtu pitong dagat ag magbaklay kanda sari,5,dagat,NOUN,,0.9292,False
+v2_rank_04297,2026-11-23T08:39:17+00:00,diri payka nakaiyan sadtu pitong dagat ag magbaklay kanda sari,6,ag,CCONJ,,0.9994,False
+v2_rank_04297,2026-11-23T08:39:17+00:00,diri payka nakaiyan sadtu pitong dagat ag magbaklay kanda sari,7,magbaklay,VERB,,0.9887,True
+v2_rank_04297,2026-11-23T08:39:17+00:00,diri payka nakaiyan sadtu pitong dagat ag magbaklay kanda sari,8,kanda,PRON,,0.9722,False
+v2_rank_04297,2026-11-23T08:39:17+00:00,diri payka nakaiyan sadtu pitong dagat ag magbaklay kanda sari,9,sari,ADV,,0.6212,False
+v2_rank_04432,2026-11-23T08:39:17+00:00,Uda si nanay ni Victor  natagak sirang mag ngud,0,Uda,VERB,,0.9888,False
+v2_rank_04432,2026-11-23T08:39:17+00:00,Uda si nanay ni Victor  natagak sirang mag ngud,1,si,DET,,0.9969,False
+v2_rank_04432,2026-11-23T08:39:17+00:00,Uda si nanay ni Victor  natagak sirang mag ngud,2,nanay,NOUN,,0.9979,False
+v2_rank_04432,2026-11-23T08:39:17+00:00,Uda si nanay ni Victor  natagak sirang mag ngud,3,ni,ADP,,0.7681,False
+v2_rank_04432,2026-11-23T08:39:17+00:00,Uda si nanay ni Victor  natagak sirang mag ngud,4,Victor,PROPN,,0.9979,True
+v2_rank_04432,2026-11-23T08:39:17+00:00,Uda si nanay ni Victor  natagak sirang mag ngud,5,natagak,VERB,,0.9917,True
+v2_rank_04432,2026-11-23T08:39:17+00:00,Uda si nanay ni Victor  natagak sirang mag ngud,6,sirang,PRON,,0.9955,False
+v2_rank_04432,2026-11-23T08:39:17+00:00,Uda si nanay ni Victor  natagak sirang mag ngud,7,mag,VERB,,0.6374,False
+v2_rank_04432,2026-11-23T08:39:17+00:00,Uda si nanay ni Victor  natagak sirang mag ngud,8,ngud,ADP,,0.5731,False
+v2_rank_04867,2026-11-23T08:39:17+00:00,Adi  Iton  Adto  na supong kong relo itinao kanako ni Ana,0,Adi,PRON,,0.9849,False
+v2_rank_04867,2026-11-23T08:39:17+00:00,Adi  Iton  Adto  na supong kong relo itinao kanako ni Ana,1,Iton,PRON,,0.9212,False
+v2_rank_04867,2026-11-23T08:39:17+00:00,Adi  Iton  Adto  na supong kong relo itinao kanako ni Ana,2,Adto,PRON,,0.7456,False
+v2_rank_04867,2026-11-23T08:39:17+00:00,Adi  Iton  Adto  na supong kong relo itinao kanako ni Ana,3,na,PART,,0.5521,False
+v2_rank_04867,2026-11-23T08:39:17+00:00,Adi  Iton  Adto  na supong kong relo itinao kanako ni Ana,4,supong,NOUN,,0.669,False
+v2_rank_04867,2026-11-23T08:39:17+00:00,Adi  Iton  Adto  na supong kong relo itinao kanako ni Ana,5,kong,PRON,,0.9522,False
+v2_rank_04867,2026-11-23T08:39:17+00:00,Adi  Iton  Adto  na supong kong relo itinao kanako ni Ana,6,relo,NOUN,,0.9724,True
+v2_rank_04867,2026-11-23T08:39:17+00:00,Adi  Iton  Adto  na supong kong relo itinao kanako ni Ana,7,itinao,VERB,,0.9943,False
+v2_rank_04867,2026-11-23T08:39:17+00:00,Adi  Iton  Adto  na supong kong relo itinao kanako ni Ana,8,kanako,PRON,,0.9966,False
+v2_rank_04867,2026-11-23T08:39:17+00:00,Adi  Iton  Adto  na supong kong relo itinao kanako ni Ana,9,ni,ADP,,0.991,False
+v2_rank_04867,2026-11-23T08:39:17+00:00,Adi  Iton  Adto  na supong kong relo itinao kanako ni Ana,10,Ana,PROPN,,0.999,False
+v2_rank_05054,2026-11-23T08:39:17+00:00,Nanggana su igin sadto pangayamon ta matandos iyang magdalagan .,0,Nanggana,VERB,,0.9731,False
+v2_rank_05054,2026-11-23T08:39:17+00:00,Nanggana su igin sadto pangayamon ta matandos iyang magdalagan .,1,su,DET,,0.639,False
+v2_rank_05054,2026-11-23T08:39:17+00:00,Nanggana su igin sadto pangayamon ta matandos iyang magdalagan .,2,igin,NOUN,,0.9982,False
+v2_rank_05054,2026-11-23T08:39:17+00:00,Nanggana su igin sadto pangayamon ta matandos iyang magdalagan .,3,sadto,ADP,,0.9986,False
+v2_rank_05054,2026-11-23T08:39:17+00:00,Nanggana su igin sadto pangayamon ta matandos iyang magdalagan .,4,pangayamon,NOUN,,0.999,True
+v2_rank_05054,2026-11-23T08:39:17+00:00,Nanggana su igin sadto pangayamon ta matandos iyang magdalagan .,5,ta,SCONJ,,0.6888,False
+v2_rank_05054,2026-11-23T08:39:17+00:00,Nanggana su igin sadto pangayamon ta matandos iyang magdalagan .,6,matandos,ADJ,,0.621,False
+v2_rank_05054,2026-11-23T08:39:17+00:00,Nanggana su igin sadto pangayamon ta matandos iyang magdalagan .,7,iyang,PRON,,0.9998,False
+v2_rank_05054,2026-11-23T08:39:17+00:00,Nanggana su igin sadto pangayamon ta matandos iyang magdalagan .,8,magdalagan,VERB,,0.9964,False
+v2_rank_05054,2026-11-23T08:39:17+00:00,Nanggana su igin sadto pangayamon ta matandos iyang magdalagan .,9,.,PUNCT,,0.9999,False
+v2_rank_05095,2026-11-23T08:39:17+00:00,Sinabiyan sira ku tindero na udma atud su bisekleta sadtu baluy nira.,0,Sinabiyan,VERB,,0.9829,False
+v2_rank_05095,2026-11-23T08:39:17+00:00,Sinabiyan sira ku tindero na udma atud su bisekleta sadtu baluy nira.,1,sira,PRON,,0.9536,False
+v2_rank_05095,2026-11-23T08:39:17+00:00,Sinabiyan sira ku tindero na udma atud su bisekleta sadtu baluy nira.,2,ku,ADP,,0.9971,False
+v2_rank_05095,2026-11-23T08:39:17+00:00,Sinabiyan sira ku tindero na udma atud su bisekleta sadtu baluy nira.,3,tindero,NOUN,,0.7473,True
+v2_rank_05095,2026-11-23T08:39:17+00:00,Sinabiyan sira ku tindero na udma atud su bisekleta sadtu baluy nira.,4,na,PART,,0.9489,False
+v2_rank_05095,2026-11-23T08:39:17+00:00,Sinabiyan sira ku tindero na udma atud su bisekleta sadtu baluy nira.,5,udma,NOUN,,0.5232,False
+v2_rank_05095,2026-11-23T08:39:17+00:00,Sinabiyan sira ku tindero na udma atud su bisekleta sadtu baluy nira.,6,atud,CCONJ,,0.4684,True
+v2_rank_05095,2026-11-23T08:39:17+00:00,Sinabiyan sira ku tindero na udma atud su bisekleta sadtu baluy nira.,7,su,DET,,0.9994,False
+v2_rank_05095,2026-11-23T08:39:17+00:00,Sinabiyan sira ku tindero na udma atud su bisekleta sadtu baluy nira.,8,bisekleta,NOUN,,0.9843,True
+v2_rank_05095,2026-11-23T08:39:17+00:00,Sinabiyan sira ku tindero na udma atud su bisekleta sadtu baluy nira.,9,sadtu,ADP,,0.992,False
+v2_rank_05095,2026-11-23T08:39:17+00:00,Sinabiyan sira ku tindero na udma atud su bisekleta sadtu baluy nira.,10,baluy,NOUN,,0.9997,False
+v2_rank_05095,2026-11-23T08:39:17+00:00,Sinabiyan sira ku tindero na udma atud su bisekleta sadtu baluy nira.,11,nira,PRON,,0.9992,False
+v2_rank_05095,2026-11-23T08:39:17+00:00,Sinabiyan sira ku tindero na udma atud su bisekleta sadtu baluy nira.,12,.,PUNCT,,1.0,False
+v2_rank_05113,2026-11-23T08:39:17+00:00,"kadto, baga na kita bulan",0,kadto,ADV,,0.9313,False
+v2_rank_05113,2026-11-23T08:39:17+00:00,"kadto, baga na kita bulan",1,",",PUNCT,,0.9999,False
+v2_rank_05113,2026-11-23T08:39:17+00:00,"kadto, baga na kita bulan",2,baga,PART,,0.549,False
+v2_rank_05113,2026-11-23T08:39:17+00:00,"kadto, baga na kita bulan",3,na,ADV,,0.9762,False
+v2_rank_05113,2026-11-23T08:39:17+00:00,"kadto, baga na kita bulan",4,kita,PRON,,0.9951,False
+v2_rank_05113,2026-11-23T08:39:17+00:00,"kadto, baga na kita bulan",5,bulan,NOUN,,0.9015,False
+v2_rank_05407,2026-11-23T08:39:17+00:00,Padi magtagnaw kita sadtu salug.,0,Padi,ADV,,0.3952,False
+v2_rank_05407,2026-11-23T08:39:17+00:00,Padi magtagnaw kita sadtu salug.,1,magtagnaw,VERB,,0.9995,True
+v2_rank_05407,2026-11-23T08:39:17+00:00,Padi magtagnaw kita sadtu salug.,2,kita,PRON,,0.9968,False
+v2_rank_05407,2026-11-23T08:39:17+00:00,Padi magtagnaw kita sadtu salug.,3,sadtu,ADP,,0.9885,False
+v2_rank_05407,2026-11-23T08:39:17+00:00,Padi magtagnaw kita sadtu salug.,4,salug,NOUN,,0.9972,False
+v2_rank_05407,2026-11-23T08:39:17+00:00,Padi magtagnaw kita sadtu salug.,5,.,PUNCT,,0.9999,False
+v2_rank_05526,2026-11-23T08:39:17+00:00,Mayna maglinig na sadi baloy tanganing pagabot ni mama mamuya iya kanato,0,Mayna,VERB,,0.686,False
+v2_rank_05526,2026-11-23T08:39:17+00:00,Mayna maglinig na sadi baloy tanganing pagabot ni mama mamuya iya kanato,1,maglinig,VERB,,0.9495,True
+v2_rank_05526,2026-11-23T08:39:17+00:00,Mayna maglinig na sadi baloy tanganing pagabot ni mama mamuya iya kanato,2,na,PART,,0.9056,False
+v2_rank_05526,2026-11-23T08:39:17+00:00,Mayna maglinig na sadi baloy tanganing pagabot ni mama mamuya iya kanato,3,sadi,ADP,,0.5309,False
+v2_rank_05526,2026-11-23T08:39:17+00:00,Mayna maglinig na sadi baloy tanganing pagabot ni mama mamuya iya kanato,4,baloy,NOUN,,0.9936,False
+v2_rank_05526,2026-11-23T08:39:17+00:00,Mayna maglinig na sadi baloy tanganing pagabot ni mama mamuya iya kanato,5,tanganing,SCONJ,,0.9546,False
+v2_rank_05526,2026-11-23T08:39:17+00:00,Mayna maglinig na sadi baloy tanganing pagabot ni mama mamuya iya kanato,6,pagabot,VERB,,0.9918,False
+v2_rank_05526,2026-11-23T08:39:17+00:00,Mayna maglinig na sadi baloy tanganing pagabot ni mama mamuya iya kanato,7,ni,ADP,,0.9983,False
+v2_rank_05526,2026-11-23T08:39:17+00:00,Mayna maglinig na sadi baloy tanganing pagabot ni mama mamuya iya kanato,8,mama,NOUN,,0.9182,False
+v2_rank_05526,2026-11-23T08:39:17+00:00,Mayna maglinig na sadi baloy tanganing pagabot ni mama mamuya iya kanato,9,mamuya,ADJ,,0.8621,False
+v2_rank_05526,2026-11-23T08:39:17+00:00,Mayna maglinig na sadi baloy tanganing pagabot ni mama mamuya iya kanato,10,iya,PRON,,0.9979,False
+v2_rank_05526,2026-11-23T08:39:17+00:00,Mayna maglinig na sadi baloy tanganing pagabot ni mama mamuya iya kanato,11,kanato,PRON,,0.9844,False
+v2_rank_05542,2026-11-23T08:39:17+00:00,Importante na maturan adi ta,0,Importante,ADJ,,0.8117,False
+v2_rank_05542,2026-11-23T08:39:17+00:00,Importante na maturan adi ta,1,na,PART,,0.9483,False
+v2_rank_05542,2026-11-23T08:39:17+00:00,Importante na maturan adi ta,2,maturan,VERB,,0.9744,False
+v2_rank_05542,2026-11-23T08:39:17+00:00,Importante na maturan adi ta,3,adi,PRON,,0.9983,False
+v2_rank_05542,2026-11-23T08:39:17+00:00,Importante na maturan adi ta,4,ta,SCONJ,,0.7569,False
+v2_rank_05630,2026-11-23T08:39:17+00:00,Su alibangbang linnayug paiyan sadtu maduag na puun sa kawuy.,0,Su,DET,,0.9923,False
+v2_rank_05630,2026-11-23T08:39:17+00:00,Su alibangbang linnayug paiyan sadtu maduag na puun sa kawuy.,1,alibangbang,NOUN,,0.9581,False
+v2_rank_05630,2026-11-23T08:39:17+00:00,Su alibangbang linnayug paiyan sadtu maduag na puun sa kawuy.,2,linnayug,VERB,,0.6126,True
+v2_rank_05630,2026-11-23T08:39:17+00:00,Su alibangbang linnayug paiyan sadtu maduag na puun sa kawuy.,3,paiyan,ADV,,0.6188,False
+v2_rank_05630,2026-11-23T08:39:17+00:00,Su alibangbang linnayug paiyan sadtu maduag na puun sa kawuy.,4,sadtu,ADP,,0.8735,False
+v2_rank_05630,2026-11-23T08:39:17+00:00,Su alibangbang linnayug paiyan sadtu maduag na puun sa kawuy.,5,maduag,ADJ,,0.9413,False
+v2_rank_05630,2026-11-23T08:39:17+00:00,Su alibangbang linnayug paiyan sadtu maduag na puun sa kawuy.,6,na,PART,,0.9882,False
+v2_rank_05630,2026-11-23T08:39:17+00:00,Su alibangbang linnayug paiyan sadtu maduag na puun sa kawuy.,7,puun,NOUN,,0.9034,False
+v2_rank_05630,2026-11-23T08:39:17+00:00,Su alibangbang linnayug paiyan sadtu maduag na puun sa kawuy.,8,sa,ADP,,1.0,False
+v2_rank_05630,2026-11-23T08:39:17+00:00,Su alibangbang linnayug paiyan sadtu maduag na puun sa kawuy.,9,kawuy,NOUN,,0.9993,False
+v2_rank_05630,2026-11-23T08:39:17+00:00,Su alibangbang linnayug paiyan sadtu maduag na puun sa kawuy.,10,.,PUNCT,,1.0,False
+v2_rank_05696,2026-11-23T08:39:17+00:00,Nakakaubos sa limang gatas adto ngod kong kauriyan.,0,Nakakaubos,VERB,,0.9981,True
+v2_rank_05696,2026-11-23T08:39:17+00:00,Nakakaubos sa limang gatas adto ngod kong kauriyan.,1,sa,ADP,,1.0,False
+v2_rank_05696,2026-11-23T08:39:17+00:00,Nakakaubos sa limang gatas adto ngod kong kauriyan.,2,limang,NUM,,0.7545,False
+v2_rank_05696,2026-11-23T08:39:17+00:00,Nakakaubos sa limang gatas adto ngod kong kauriyan.,3,gatas,NOUN,,0.9982,False
+v2_rank_05696,2026-11-23T08:39:17+00:00,Nakakaubos sa limang gatas adto ngod kong kauriyan.,4,adto,PRON,,0.984,False
+v2_rank_05696,2026-11-23T08:39:17+00:00,Nakakaubos sa limang gatas adto ngod kong kauriyan.,5,ngod,ADV,,0.4291,False
+v2_rank_05696,2026-11-23T08:39:17+00:00,Nakakaubos sa limang gatas adto ngod kong kauriyan.,6,kong,PRON,,0.9893,False
+v2_rank_05696,2026-11-23T08:39:17+00:00,Nakakaubos sa limang gatas adto ngod kong kauriyan.,7,kauriyan,NOUN,,0.9437,False
+v2_rank_05696,2026-11-23T08:39:17+00:00,Nakakaubos sa limang gatas adto ngod kong kauriyan.,8,.,PUNCT,,1.0,False
+v2_rank_05763,2026-11-23T08:39:17+00:00,"diri matukran, baga na pinagoosipan",0,diri,PART,,0.9997,False
+v2_rank_05763,2026-11-23T08:39:17+00:00,"diri matukran, baga na pinagoosipan",1,matukran,VERB,,0.8129,True
+v2_rank_05763,2026-11-23T08:39:17+00:00,"diri matukran, baga na pinagoosipan",2,",",PUNCT,,0.9999,False
+v2_rank_05763,2026-11-23T08:39:17+00:00,"diri matukran, baga na pinagoosipan",3,baga,PART,,0.7934,False
+v2_rank_05763,2026-11-23T08:39:17+00:00,"diri matukran, baga na pinagoosipan",4,na,PART,,0.8253,False
+v2_rank_05763,2026-11-23T08:39:17+00:00,"diri matukran, baga na pinagoosipan",5,pinagoosipan,VERB,,0.9708,True
+v2_rank_05789,2026-11-23T08:39:17+00:00,Diri ika magpadalagan sa makaskas ta madisgrasya ika.,0,Diri,PART,,0.9953,False
+v2_rank_05789,2026-11-23T08:39:17+00:00,Diri ika magpadalagan sa makaskas ta madisgrasya ika.,1,ika,PRON,,0.9991,False
+v2_rank_05789,2026-11-23T08:39:17+00:00,Diri ika magpadalagan sa makaskas ta madisgrasya ika.,2,magpadalagan,VERB,,1.0,True
+v2_rank_05789,2026-11-23T08:39:17+00:00,Diri ika magpadalagan sa makaskas ta madisgrasya ika.,3,sa,ADP,,0.9997,False
+v2_rank_05789,2026-11-23T08:39:17+00:00,Diri ika magpadalagan sa makaskas ta madisgrasya ika.,4,makaskas,NOUN,,0.3625,False
+v2_rank_05789,2026-11-23T08:39:17+00:00,Diri ika magpadalagan sa makaskas ta madisgrasya ika.,5,ta,SCONJ,,0.9988,False
+v2_rank_05789,2026-11-23T08:39:17+00:00,Diri ika magpadalagan sa makaskas ta madisgrasya ika.,6,madisgrasya,VERB,,0.7506,True
+v2_rank_05789,2026-11-23T08:39:17+00:00,Diri ika magpadalagan sa makaskas ta madisgrasya ika.,7,ika,PRON,,0.999,False
+v2_rank_05789,2026-11-23T08:39:17+00:00,Diri ika magpadalagan sa makaskas ta madisgrasya ika.,8,.,PUNCT,,0.9999,False
+v2_rank_05842,2026-11-23T08:39:17+00:00,setyembre 25  sabado uda man nagbago sadto nakakalay na kulor berde,0,setyembre,NOUN,,0.8199,False
+v2_rank_05842,2026-11-23T08:39:17+00:00,setyembre 25  sabado uda man nagbago sadto nakakalay na kulor berde,1,25,NUM,,0.9944,False
+v2_rank_05842,2026-11-23T08:39:17+00:00,setyembre 25  sabado uda man nagbago sadto nakakalay na kulor berde,2,sabado,ADV,,0.5477,False
+v2_rank_05842,2026-11-23T08:39:17+00:00,setyembre 25  sabado uda man nagbago sadto nakakalay na kulor berde,3,uda,VERB,,0.8817,False
+v2_rank_05842,2026-11-23T08:39:17+00:00,setyembre 25  sabado uda man nagbago sadto nakakalay na kulor berde,4,man,ADV,,0.9922,False
+v2_rank_05842,2026-11-23T08:39:17+00:00,setyembre 25  sabado uda man nagbago sadto nakakalay na kulor berde,5,nagbago,VERB,,0.9851,True
+v2_rank_05842,2026-11-23T08:39:17+00:00,setyembre 25  sabado uda man nagbago sadto nakakalay na kulor berde,6,sadto,PRON,,0.8495,False
+v2_rank_05842,2026-11-23T08:39:17+00:00,setyembre 25  sabado uda man nagbago sadto nakakalay na kulor berde,7,nakakalay,VERB,,0.9404,False
+v2_rank_05842,2026-11-23T08:39:17+00:00,setyembre 25  sabado uda man nagbago sadto nakakalay na kulor berde,8,na,PART,,0.9831,False
+v2_rank_05842,2026-11-23T08:39:17+00:00,setyembre 25  sabado uda man nagbago sadto nakakalay na kulor berde,9,kulor,NOUN,,0.9744,False
+v2_rank_05842,2026-11-23T08:39:17+00:00,setyembre 25  sabado uda man nagbago sadto nakakalay na kulor berde,10,berde,ADJ,,0.9433,False
+v2_rank_06045,2026-11-23T08:39:17+00:00,nganud mag iba kita sadtu klinik ni Doktor Lopez,0,nganud,ADV,,0.9313,False
+v2_rank_06045,2026-11-23T08:39:17+00:00,nganud mag iba kita sadtu klinik ni Doktor Lopez,1,mag,PART,,0.8683,False
+v2_rank_06045,2026-11-23T08:39:17+00:00,nganud mag iba kita sadtu klinik ni Doktor Lopez,2,iba,ADJ,,0.5281,False
+v2_rank_06045,2026-11-23T08:39:17+00:00,nganud mag iba kita sadtu klinik ni Doktor Lopez,3,kita,PRON,,0.9928,False
+v2_rank_06045,2026-11-23T08:39:17+00:00,nganud mag iba kita sadtu klinik ni Doktor Lopez,4,sadtu,ADP,,0.9402,False
+v2_rank_06045,2026-11-23T08:39:17+00:00,nganud mag iba kita sadtu klinik ni Doktor Lopez,5,klinik,NOUN,,0.9977,True
+v2_rank_06045,2026-11-23T08:39:17+00:00,nganud mag iba kita sadtu klinik ni Doktor Lopez,6,ni,ADP,,0.882,False
+v2_rank_06045,2026-11-23T08:39:17+00:00,nganud mag iba kita sadtu klinik ni Doktor Lopez,7,Doktor,PROPN,,0.9899,False
+v2_rank_06045,2026-11-23T08:39:17+00:00,nganud mag iba kita sadtu klinik ni Doktor Lopez,8,Lopez,PROPN,,0.9996,True
+v2_rank_06106,2026-11-23T08:39:17+00:00,Uno paborito mong ngayamnan Idrowing adi saka kuluran.,0,Uno,PRON,,0.9152,False
+v2_rank_06106,2026-11-23T08:39:17+00:00,Uno paborito mong ngayamnan Idrowing adi saka kuluran.,1,paborito,ADV,,0.6587,False
+v2_rank_06106,2026-11-23T08:39:17+00:00,Uno paborito mong ngayamnan Idrowing adi saka kuluran.,2,mong,PRON,,0.9855,False
+v2_rank_06106,2026-11-23T08:39:17+00:00,Uno paborito mong ngayamnan Idrowing adi saka kuluran.,3,ngayamnan,NOUN,,0.8225,False
+v2_rank_06106,2026-11-23T08:39:17+00:00,Uno paborito mong ngayamnan Idrowing adi saka kuluran.,4,Idrowing,VERB,,0.9747,False
+v2_rank_06106,2026-11-23T08:39:17+00:00,Uno paborito mong ngayamnan Idrowing adi saka kuluran.,5,adi,PRON,,0.9996,False
+v2_rank_06106,2026-11-23T08:39:17+00:00,Uno paborito mong ngayamnan Idrowing adi saka kuluran.,6,saka,CCONJ,,0.9993,False
+v2_rank_06106,2026-11-23T08:39:17+00:00,Uno paborito mong ngayamnan Idrowing adi saka kuluran.,7,kuluran,NOUN,,0.7801,False
+v2_rank_06106,2026-11-23T08:39:17+00:00,Uno paborito mong ngayamnan Idrowing adi saka kuluran.,8,.,PUNCT,,1.0,False
+v2_rank_06285,2026-11-23T08:39:17+00:00,nagluwas sadto su sadit naulod,0,nagluwas,VERB,,0.9994,False
+v2_rank_06285,2026-11-23T08:39:17+00:00,nagluwas sadto su sadit naulod,1,sadto,ADP,,0.6805,False
+v2_rank_06285,2026-11-23T08:39:17+00:00,nagluwas sadto su sadit naulod,2,su,DET,,0.95,False
+v2_rank_06285,2026-11-23T08:39:17+00:00,nagluwas sadto su sadit naulod,3,sadit,ADJ,,0.9258,False
+v2_rank_06285,2026-11-23T08:39:17+00:00,nagluwas sadto su sadit naulod,4,naulod,VERB,,0.9755,True
+v2_rank_06472,2026-11-23T08:39:17+00:00,"Sadtu kita mangayamun na darwa, sabi ni Kalbo.",0,Sadtu,ADV,,0.4783,False
+v2_rank_06472,2026-11-23T08:39:17+00:00,"Sadtu kita mangayamun na darwa, sabi ni Kalbo.",1,kita,PRON,,0.9686,False
+v2_rank_06472,2026-11-23T08:39:17+00:00,"Sadtu kita mangayamun na darwa, sabi ni Kalbo.",2,mangayamun,VERB,,0.9425,True
+v2_rank_06472,2026-11-23T08:39:17+00:00,"Sadtu kita mangayamun na darwa, sabi ni Kalbo.",3,na,PART,,0.7711,False
+v2_rank_06472,2026-11-23T08:39:17+00:00,"Sadtu kita mangayamun na darwa, sabi ni Kalbo.",4,darwa,NUM,,0.9933,False
+v2_rank_06472,2026-11-23T08:39:17+00:00,"Sadtu kita mangayamun na darwa, sabi ni Kalbo.",5,",",PUNCT,,0.9999,False
+v2_rank_06472,2026-11-23T08:39:17+00:00,"Sadtu kita mangayamun na darwa, sabi ni Kalbo.",6,sabi,VERB,,0.9969,False
+v2_rank_06472,2026-11-23T08:39:17+00:00,"Sadtu kita mangayamun na darwa, sabi ni Kalbo.",7,ni,ADP,,0.9338,False
+v2_rank_06472,2026-11-23T08:39:17+00:00,"Sadtu kita mangayamun na darwa, sabi ni Kalbo.",8,Kalbo,PROPN,,0.9983,False
+v2_rank_06472,2026-11-23T08:39:17+00:00,"Sadtu kita mangayamun na darwa, sabi ni Kalbo.",9,.,PUNCT,,0.9999,False
+v2_rank_06502,2026-11-23T08:39:17+00:00,Diri naibutang su nauudang bantas anggan dakulong letra saka diri nagindent. .,0,Diri,PART,,0.9865,False
+v2_rank_06502,2026-11-23T08:39:17+00:00,Diri naibutang su nauudang bantas anggan dakulong letra saka diri nagindent. .,1,naibutang,VERB,,0.9806,True
+v2_rank_06502,2026-11-23T08:39:17+00:00,Diri naibutang su nauudang bantas anggan dakulong letra saka diri nagindent. .,2,su,DET,,0.9991,False
+v2_rank_06502,2026-11-23T08:39:17+00:00,Diri naibutang su nauudang bantas anggan dakulong letra saka diri nagindent. .,3,nauudang,VERB,,0.4526,False
+v2_rank_06502,2026-11-23T08:39:17+00:00,Diri naibutang su nauudang bantas anggan dakulong letra saka diri nagindent. .,4,bantas,NOUN,,0.9841,False
+v2_rank_06502,2026-11-23T08:39:17+00:00,Diri naibutang su nauudang bantas anggan dakulong letra saka diri nagindent. .,5,anggan,ADP,,0.6512,False
+v2_rank_06502,2026-11-23T08:39:17+00:00,Diri naibutang su nauudang bantas anggan dakulong letra saka diri nagindent. .,6,dakulong,ADJ,,0.958,False
+v2_rank_06502,2026-11-23T08:39:17+00:00,Diri naibutang su nauudang bantas anggan dakulong letra saka diri nagindent. .,7,letra,NOUN,,0.9988,False
+v2_rank_06502,2026-11-23T08:39:17+00:00,Diri naibutang su nauudang bantas anggan dakulong letra saka diri nagindent. .,8,saka,CCONJ,,0.9999,False
+v2_rank_06502,2026-11-23T08:39:17+00:00,Diri naibutang su nauudang bantas anggan dakulong letra saka diri nagindent. .,9,diri,PART,,0.801,False
+v2_rank_06502,2026-11-23T08:39:17+00:00,Diri naibutang su nauudang bantas anggan dakulong letra saka diri nagindent. .,10,nagindent,VERB,,0.9997,True
+v2_rank_06502,2026-11-23T08:39:17+00:00,Diri naibutang su nauudang bantas anggan dakulong letra saka diri nagindent. .,11,.,PUNCT,,0.9998,False
+v2_rank_06502,2026-11-23T08:39:17+00:00,Diri naibutang su nauudang bantas anggan dakulong letra saka diri nagindent. .,12,.,PUNCT,,0.9998,False
+v2_rank_06616,2026-11-23T08:39:17+00:00,Unung ayup su nasambit sa isturya,0,Unung,PRON,,0.813,False
+v2_rank_06616,2026-11-23T08:39:17+00:00,Unung ayup su nasambit sa isturya,1,ayup,NOUN,,0.9965,False
+v2_rank_06616,2026-11-23T08:39:17+00:00,Unung ayup su nasambit sa isturya,2,su,DET,,0.9986,False
+v2_rank_06616,2026-11-23T08:39:17+00:00,Unung ayup su nasambit sa isturya,3,nasambit,VERB,,0.6522,True
+v2_rank_06616,2026-11-23T08:39:17+00:00,Unung ayup su nasambit sa isturya,4,sa,ADP,,0.9989,False
+v2_rank_06616,2026-11-23T08:39:17+00:00,Unung ayup su nasambit sa isturya,5,isturya,NOUN,,0.9998,False
+v2_rank_06779,2026-11-23T08:39:17+00:00,Uno su ipigselebrar ku eskwelahan,0,Uno,PRON,,0.9706,False
+v2_rank_06779,2026-11-23T08:39:17+00:00,Uno su ipigselebrar ku eskwelahan,1,su,DET,,0.9972,False
+v2_rank_06779,2026-11-23T08:39:17+00:00,Uno su ipigselebrar ku eskwelahan,2,ipigselebrar,NOUN,,0.6279,True
+v2_rank_06779,2026-11-23T08:39:17+00:00,Uno su ipigselebrar ku eskwelahan,3,ku,ADP,,0.9627,False
+v2_rank_06779,2026-11-23T08:39:17+00:00,Uno su ipigselebrar ku eskwelahan,4,eskwelahan,NOUN,,0.9989,True
+v2_rank_06924,2026-11-23T08:39:17+00:00,Tauno ta amo adto su pinaguusipan nira,0,Tauno,ADV,,0.995,False
+v2_rank_06924,2026-11-23T08:39:17+00:00,Tauno ta amo adto su pinaguusipan nira,1,ta,SCONJ,,0.9854,False
+v2_rank_06924,2026-11-23T08:39:17+00:00,Tauno ta amo adto su pinaguusipan nira,2,amo,ADV,,0.6295,False
+v2_rank_06924,2026-11-23T08:39:17+00:00,Tauno ta amo adto su pinaguusipan nira,3,adto,PRON,,0.9987,False
+v2_rank_06924,2026-11-23T08:39:17+00:00,Tauno ta amo adto su pinaguusipan nira,4,su,DET,,0.9956,False
+v2_rank_06924,2026-11-23T08:39:17+00:00,Tauno ta amo adto su pinaguusipan nira,5,pinaguusipan,NOUN,,0.7877,True
+v2_rank_06924,2026-11-23T08:39:17+00:00,Tauno ta amo adto su pinaguusipan nira,6,nira,PRON,,0.9996,False
+v2_rank_06998,2026-11-23T08:39:17+00:00,"puruton ngamin, agko kita piglilimanan",0,puruton,VERB,,0.515,True
+v2_rank_06998,2026-11-23T08:39:17+00:00,"puruton ngamin, agko kita piglilimanan",1,ngamin,PRON,,0.9804,False
+v2_rank_06998,2026-11-23T08:39:17+00:00,"puruton ngamin, agko kita piglilimanan",2,",",PUNCT,,0.9999,False
+v2_rank_06998,2026-11-23T08:39:17+00:00,"puruton ngamin, agko kita piglilimanan",3,agko,VERB,,0.9972,False
+v2_rank_06998,2026-11-23T08:39:17+00:00,"puruton ngamin, agko kita piglilimanan",4,kita,PRON,,0.9978,False
+v2_rank_06998,2026-11-23T08:39:17+00:00,"puruton ngamin, agko kita piglilimanan",5,piglilimanan,VERB,,0.994,True
+v2_rank_07033,2026-11-23T08:39:17+00:00,Siisay su pinakaimportante sa kanda ngamin .,0,Siisay,PRON,,0.9037,False
+v2_rank_07033,2026-11-23T08:39:17+00:00,Siisay su pinakaimportante sa kanda ngamin .,1,su,DET,,0.9991,False
+v2_rank_07033,2026-11-23T08:39:17+00:00,Siisay su pinakaimportante sa kanda ngamin .,2,pinakaimportante,VERB,,0.5924,True
+v2_rank_07033,2026-11-23T08:39:17+00:00,Siisay su pinakaimportante sa kanda ngamin .,3,sa,ADP,,0.9994,False
+v2_rank_07033,2026-11-23T08:39:17+00:00,Siisay su pinakaimportante sa kanda ngamin .,4,kanda,PRON,,0.9424,False
+v2_rank_07033,2026-11-23T08:39:17+00:00,Siisay su pinakaimportante sa kanda ngamin .,5,ngamin,PRON,,0.9636,False
+v2_rank_07033,2026-11-23T08:39:17+00:00,Siisay su pinakaimportante sa kanda ngamin .,6,.,PUNCT,,1.0,False
+v2_rank_07035,2026-11-23T08:39:17+00:00,Diyos maray na alduw,0,Diyos,PROPN,,0.6758,False
+v2_rank_07035,2026-11-23T08:39:17+00:00,Diyos maray na alduw,1,maray,ADJ,,0.9946,False
+v2_rank_07035,2026-11-23T08:39:17+00:00,Diyos maray na alduw,2,na,PART,,0.9915,False
+v2_rank_07035,2026-11-23T08:39:17+00:00,Diyos maray na alduw,3,alduw,NOUN,,0.9957,False
+v2_rank_07136,2026-11-23T08:39:17+00:00,uno gigibuwon ta na nguwan?,0,uno,PRON,,0.9661,False
+v2_rank_07136,2026-11-23T08:39:17+00:00,uno gigibuwon ta na nguwan?,1,gigibuwon,VERB,,0.9678,False
+v2_rank_07136,2026-11-23T08:39:17+00:00,uno gigibuwon ta na nguwan?,2,ta,SCONJ,,0.5831,False
+v2_rank_07136,2026-11-23T08:39:17+00:00,uno gigibuwon ta na nguwan?,3,na,PART,,0.9808,False
+v2_rank_07136,2026-11-23T08:39:17+00:00,uno gigibuwon ta na nguwan?,4,nguwan,ADV,,0.9958,False
+v2_rank_07136,2026-11-23T08:39:17+00:00,uno gigibuwon ta na nguwan?,5,?,PUNCT,,0.9994,False
+v2_rank_07321,2026-11-23T08:39:17+00:00,Uda isinurat Depende sa paagi ka pagsurat ka igin.,0,Uda,VERB,,0.9848,False
+v2_rank_07321,2026-11-23T08:39:17+00:00,Uda isinurat Depende sa paagi ka pagsurat ka igin.,1,isinurat,NOUN,,0.6277,False
+v2_rank_07321,2026-11-23T08:39:17+00:00,Uda isinurat Depende sa paagi ka pagsurat ka igin.,2,Depende,PROPN,,0.5708,False
+v2_rank_07321,2026-11-23T08:39:17+00:00,Uda isinurat Depende sa paagi ka pagsurat ka igin.,3,sa,ADP,,0.9999,False
+v2_rank_07321,2026-11-23T08:39:17+00:00,Uda isinurat Depende sa paagi ka pagsurat ka igin.,4,paagi,NOUN,,0.995,False
+v2_rank_07321,2026-11-23T08:39:17+00:00,Uda isinurat Depende sa paagi ka pagsurat ka igin.,5,ka,ADP,,0.9995,False
+v2_rank_07321,2026-11-23T08:39:17+00:00,Uda isinurat Depende sa paagi ka pagsurat ka igin.,6,pagsurat,NOUN,,0.9971,False
+v2_rank_07321,2026-11-23T08:39:17+00:00,Uda isinurat Depende sa paagi ka pagsurat ka igin.,7,ka,ADP,,0.9964,False
+v2_rank_07321,2026-11-23T08:39:17+00:00,Uda isinurat Depende sa paagi ka pagsurat ka igin.,8,igin,NOUN,,0.9995,False
+v2_rank_07321,2026-11-23T08:39:17+00:00,Uda isinurat Depende sa paagi ka pagsurat ka igin.,9,.,PUNCT,,0.9999,False
+v2_rank_07335,2026-11-23T08:39:17+00:00,Saring lugar sira nagiyan saka unu ginibu nira .,0,Saring,ADJ,,0.4568,False
+v2_rank_07335,2026-11-23T08:39:17+00:00,Saring lugar sira nagiyan saka unu ginibu nira .,1,lugar,NOUN,,0.9993,False
+v2_rank_07335,2026-11-23T08:39:17+00:00,Saring lugar sira nagiyan saka unu ginibu nira .,2,sira,PRON,,0.9637,False
+v2_rank_07335,2026-11-23T08:39:17+00:00,Saring lugar sira nagiyan saka unu ginibu nira .,3,nagiyan,VERB,,0.9852,False
+v2_rank_07335,2026-11-23T08:39:17+00:00,Saring lugar sira nagiyan saka unu ginibu nira .,4,saka,CCONJ,,0.9941,False
+v2_rank_07335,2026-11-23T08:39:17+00:00,Saring lugar sira nagiyan saka unu ginibu nira .,5,unu,PRON,,0.92,False
+v2_rank_07335,2026-11-23T08:39:17+00:00,Saring lugar sira nagiyan saka unu ginibu nira .,6,ginibu,VERB,,0.9357,False
+v2_rank_07335,2026-11-23T08:39:17+00:00,Saring lugar sira nagiyan saka unu ginibu nira .,7,nira,PRON,,0.9999,False
+v2_rank_07335,2026-11-23T08:39:17+00:00,Saring lugar sira nagiyan saka unu ginibu nira .,8,.,PUNCT,,0.9999,False
+v2_rank_07361,2026-11-23T08:39:17+00:00,sira Lester saka Lito udma sadtu dagat.,0,sira,PRON,,0.7452,False
+v2_rank_07361,2026-11-23T08:39:17+00:00,sira Lester saka Lito udma sadtu dagat.,1,Lester,NOUN,,0.8683,True
+v2_rank_07361,2026-11-23T08:39:17+00:00,sira Lester saka Lito udma sadtu dagat.,2,saka,CCONJ,,0.9896,False
+v2_rank_07361,2026-11-23T08:39:17+00:00,sira Lester saka Lito udma sadtu dagat.,3,Lito,PROPN,,0.9781,False
+v2_rank_07361,2026-11-23T08:39:17+00:00,sira Lester saka Lito udma sadtu dagat.,4,udma,ADV,,0.7772,False
+v2_rank_07361,2026-11-23T08:39:17+00:00,sira Lester saka Lito udma sadtu dagat.,5,sadtu,ADP,,0.9824,False
+v2_rank_07361,2026-11-23T08:39:17+00:00,sira Lester saka Lito udma sadtu dagat.,6,dagat,NOUN,,0.9989,False
+v2_rank_07361,2026-11-23T08:39:17+00:00,sira Lester saka Lito udma sadtu dagat.,7,.,PUNCT,,0.9999,False
+v2_rank_07486,2026-11-23T08:39:17+00:00,pato sadto bulsa ku bado kadi.,0,pato,NOUN,,0.4522,False
+v2_rank_07486,2026-11-23T08:39:17+00:00,pato sadto bulsa ku bado kadi.,1,sadto,ADP,,0.9995,False
+v2_rank_07486,2026-11-23T08:39:17+00:00,pato sadto bulsa ku bado kadi.,2,bulsa,NOUN,,0.9996,False
+v2_rank_07486,2026-11-23T08:39:17+00:00,pato sadto bulsa ku bado kadi.,3,ku,ADP,,0.9917,False
+v2_rank_07486,2026-11-23T08:39:17+00:00,pato sadto bulsa ku bado kadi.,4,bado,NOUN,,0.9946,False
+v2_rank_07486,2026-11-23T08:39:17+00:00,pato sadto bulsa ku bado kadi.,5,kadi,PRON,,0.9934,False
+v2_rank_07486,2026-11-23T08:39:17+00:00,pato sadto bulsa ku bado kadi.,6,.,PUNCT,,0.9999,False
+v2_rank_07707,2026-11-23T08:39:17+00:00,Libut nira nguwan su ngamin na tindan nganing makaanap sa magayun saka baratung bisekleta.,0,Libut,NOUN,,0.6314,True
+v2_rank_07707,2026-11-23T08:39:17+00:00,Libut nira nguwan su ngamin na tindan nganing makaanap sa magayun saka baratung bisekleta.,1,nira,PRON,,0.998,False
+v2_rank_07707,2026-11-23T08:39:17+00:00,Libut nira nguwan su ngamin na tindan nganing makaanap sa magayun saka baratung bisekleta.,2,nguwan,ADV,,0.9785,False
+v2_rank_07707,2026-11-23T08:39:17+00:00,Libut nira nguwan su ngamin na tindan nganing makaanap sa magayun saka baratung bisekleta.,3,su,DET,,0.9528,False
+v2_rank_07707,2026-11-23T08:39:17+00:00,Libut nira nguwan su ngamin na tindan nganing makaanap sa magayun saka baratung bisekleta.,4,ngamin,PRON,,0.9722,False
+v2_rank_07707,2026-11-23T08:39:17+00:00,Libut nira nguwan su ngamin na tindan nganing makaanap sa magayun saka baratung bisekleta.,5,na,PART,,0.9998,False
+v2_rank_07707,2026-11-23T08:39:17+00:00,Libut nira nguwan su ngamin na tindan nganing makaanap sa magayun saka baratung bisekleta.,6,tindan,NOUN,,0.9695,False
+v2_rank_07707,2026-11-23T08:39:17+00:00,Libut nira nguwan su ngamin na tindan nganing makaanap sa magayun saka baratung bisekleta.,7,nganing,SCONJ,,0.9645,False
+v2_rank_07707,2026-11-23T08:39:17+00:00,Libut nira nguwan su ngamin na tindan nganing makaanap sa magayun saka baratung bisekleta.,8,makaanap,VERB,,0.9999,True
+v2_rank_07707,2026-11-23T08:39:17+00:00,Libut nira nguwan su ngamin na tindan nganing makaanap sa magayun saka baratung bisekleta.,9,sa,ADP,,0.999,False
+v2_rank_07707,2026-11-23T08:39:17+00:00,Libut nira nguwan su ngamin na tindan nganing makaanap sa magayun saka baratung bisekleta.,10,magayun,ADJ,,0.9,False
+v2_rank_07707,2026-11-23T08:39:17+00:00,Libut nira nguwan su ngamin na tindan nganing makaanap sa magayun saka baratung bisekleta.,11,saka,CCONJ,,0.9979,False
+v2_rank_07707,2026-11-23T08:39:17+00:00,Libut nira nguwan su ngamin na tindan nganing makaanap sa magayun saka baratung bisekleta.,12,baratung,NOUN,,0.4578,True
+v2_rank_07707,2026-11-23T08:39:17+00:00,Libut nira nguwan su ngamin na tindan nganing makaanap sa magayun saka baratung bisekleta.,13,bisekleta,NOUN,,0.9941,True
+v2_rank_07707,2026-11-23T08:39:17+00:00,Libut nira nguwan su ngamin na tindan nganing makaanap sa magayun saka baratung bisekleta.,14,.,PUNCT,,1.0,False
+v2_rank_08070,2026-11-23T08:39:17+00:00,Nagpanik su igin sadtu alangkaw na kawuy.,0,Nagpanik,VERB,,0.9999,False
+v2_rank_08070,2026-11-23T08:39:17+00:00,Nagpanik su igin sadtu alangkaw na kawuy.,1,su,DET,,0.9086,False
+v2_rank_08070,2026-11-23T08:39:17+00:00,Nagpanik su igin sadtu alangkaw na kawuy.,2,igin,NOUN,,0.9995,False
+v2_rank_08070,2026-11-23T08:39:17+00:00,Nagpanik su igin sadtu alangkaw na kawuy.,3,sadtu,ADP,,0.9657,False
+v2_rank_08070,2026-11-23T08:39:17+00:00,Nagpanik su igin sadtu alangkaw na kawuy.,4,alangkaw,ADJ,,0.5359,False
+v2_rank_08070,2026-11-23T08:39:17+00:00,Nagpanik su igin sadtu alangkaw na kawuy.,5,na,PART,,0.9888,False
+v2_rank_08070,2026-11-23T08:39:17+00:00,Nagpanik su igin sadtu alangkaw na kawuy.,6,kawuy,NOUN,,0.997,False
+v2_rank_08070,2026-11-23T08:39:17+00:00,Nagpanik su igin sadtu alangkaw na kawuy.,7,.,PUNCT,,1.0,False
+v2_rank_08178,2026-11-23T08:39:17+00:00,Siisay su nagbangun tulus pagkarungug ku tunug ku orasan?,0,Siisay,PRON,,0.9759,False
+v2_rank_08178,2026-11-23T08:39:17+00:00,Siisay su nagbangun tulus pagkarungug ku tunug ku orasan?,1,su,DET,,0.9991,False
+v2_rank_08178,2026-11-23T08:39:17+00:00,Siisay su nagbangun tulus pagkarungug ku tunug ku orasan?,2,nagbangun,VERB,,0.9994,True
+v2_rank_08178,2026-11-23T08:39:17+00:00,Siisay su nagbangun tulus pagkarungug ku tunug ku orasan?,3,tulus,ADP,,0.4876,False
+v2_rank_08178,2026-11-23T08:39:17+00:00,Siisay su nagbangun tulus pagkarungug ku tunug ku orasan?,4,pagkarungug,NOUN,,0.8481,True
+v2_rank_08178,2026-11-23T08:39:17+00:00,Siisay su nagbangun tulus pagkarungug ku tunug ku orasan?,5,ku,ADP,,0.9993,False
+v2_rank_08178,2026-11-23T08:39:17+00:00,Siisay su nagbangun tulus pagkarungug ku tunug ku orasan?,6,tunug,NOUN,,0.9692,True
+v2_rank_08178,2026-11-23T08:39:17+00:00,Siisay su nagbangun tulus pagkarungug ku tunug ku orasan?,7,ku,ADP,,0.9789,False
+v2_rank_08178,2026-11-23T08:39:17+00:00,Siisay su nagbangun tulus pagkarungug ku tunug ku orasan?,8,orasan,NOUN,,0.996,False
+v2_rank_08178,2026-11-23T08:39:17+00:00,Siisay su nagbangun tulus pagkarungug ku tunug ku orasan?,9,?,PUNCT,,0.9992,False
+v2_rank_08195,2026-11-23T08:39:17+00:00,pagmata nira kinaramragan uda na iya,0,pagmata,NOUN,,0.9345,False
+v2_rank_08195,2026-11-23T08:39:17+00:00,pagmata nira kinaramragan uda na iya,1,nira,PRON,,0.9567,False
+v2_rank_08195,2026-11-23T08:39:17+00:00,pagmata nira kinaramragan uda na iya,2,kinaramragan,VERB,,0.8979,False
+v2_rank_08195,2026-11-23T08:39:17+00:00,pagmata nira kinaramragan uda na iya,3,uda,VERB,,0.7756,False
+v2_rank_08195,2026-11-23T08:39:17+00:00,pagmata nira kinaramragan uda na iya,4,na,ADV,,0.9897,False
+v2_rank_08195,2026-11-23T08:39:17+00:00,pagmata nira kinaramragan uda na iya,5,iya,PRON,,0.9983,False
+v2_rank_08237,2026-11-23T08:39:17+00:00,Tinabangan iya ku gurang na makapauli sadto baloy nira.,0,Tinabangan,VERB,,0.9999,False
+v2_rank_08237,2026-11-23T08:39:17+00:00,Tinabangan iya ku gurang na makapauli sadto baloy nira.,1,iya,PRON,,0.999,False
+v2_rank_08237,2026-11-23T08:39:17+00:00,Tinabangan iya ku gurang na makapauli sadto baloy nira.,2,ku,ADP,,0.7925,False
+v2_rank_08237,2026-11-23T08:39:17+00:00,Tinabangan iya ku gurang na makapauli sadto baloy nira.,3,gurang,NOUN,,0.5063,False
+v2_rank_08237,2026-11-23T08:39:17+00:00,Tinabangan iya ku gurang na makapauli sadto baloy nira.,4,na,ADV,,0.9648,False
+v2_rank_08237,2026-11-23T08:39:17+00:00,Tinabangan iya ku gurang na makapauli sadto baloy nira.,5,makapauli,VERB,,0.9987,True
+v2_rank_08237,2026-11-23T08:39:17+00:00,Tinabangan iya ku gurang na makapauli sadto baloy nira.,6,sadto,ADP,,0.9982,False
+v2_rank_08237,2026-11-23T08:39:17+00:00,Tinabangan iya ku gurang na makapauli sadto baloy nira.,7,baloy,NOUN,,0.9998,False
+v2_rank_08237,2026-11-23T08:39:17+00:00,Tinabangan iya ku gurang na makapauli sadto baloy nira.,8,nira,PRON,,0.9984,False
+v2_rank_08237,2026-11-23T08:39:17+00:00,Tinabangan iya ku gurang na makapauli sadto baloy nira.,9,.,PUNCT,,0.9999,False
+v2_rank_08272,2026-11-23T08:39:17+00:00,Siisay su nasabat nirang magama sadtu Ayagan Street,0,Siisay,PRON,,0.9745,False
+v2_rank_08272,2026-11-23T08:39:17+00:00,Siisay su nasabat nirang magama sadtu Ayagan Street,1,su,DET,,0.9982,False
+v2_rank_08272,2026-11-23T08:39:17+00:00,Siisay su nasabat nirang magama sadtu Ayagan Street,2,nasabat,VERB,,0.9633,False
+v2_rank_08272,2026-11-23T08:39:17+00:00,Siisay su nasabat nirang magama sadtu Ayagan Street,3,nirang,PRON,,0.9985,False
+v2_rank_08272,2026-11-23T08:39:17+00:00,Siisay su nasabat nirang magama sadtu Ayagan Street,4,magama,VERB,,0.7531,True
+v2_rank_08272,2026-11-23T08:39:17+00:00,Siisay su nasabat nirang magama sadtu Ayagan Street,5,sadtu,ADP,,0.9976,False
+v2_rank_08272,2026-11-23T08:39:17+00:00,Siisay su nasabat nirang magama sadtu Ayagan Street,6,Ayagan,PROPN,,0.7414,True
+v2_rank_08272,2026-11-23T08:39:17+00:00,Siisay su nasabat nirang magama sadtu Ayagan Street,7,Street,PROPN,,0.9817,True
+v2_rank_08462,2026-11-23T08:39:17+00:00,"Mayna kamo ta magmirindal na kita, aluk ni Mama Mila.",0,Mayna,VERB,,0.9045,False
+v2_rank_08462,2026-11-23T08:39:17+00:00,"Mayna kamo ta magmirindal na kita, aluk ni Mama Mila.",1,kamo,PRON,,0.9999,False
+v2_rank_08462,2026-11-23T08:39:17+00:00,"Mayna kamo ta magmirindal na kita, aluk ni Mama Mila.",2,ta,SCONJ,,0.8548,False
+v2_rank_08462,2026-11-23T08:39:17+00:00,"Mayna kamo ta magmirindal na kita, aluk ni Mama Mila.",3,magmirindal,VERB,,0.6716,True
+v2_rank_08462,2026-11-23T08:39:17+00:00,"Mayna kamo ta magmirindal na kita, aluk ni Mama Mila.",4,na,ADV,,0.9305,False
+v2_rank_08462,2026-11-23T08:39:17+00:00,"Mayna kamo ta magmirindal na kita, aluk ni Mama Mila.",5,kita,PRON,,0.9984,False
+v2_rank_08462,2026-11-23T08:39:17+00:00,"Mayna kamo ta magmirindal na kita, aluk ni Mama Mila.",6,",",PUNCT,,0.9999,False
+v2_rank_08462,2026-11-23T08:39:17+00:00,"Mayna kamo ta magmirindal na kita, aluk ni Mama Mila.",7,aluk,NOUN,,0.9463,True
+v2_rank_08462,2026-11-23T08:39:17+00:00,"Mayna kamo ta magmirindal na kita, aluk ni Mama Mila.",8,ni,ADP,,0.9916,False
+v2_rank_08462,2026-11-23T08:39:17+00:00,"Mayna kamo ta magmirindal na kita, aluk ni Mama Mila.",9,Mama,PROPN,,0.8366,False
+v2_rank_08462,2026-11-23T08:39:17+00:00,"Mayna kamo ta magmirindal na kita, aluk ni Mama Mila.",10,Mila,PROPN,,0.9989,False
+v2_rank_08462,2026-11-23T08:39:17+00:00,"Mayna kamo ta magmirindal na kita, aluk ni Mama Mila.",11,.,PUNCT,,0.9999,False
+v2_rank_08474,2026-11-23T08:39:17+00:00,drowing adto ku pamilya nira saka baloy nira,0,drowing,VERB,,0.5663,False
+v2_rank_08474,2026-11-23T08:39:17+00:00,drowing adto ku pamilya nira saka baloy nira,1,adto,PRON,,0.8871,False
+v2_rank_08474,2026-11-23T08:39:17+00:00,drowing adto ku pamilya nira saka baloy nira,2,ku,ADP,,0.9815,False
+v2_rank_08474,2026-11-23T08:39:17+00:00,drowing adto ku pamilya nira saka baloy nira,3,pamilya,NOUN,,0.9998,False
+v2_rank_08474,2026-11-23T08:39:17+00:00,drowing adto ku pamilya nira saka baloy nira,4,nira,PRON,,0.9991,False
+v2_rank_08474,2026-11-23T08:39:17+00:00,drowing adto ku pamilya nira saka baloy nira,5,saka,CCONJ,,0.9925,False
+v2_rank_08474,2026-11-23T08:39:17+00:00,drowing adto ku pamilya nira saka baloy nira,6,baloy,NOUN,,0.9974,False
+v2_rank_08474,2026-11-23T08:39:17+00:00,drowing adto ku pamilya nira saka baloy nira,7,nira,PRON,,0.999,False
+v2_rank_08528,2026-11-23T08:39:17+00:00,Saring lugar sira nagiyan saka uno ginibo nira Nabua East .,0,Saring,ADJ,,0.4568,False
+v2_rank_08528,2026-11-23T08:39:17+00:00,Saring lugar sira nagiyan saka uno ginibo nira Nabua East .,1,lugar,NOUN,,0.9993,False
+v2_rank_08528,2026-11-23T08:39:17+00:00,Saring lugar sira nagiyan saka uno ginibo nira Nabua East .,2,sira,PRON,,0.9645,False
+v2_rank_08528,2026-11-23T08:39:17+00:00,Saring lugar sira nagiyan saka uno ginibo nira Nabua East .,3,nagiyan,VERB,,0.9927,False
+v2_rank_08528,2026-11-23T08:39:17+00:00,Saring lugar sira nagiyan saka uno ginibo nira Nabua East .,4,saka,CCONJ,,0.9942,False
+v2_rank_08528,2026-11-23T08:39:17+00:00,Saring lugar sira nagiyan saka uno ginibo nira Nabua East .,5,uno,PRON,,0.9191,False
+v2_rank_08528,2026-11-23T08:39:17+00:00,Saring lugar sira nagiyan saka uno ginibo nira Nabua East .,6,ginibo,VERB,,0.8969,False
+v2_rank_08528,2026-11-23T08:39:17+00:00,Saring lugar sira nagiyan saka uno ginibo nira Nabua East .,7,nira,PRON,,0.9902,False
+v2_rank_08528,2026-11-23T08:39:17+00:00,Saring lugar sira nagiyan saka uno ginibo nira Nabua East .,8,Nabua,PROPN,,0.9982,False
+v2_rank_08528,2026-11-23T08:39:17+00:00,Saring lugar sira nagiyan saka uno ginibo nira Nabua East .,9,East,PROPN,,0.9995,False
+v2_rank_08528,2026-11-23T08:39:17+00:00,Saring lugar sira nagiyan saka uno ginibo nira Nabua East .,10,.,PUNCT,,0.9999,False
+v2_rank_08536,2026-11-23T08:39:17+00:00,"uda libre sadi, ngamin agko bayad",0,uda,VERB,,0.9963,False
+v2_rank_08536,2026-11-23T08:39:17+00:00,"uda libre sadi, ngamin agko bayad",1,libre,NOUN,,0.9778,True
+v2_rank_08536,2026-11-23T08:39:17+00:00,"uda libre sadi, ngamin agko bayad",2,sadi,ADV,,0.7022,False
+v2_rank_08536,2026-11-23T08:39:17+00:00,"uda libre sadi, ngamin agko bayad",3,",",PUNCT,,0.9998,False
+v2_rank_08536,2026-11-23T08:39:17+00:00,"uda libre sadi, ngamin agko bayad",4,ngamin,PRON,,0.9457,False
+v2_rank_08536,2026-11-23T08:39:17+00:00,"uda libre sadi, ngamin agko bayad",5,agko,VERB,,0.995,False
+v2_rank_08536,2026-11-23T08:39:17+00:00,"uda libre sadi, ngamin agko bayad",6,bayad,NOUN,,0.8817,False
+v2_rank_08672,2026-11-23T08:39:17+00:00,migbayadan kita utro ngani,0,migbayadan,VERB,,0.9998,True
+v2_rank_08672,2026-11-23T08:39:17+00:00,migbayadan kita utro ngani,1,kita,PRON,,0.9963,False
+v2_rank_08672,2026-11-23T08:39:17+00:00,migbayadan kita utro ngani,2,utro,ADV,,0.9557,False
+v2_rank_08672,2026-11-23T08:39:17+00:00,migbayadan kita utro ngani,3,ngani,PART,,0.7662,False
+v2_rank_08691,2026-11-23T08:39:17+00:00,Handa na ika ka bagong leksyon ta nguwan na alduw,0,Handa,ADJ,,0.8883,False
+v2_rank_08691,2026-11-23T08:39:17+00:00,Handa na ika ka bagong leksyon ta nguwan na alduw,1,na,ADV,,0.5436,False
+v2_rank_08691,2026-11-23T08:39:17+00:00,Handa na ika ka bagong leksyon ta nguwan na alduw,2,ika,PRON,,0.995,False
+v2_rank_08691,2026-11-23T08:39:17+00:00,Handa na ika ka bagong leksyon ta nguwan na alduw,3,ka,ADP,,0.9977,False
+v2_rank_08691,2026-11-23T08:39:17+00:00,Handa na ika ka bagong leksyon ta nguwan na alduw,4,bagong,ADJ,,0.9979,False
+v2_rank_08691,2026-11-23T08:39:17+00:00,Handa na ika ka bagong leksyon ta nguwan na alduw,5,leksyon,NOUN,,0.9996,False
+v2_rank_08691,2026-11-23T08:39:17+00:00,Handa na ika ka bagong leksyon ta nguwan na alduw,6,ta,PRON,,0.9039,False
+v2_rank_08691,2026-11-23T08:39:17+00:00,Handa na ika ka bagong leksyon ta nguwan na alduw,7,nguwan,ADV,,0.9937,False
+v2_rank_08691,2026-11-23T08:39:17+00:00,Handa na ika ka bagong leksyon ta nguwan na alduw,8,na,PART,,0.9964,False
+v2_rank_08691,2026-11-23T08:39:17+00:00,Handa na ika ka bagong leksyon ta nguwan na alduw,9,alduw,NOUN,,0.981,False
+v2_rank_08809,2026-11-23T08:39:17+00:00,Uda iya kapagalan sa paggibu.,0,Uda,VERB,,0.9984,False
+v2_rank_08809,2026-11-23T08:39:17+00:00,Uda iya kapagalan sa paggibu.,1,iya,PRON,,0.996,False
+v2_rank_08809,2026-11-23T08:39:17+00:00,Uda iya kapagalan sa paggibu.,2,kapagalan,NOUN,,0.59,False
+v2_rank_08809,2026-11-23T08:39:17+00:00,Uda iya kapagalan sa paggibu.,3,sa,ADP,,1.0,False
+v2_rank_08809,2026-11-23T08:39:17+00:00,Uda iya kapagalan sa paggibu.,4,paggibu,NOUN,,0.9997,False
+v2_rank_08809,2026-11-23T08:39:17+00:00,Uda iya kapagalan sa paggibu.,5,.,PUNCT,,0.9999,False
+v2_rank_08921,2026-11-23T08:39:17+00:00,Uno kita mig galin na,0,Uno,PRON,,0.9773,False
+v2_rank_08921,2026-11-23T08:39:17+00:00,Uno kita mig galin na,1,kita,PRON,,0.9905,False
+v2_rank_08921,2026-11-23T08:39:17+00:00,Uno kita mig galin na,2,mig,PART,,0.9545,False
+v2_rank_08921,2026-11-23T08:39:17+00:00,Uno kita mig galin na,3,galin,VERB,,0.9706,False
+v2_rank_08921,2026-11-23T08:39:17+00:00,Uno kita mig galin na,4,na,PART,,0.7655,False
+v2_rank_08929,2026-11-23T08:39:17+00:00,adi nman sadi tinampo,0,adi,PRON,,0.9943,False
+v2_rank_08929,2026-11-23T08:39:17+00:00,adi nman sadi tinampo,1,nman,ADV,,0.9888,False
+v2_rank_08929,2026-11-23T08:39:17+00:00,adi nman sadi tinampo,2,sadi,ADP,,0.8478,False
+v2_rank_08929,2026-11-23T08:39:17+00:00,adi nman sadi tinampo,3,tinampo,NOUN,,0.896,False
+v2_rank_08953,2026-11-23T08:39:17+00:00,Maati su ayam nira,0,Maati,ADJ,,0.7343,False
+v2_rank_08953,2026-11-23T08:39:17+00:00,Maati su ayam nira,1,su,DET,,0.9988,False
+v2_rank_08953,2026-11-23T08:39:17+00:00,Maati su ayam nira,2,ayam,NOUN,,0.9974,False
+v2_rank_08953,2026-11-23T08:39:17+00:00,Maati su ayam nira,3,nira,PRON,,0.9971,False
+v2_rank_08980,2026-11-23T08:39:17+00:00,"Mayna, magloog na kita sadtu klasrum.",0,Mayna,VERB,,0.4781,False
+v2_rank_08980,2026-11-23T08:39:17+00:00,"Mayna, magloog na kita sadtu klasrum.",1,",",PUNCT,,0.9999,False
+v2_rank_08980,2026-11-23T08:39:17+00:00,"Mayna, magloog na kita sadtu klasrum.",2,magloog,VERB,,0.9901,False
+v2_rank_08980,2026-11-23T08:39:17+00:00,"Mayna, magloog na kita sadtu klasrum.",3,na,ADV,,0.9991,False
+v2_rank_08980,2026-11-23T08:39:17+00:00,"Mayna, magloog na kita sadtu klasrum.",4,kita,PRON,,0.998,False
+v2_rank_08980,2026-11-23T08:39:17+00:00,"Mayna, magloog na kita sadtu klasrum.",5,sadtu,ADP,,0.9924,False
+v2_rank_08980,2026-11-23T08:39:17+00:00,"Mayna, magloog na kita sadtu klasrum.",6,klasrum,NOUN,,0.9997,True
+v2_rank_08980,2026-11-23T08:39:17+00:00,"Mayna, magloog na kita sadtu klasrum.",7,.,PUNCT,,0.9999,False
+v2_rank_09086,2026-11-23T08:39:17+00:00,Nagbalik sira sadto baloy ni Lolo nira,0,Nagbalik,VERB,,0.9998,False
+v2_rank_09086,2026-11-23T08:39:17+00:00,Nagbalik sira sadto baloy ni Lolo nira,1,sira,PRON,,0.9951,False
+v2_rank_09086,2026-11-23T08:39:17+00:00,Nagbalik sira sadto baloy ni Lolo nira,2,sadto,ADP,,0.9745,False
+v2_rank_09086,2026-11-23T08:39:17+00:00,Nagbalik sira sadto baloy ni Lolo nira,3,baloy,NOUN,,0.999,False
+v2_rank_09086,2026-11-23T08:39:17+00:00,Nagbalik sira sadto baloy ni Lolo nira,4,ni,ADP,,0.837,False
+v2_rank_09086,2026-11-23T08:39:17+00:00,Nagbalik sira sadto baloy ni Lolo nira,5,Lolo,NOUN,,0.7648,False
+v2_rank_09086,2026-11-23T08:39:17+00:00,Nagbalik sira sadto baloy ni Lolo nira,6,nira,PRON,,0.9611,False
+v2_rank_09166,2026-11-23T08:39:17+00:00,Unung klaseng igin su sadtu istorya,0,Unung,PRON,,0.8698,False
+v2_rank_09166,2026-11-23T08:39:17+00:00,Unung klaseng igin su sadtu istorya,1,klaseng,NOUN,,0.966,False
+v2_rank_09166,2026-11-23T08:39:17+00:00,Unung klaseng igin su sadtu istorya,2,igin,NOUN,,0.9657,False
+v2_rank_09166,2026-11-23T08:39:17+00:00,Unung klaseng igin su sadtu istorya,3,su,DET,,0.9212,False
+v2_rank_09166,2026-11-23T08:39:17+00:00,Unung klaseng igin su sadtu istorya,4,sadtu,ADP,,0.8812,False
+v2_rank_09166,2026-11-23T08:39:17+00:00,Unung klaseng igin su sadtu istorya,5,istorya,NOUN,,0.9987,False
+v2_rank_09402,2026-11-23T08:39:17+00:00,"dawa naluog sadi,",0,dawa,SCONJ,,0.9937,False
+v2_rank_09402,2026-11-23T08:39:17+00:00,"dawa naluog sadi,",1,naluog,VERB,,0.9285,True
+v2_rank_09402,2026-11-23T08:39:17+00:00,"dawa naluog sadi,",2,sadi,ADV,,0.8201,False
+v2_rank_09402,2026-11-23T08:39:17+00:00,"dawa naluog sadi,",3,",",PUNCT,,1.0,False
+v2_rank_09705,2026-11-23T08:39:17+00:00,ampulong mangga su nagiro ni Boboy sadto tanom nira.,0,ampulong,ADJ,,0.7809,True
+v2_rank_09705,2026-11-23T08:39:17+00:00,ampulong mangga su nagiro ni Boboy sadto tanom nira.,1,mangga,NOUN,,0.6489,False
+v2_rank_09705,2026-11-23T08:39:17+00:00,ampulong mangga su nagiro ni Boboy sadto tanom nira.,2,su,DET,,0.9969,False
+v2_rank_09705,2026-11-23T08:39:17+00:00,ampulong mangga su nagiro ni Boboy sadto tanom nira.,3,nagiro,VERB,,0.9907,True
+v2_rank_09705,2026-11-23T08:39:17+00:00,ampulong mangga su nagiro ni Boboy sadto tanom nira.,4,ni,ADP,,0.9765,False
+v2_rank_09705,2026-11-23T08:39:17+00:00,ampulong mangga su nagiro ni Boboy sadto tanom nira.,5,Boboy,PROPN,,0.9929,False
+v2_rank_09705,2026-11-23T08:39:17+00:00,ampulong mangga su nagiro ni Boboy sadto tanom nira.,6,sadto,ADP,,0.9989,False
+v2_rank_09705,2026-11-23T08:39:17+00:00,ampulong mangga su nagiro ni Boboy sadto tanom nira.,7,tanom,NOUN,,0.995,False
+v2_rank_09705,2026-11-23T08:39:17+00:00,ampulong mangga su nagiro ni Boboy sadto tanom nira.,8,nira,PRON,,0.9985,False
+v2_rank_09705,2026-11-23T08:39:17+00:00,ampulong mangga su nagiro ni Boboy sadto tanom nira.,9,.,PUNCT,,1.0,False
+v2_rank_09759,2026-11-23T08:39:17+00:00,Unung Alduw su pinakagagatikut na nagboluntaryong nagtanum,0,Unung,PRON,,0.7678,False
+v2_rank_09759,2026-11-23T08:39:17+00:00,Unung Alduw su pinakagagatikut na nagboluntaryong nagtanum,1,Alduw,NOUN,,0.8969,False
+v2_rank_09759,2026-11-23T08:39:17+00:00,Unung Alduw su pinakagagatikut na nagboluntaryong nagtanum,2,su,DET,,0.9998,False
+v2_rank_09759,2026-11-23T08:39:17+00:00,Unung Alduw su pinakagagatikut na nagboluntaryong nagtanum,3,pinakagagatikut,ADJ,,0.9971,True
+v2_rank_09759,2026-11-23T08:39:17+00:00,Unung Alduw su pinakagagatikut na nagboluntaryong nagtanum,4,na,PART,,0.9092,False
+v2_rank_09759,2026-11-23T08:39:17+00:00,Unung Alduw su pinakagagatikut na nagboluntaryong nagtanum,5,nagboluntaryong,VERB,,0.9991,True
+v2_rank_09759,2026-11-23T08:39:17+00:00,Unung Alduw su pinakagagatikut na nagboluntaryong nagtanum,6,nagtanum,VERB,,0.9995,True
+v2_rank_09784,2026-11-23T08:39:17+00:00,Manungod sa uno su pinagbibisaranan nira James saka  Liza,0,Manungod,ADP,,0.8388,False
+v2_rank_09784,2026-11-23T08:39:17+00:00,Manungod sa uno su pinagbibisaranan nira James saka  Liza,1,sa,ADP,,0.9996,False
+v2_rank_09784,2026-11-23T08:39:17+00:00,Manungod sa uno su pinagbibisaranan nira James saka  Liza,2,uno,PRON,,0.975,False
+v2_rank_09784,2026-11-23T08:39:17+00:00,Manungod sa uno su pinagbibisaranan nira James saka  Liza,3,su,DET,,0.9998,False
+v2_rank_09784,2026-11-23T08:39:17+00:00,Manungod sa uno su pinagbibisaranan nira James saka  Liza,4,pinagbibisaranan,VERB,,0.654,True
+v2_rank_09784,2026-11-23T08:39:17+00:00,Manungod sa uno su pinagbibisaranan nira James saka  Liza,5,nira,PRON,,0.9906,False
+v2_rank_09784,2026-11-23T08:39:17+00:00,Manungod sa uno su pinagbibisaranan nira James saka  Liza,6,James,PROPN,,0.9962,True
+v2_rank_09784,2026-11-23T08:39:17+00:00,Manungod sa uno su pinagbibisaranan nira James saka  Liza,7,saka,CCONJ,,0.9985,False
+v2_rank_09784,2026-11-23T08:39:17+00:00,Manungod sa uno su pinagbibisaranan nira James saka  Liza,8,Liza,PROPN,,0.9951,False
+v2_rank_09865,2026-11-23T08:39:17+00:00,Nagiyan sira Tatay saka Kuya sadtu uma,0,Nagiyan,VERB,,0.9996,False
+v2_rank_09865,2026-11-23T08:39:17+00:00,Nagiyan sira Tatay saka Kuya sadtu uma,1,sira,PRON,,0.8865,False
+v2_rank_09865,2026-11-23T08:39:17+00:00,Nagiyan sira Tatay saka Kuya sadtu uma,2,Tatay,NOUN,,0.7302,False
+v2_rank_09865,2026-11-23T08:39:17+00:00,Nagiyan sira Tatay saka Kuya sadtu uma,3,saka,CCONJ,,0.9989,False
+v2_rank_09865,2026-11-23T08:39:17+00:00,Nagiyan sira Tatay saka Kuya sadtu uma,4,Kuya,NOUN,,0.9708,False
+v2_rank_09865,2026-11-23T08:39:17+00:00,Nagiyan sira Tatay saka Kuya sadtu uma,5,sadtu,ADP,,0.9924,False
+v2_rank_09865,2026-11-23T08:39:17+00:00,Nagiyan sira Tatay saka Kuya sadtu uma,6,uma,NOUN,,0.9963,False
+v2_rank_10176,2026-11-23T08:39:17+00:00,Mayna  magluog na kita sadto klasrum,0,Mayna,VERB,,0.7041,False
+v2_rank_10176,2026-11-23T08:39:17+00:00,Mayna  magluog na kita sadto klasrum,1,magluog,VERB,,0.9725,False
+v2_rank_10176,2026-11-23T08:39:17+00:00,Mayna  magluog na kita sadto klasrum,2,na,ADV,,0.9807,False
+v2_rank_10176,2026-11-23T08:39:17+00:00,Mayna  magluog na kita sadto klasrum,3,kita,PRON,,0.9979,False
+v2_rank_10176,2026-11-23T08:39:17+00:00,Mayna  magluog na kita sadto klasrum,4,sadto,ADP,,0.9966,False
+v2_rank_10176,2026-11-23T08:39:17+00:00,Mayna  magluog na kita sadto klasrum,5,klasrum,NOUN,,0.9978,True
+v2_rank_10190,2026-11-23T08:39:17+00:00,Igrupo adi sa tawu  bagay  ayup o lugar,0,Igrupo,VERB,,0.7729,True
+v2_rank_10190,2026-11-23T08:39:17+00:00,Igrupo adi sa tawu  bagay  ayup o lugar,1,adi,PRON,,0.9996,False
+v2_rank_10190,2026-11-23T08:39:17+00:00,Igrupo adi sa tawu  bagay  ayup o lugar,2,sa,ADP,,0.9999,False
+v2_rank_10190,2026-11-23T08:39:17+00:00,Igrupo adi sa tawu  bagay  ayup o lugar,3,tawu,NOUN,,0.9911,False
+v2_rank_10190,2026-11-23T08:39:17+00:00,Igrupo adi sa tawu  bagay  ayup o lugar,4,bagay,NOUN,,0.7817,False
+v2_rank_10190,2026-11-23T08:39:17+00:00,Igrupo adi sa tawu  bagay  ayup o lugar,5,ayup,NOUN,,0.9915,False
+v2_rank_10190,2026-11-23T08:39:17+00:00,Igrupo adi sa tawu  bagay  ayup o lugar,6,o,CCONJ,,0.9976,False
+v2_rank_10190,2026-11-23T08:39:17+00:00,Igrupo adi sa tawu  bagay  ayup o lugar,7,lugar,NOUN,,0.9992,False
+v2_rank_10309,2026-11-23T08:39:17+00:00,"Alduw na Sabado, nagiyan iya sadtu salug.",0,Alduw,NOUN,,0.6658,False
+v2_rank_10309,2026-11-23T08:39:17+00:00,"Alduw na Sabado, nagiyan iya sadtu salug.",1,na,PART,,0.9927,False
+v2_rank_10309,2026-11-23T08:39:17+00:00,"Alduw na Sabado, nagiyan iya sadtu salug.",2,Sabado,PROPN,,0.8321,False
+v2_rank_10309,2026-11-23T08:39:17+00:00,"Alduw na Sabado, nagiyan iya sadtu salug.",3,",",PUNCT,,0.9999,False
+v2_rank_10309,2026-11-23T08:39:17+00:00,"Alduw na Sabado, nagiyan iya sadtu salug.",4,nagiyan,VERB,,0.9999,False
+v2_rank_10309,2026-11-23T08:39:17+00:00,"Alduw na Sabado, nagiyan iya sadtu salug.",5,iya,PRON,,0.9996,False
+v2_rank_10309,2026-11-23T08:39:17+00:00,"Alduw na Sabado, nagiyan iya sadtu salug.",6,sadtu,ADP,,0.9975,False
+v2_rank_10309,2026-11-23T08:39:17+00:00,"Alduw na Sabado, nagiyan iya sadtu salug.",7,salug,NOUN,,0.9965,False
+v2_rank_10309,2026-11-23T08:39:17+00:00,"Alduw na Sabado, nagiyan iya sadtu salug.",8,.,PUNCT,,0.9999,False
+v2_rank_10372,2026-11-23T08:39:17+00:00,Paggalin  ni Nanay Sisa  nagiyan tulus iya sadtu sapa,0,Paggalin,NOUN,,0.9789,False
+v2_rank_10372,2026-11-23T08:39:17+00:00,Paggalin  ni Nanay Sisa  nagiyan tulus iya sadtu sapa,1,ni,DET,,0.9638,False
+v2_rank_10372,2026-11-23T08:39:17+00:00,Paggalin  ni Nanay Sisa  nagiyan tulus iya sadtu sapa,2,Nanay,NOUN,,0.6941,False
+v2_rank_10372,2026-11-23T08:39:17+00:00,Paggalin  ni Nanay Sisa  nagiyan tulus iya sadtu sapa,3,Sisa,PROPN,,0.9934,False
+v2_rank_10372,2026-11-23T08:39:17+00:00,Paggalin  ni Nanay Sisa  nagiyan tulus iya sadtu sapa,4,nagiyan,VERB,,0.9989,False
+v2_rank_10372,2026-11-23T08:39:17+00:00,Paggalin  ni Nanay Sisa  nagiyan tulus iya sadtu sapa,5,tulus,ADV,,0.8664,False
+v2_rank_10372,2026-11-23T08:39:17+00:00,Paggalin  ni Nanay Sisa  nagiyan tulus iya sadtu sapa,6,iya,PRON,,0.9984,False
+v2_rank_10372,2026-11-23T08:39:17+00:00,Paggalin  ni Nanay Sisa  nagiyan tulus iya sadtu sapa,7,sadtu,ADP,,0.9996,False
+v2_rank_10372,2026-11-23T08:39:17+00:00,Paggalin  ni Nanay Sisa  nagiyan tulus iya sadtu sapa,8,sapa,NOUN,,0.9957,False
+v2_rank_10619,2026-11-23T08:39:17+00:00,Maray adi sa kulug sa burus,0,Maray,ADJ,,0.6784,False
+v2_rank_10619,2026-11-23T08:39:17+00:00,Maray adi sa kulug sa burus,1,adi,PRON,,0.9965,False
+v2_rank_10619,2026-11-23T08:39:17+00:00,Maray adi sa kulug sa burus,2,sa,ADP,,0.9996,False
+v2_rank_10619,2026-11-23T08:39:17+00:00,Maray adi sa kulug sa burus,3,kulug,NOUN,,0.9953,False
+v2_rank_10619,2026-11-23T08:39:17+00:00,Maray adi sa kulug sa burus,4,sa,ADP,,1.0,False
+v2_rank_10619,2026-11-23T08:39:17+00:00,Maray adi sa kulug sa burus,5,burus,NOUN,,0.9995,True
+v2_rank_10665,2026-11-23T08:39:17+00:00,"abang nakaula iya sadto paanan ku bukid,",0,abang,SCONJ,,0.6897,False
+v2_rank_10665,2026-11-23T08:39:17+00:00,"abang nakaula iya sadto paanan ku bukid,",1,nakaula,VERB,,0.9989,False
+v2_rank_10665,2026-11-23T08:39:17+00:00,"abang nakaula iya sadto paanan ku bukid,",2,iya,PRON,,0.999,False
+v2_rank_10665,2026-11-23T08:39:17+00:00,"abang nakaula iya sadto paanan ku bukid,",3,sadto,ADP,,0.9989,False
+v2_rank_10665,2026-11-23T08:39:17+00:00,"abang nakaula iya sadto paanan ku bukid,",4,paanan,NOUN,,0.9956,True
+v2_rank_10665,2026-11-23T08:39:17+00:00,"abang nakaula iya sadto paanan ku bukid,",5,ku,ADP,,0.8804,False
+v2_rank_10665,2026-11-23T08:39:17+00:00,"abang nakaula iya sadto paanan ku bukid,",6,bukid,NOUN,,0.9995,False
+v2_rank_10665,2026-11-23T08:39:17+00:00,"abang nakaula iya sadto paanan ku bukid,",7,",",PUNCT,,1.0,False
+v2_rank_10672,2026-11-23T08:39:17+00:00,Nalabusan nira su puun ku mangga sa gilid ku tinampu na kadakul bunga,0,Nalabusan,VERB,,0.9799,False
+v2_rank_10672,2026-11-23T08:39:17+00:00,Nalabusan nira su puun ku mangga sa gilid ku tinampu na kadakul bunga,1,nira,PRON,,0.9994,False
+v2_rank_10672,2026-11-23T08:39:17+00:00,Nalabusan nira su puun ku mangga sa gilid ku tinampu na kadakul bunga,2,su,DET,,0.993,False
+v2_rank_10672,2026-11-23T08:39:17+00:00,Nalabusan nira su puun ku mangga sa gilid ku tinampu na kadakul bunga,3,puun,NOUN,,0.911,False
+v2_rank_10672,2026-11-23T08:39:17+00:00,Nalabusan nira su puun ku mangga sa gilid ku tinampu na kadakul bunga,4,ku,ADP,,0.6341,False
+v2_rank_10672,2026-11-23T08:39:17+00:00,Nalabusan nira su puun ku mangga sa gilid ku tinampu na kadakul bunga,5,mangga,NOUN,,0.9216,False
+v2_rank_10672,2026-11-23T08:39:17+00:00,Nalabusan nira su puun ku mangga sa gilid ku tinampu na kadakul bunga,6,sa,ADP,,1.0,False
+v2_rank_10672,2026-11-23T08:39:17+00:00,Nalabusan nira su puun ku mangga sa gilid ku tinampu na kadakul bunga,7,gilid,NOUN,,0.9991,False
+v2_rank_10672,2026-11-23T08:39:17+00:00,Nalabusan nira su puun ku mangga sa gilid ku tinampu na kadakul bunga,8,ku,ADP,,0.9933,False
+v2_rank_10672,2026-11-23T08:39:17+00:00,Nalabusan nira su puun ku mangga sa gilid ku tinampu na kadakul bunga,9,tinampu,NOUN,,0.9435,True
+v2_rank_10672,2026-11-23T08:39:17+00:00,Nalabusan nira su puun ku mangga sa gilid ku tinampu na kadakul bunga,10,na,PART,,0.9594,False
+v2_rank_10672,2026-11-23T08:39:17+00:00,Nalabusan nira su puun ku mangga sa gilid ku tinampu na kadakul bunga,11,kadakul,ADJ,,0.9712,False
+v2_rank_10672,2026-11-23T08:39:17+00:00,Nalabusan nira su puun ku mangga sa gilid ku tinampu na kadakul bunga,12,bunga,NOUN,,0.9832,False
+v2_rank_10781,2026-11-23T08:39:17+00:00,"Halos ngamin na tawu agku kamut, na ginagamit sa ngamin na bagay.",0,Halos,ADV,,0.7796,False
+v2_rank_10781,2026-11-23T08:39:17+00:00,"Halos ngamin na tawu agku kamut, na ginagamit sa ngamin na bagay.",1,ngamin,PRON,,0.9736,False
+v2_rank_10781,2026-11-23T08:39:17+00:00,"Halos ngamin na tawu agku kamut, na ginagamit sa ngamin na bagay.",2,na,PART,,0.9989,False
+v2_rank_10781,2026-11-23T08:39:17+00:00,"Halos ngamin na tawu agku kamut, na ginagamit sa ngamin na bagay.",3,tawu,NOUN,,0.9818,False
+v2_rank_10781,2026-11-23T08:39:17+00:00,"Halos ngamin na tawu agku kamut, na ginagamit sa ngamin na bagay.",4,agku,VERB,,0.9902,False
+v2_rank_10781,2026-11-23T08:39:17+00:00,"Halos ngamin na tawu agku kamut, na ginagamit sa ngamin na bagay.",5,kamut,NOUN,,0.9871,False
+v2_rank_10781,2026-11-23T08:39:17+00:00,"Halos ngamin na tawu agku kamut, na ginagamit sa ngamin na bagay.",6,",",PUNCT,,0.9999,False
+v2_rank_10781,2026-11-23T08:39:17+00:00,"Halos ngamin na tawu agku kamut, na ginagamit sa ngamin na bagay.",7,na,PART,,0.9921,False
+v2_rank_10781,2026-11-23T08:39:17+00:00,"Halos ngamin na tawu agku kamut, na ginagamit sa ngamin na bagay.",8,ginagamit,VERB,,0.997,False
+v2_rank_10781,2026-11-23T08:39:17+00:00,"Halos ngamin na tawu agku kamut, na ginagamit sa ngamin na bagay.",9,sa,ADP,,0.9999,False
+v2_rank_10781,2026-11-23T08:39:17+00:00,"Halos ngamin na tawu agku kamut, na ginagamit sa ngamin na bagay.",10,ngamin,PRON,,0.5711,False
+v2_rank_10781,2026-11-23T08:39:17+00:00,"Halos ngamin na tawu agku kamut, na ginagamit sa ngamin na bagay.",11,na,PART,,0.9996,False
+v2_rank_10781,2026-11-23T08:39:17+00:00,"Halos ngamin na tawu agku kamut, na ginagamit sa ngamin na bagay.",12,bagay,NOUN,,0.9768,False
+v2_rank_10781,2026-11-23T08:39:17+00:00,"Halos ngamin na tawu agku kamut, na ginagamit sa ngamin na bagay.",13,.,PUNCT,,1.0,False
+v2_rank_10856,2026-11-23T08:39:17+00:00,su upus sadtu itaas ku kawuy.,0,su,DET,,0.9939,False
+v2_rank_10856,2026-11-23T08:39:17+00:00,su upus sadtu itaas ku kawuy.,1,upus,NOUN,,0.996,False
+v2_rank_10856,2026-11-23T08:39:17+00:00,su upus sadtu itaas ku kawuy.,2,sadtu,ADP,,0.9984,False
+v2_rank_10856,2026-11-23T08:39:17+00:00,su upus sadtu itaas ku kawuy.,3,itaas,NOUN,,0.9988,False
+v2_rank_10856,2026-11-23T08:39:17+00:00,su upus sadtu itaas ku kawuy.,4,ku,DET,,0.6407,False
+v2_rank_10856,2026-11-23T08:39:17+00:00,su upus sadtu itaas ku kawuy.,5,kawuy,NOUN,,0.9997,False
+v2_rank_10856,2026-11-23T08:39:17+00:00,su upus sadtu itaas ku kawuy.,6,.,PUNCT,,0.9999,False
+v2_rank_10885,2026-11-23T08:39:17+00:00,Sa leksyon na adi makatutuud ika na magistorya galin sadtu narungug o nasilngan mong istorya.,0,Sa,ADP,,0.9999,False
+v2_rank_10885,2026-11-23T08:39:17+00:00,Sa leksyon na adi makatutuud ika na magistorya galin sadtu narungug o nasilngan mong istorya.,1,leksyon,NOUN,,1.0,False
+v2_rank_10885,2026-11-23T08:39:17+00:00,Sa leksyon na adi makatutuud ika na magistorya galin sadtu narungug o nasilngan mong istorya.,2,na,PART,,0.983,False
+v2_rank_10885,2026-11-23T08:39:17+00:00,Sa leksyon na adi makatutuud ika na magistorya galin sadtu narungug o nasilngan mong istorya.,3,adi,PRON,,0.9966,False
+v2_rank_10885,2026-11-23T08:39:17+00:00,Sa leksyon na adi makatutuud ika na magistorya galin sadtu narungug o nasilngan mong istorya.,4,makatutuud,VERB,,0.9998,False
+v2_rank_10885,2026-11-23T08:39:17+00:00,Sa leksyon na adi makatutuud ika na magistorya galin sadtu narungug o nasilngan mong istorya.,5,ika,PRON,,0.9983,False
+v2_rank_10885,2026-11-23T08:39:17+00:00,Sa leksyon na adi makatutuud ika na magistorya galin sadtu narungug o nasilngan mong istorya.,6,na,PART,,0.9887,False
+v2_rank_10885,2026-11-23T08:39:17+00:00,Sa leksyon na adi makatutuud ika na magistorya galin sadtu narungug o nasilngan mong istorya.,7,magistorya,VERB,,0.9885,False
+v2_rank_10885,2026-11-23T08:39:17+00:00,Sa leksyon na adi makatutuud ika na magistorya galin sadtu narungug o nasilngan mong istorya.,8,galin,VERB,,0.4832,False
+v2_rank_10885,2026-11-23T08:39:17+00:00,Sa leksyon na adi makatutuud ika na magistorya galin sadtu narungug o nasilngan mong istorya.,9,sadtu,ADP,,0.9119,False
+v2_rank_10885,2026-11-23T08:39:17+00:00,Sa leksyon na adi makatutuud ika na magistorya galin sadtu narungug o nasilngan mong istorya.,10,narungug,NOUN,,0.8413,False
+v2_rank_10885,2026-11-23T08:39:17+00:00,Sa leksyon na adi makatutuud ika na magistorya galin sadtu narungug o nasilngan mong istorya.,11,o,CCONJ,,0.9979,False
+v2_rank_10885,2026-11-23T08:39:17+00:00,Sa leksyon na adi makatutuud ika na magistorya galin sadtu narungug o nasilngan mong istorya.,12,nasilngan,VERB,,0.9935,True
+v2_rank_10885,2026-11-23T08:39:17+00:00,Sa leksyon na adi makatutuud ika na magistorya galin sadtu narungug o nasilngan mong istorya.,13,mong,PRON,,0.9714,False
+v2_rank_10885,2026-11-23T08:39:17+00:00,Sa leksyon na adi makatutuud ika na magistorya galin sadtu narungug o nasilngan mong istorya.,14,istorya,NOUN,,0.9987,False
+v2_rank_10885,2026-11-23T08:39:17+00:00,Sa leksyon na adi makatutuud ika na magistorya galin sadtu narungug o nasilngan mong istorya.,15,.,PUNCT,,1.0,False
+v2_rank_10896,2026-11-23T08:39:17+00:00,maggibu sa maray Tumabang sa kapwa tawu .,0,maggibu,VERB,,0.9968,True
+v2_rank_10896,2026-11-23T08:39:17+00:00,maggibu sa maray Tumabang sa kapwa tawu .,1,sa,ADP,,0.9997,False
+v2_rank_10896,2026-11-23T08:39:17+00:00,maggibu sa maray Tumabang sa kapwa tawu .,2,maray,ADJ,,0.9776,False
+v2_rank_10896,2026-11-23T08:39:17+00:00,maggibu sa maray Tumabang sa kapwa tawu .,3,Tumabang,VERB,,0.6431,False
+v2_rank_10896,2026-11-23T08:39:17+00:00,maggibu sa maray Tumabang sa kapwa tawu .,4,sa,ADP,,0.9995,False
+v2_rank_10896,2026-11-23T08:39:17+00:00,maggibu sa maray Tumabang sa kapwa tawu .,5,kapwa,NOUN,,0.9931,False
+v2_rank_10896,2026-11-23T08:39:17+00:00,maggibu sa maray Tumabang sa kapwa tawu .,6,tawu,NOUN,,0.967,False
+v2_rank_10896,2026-11-23T08:39:17+00:00,maggibu sa maray Tumabang sa kapwa tawu .,7,.,PUNCT,,1.0,False
+v2_rank_10925,2026-11-23T08:39:17+00:00,Diri ustu kanako adi na sapatos.,0,Diri,PART,,0.9789,False
+v2_rank_10925,2026-11-23T08:39:17+00:00,Diri ustu kanako adi na sapatos.,1,ustu,VERB,,0.7764,True
+v2_rank_10925,2026-11-23T08:39:17+00:00,Diri ustu kanako adi na sapatos.,2,kanako,PRON,,0.9918,False
+v2_rank_10925,2026-11-23T08:39:17+00:00,Diri ustu kanako adi na sapatos.,3,adi,PRON,,0.9969,False
+v2_rank_10925,2026-11-23T08:39:17+00:00,Diri ustu kanako adi na sapatos.,4,na,PART,,0.8939,False
+v2_rank_10925,2026-11-23T08:39:17+00:00,Diri ustu kanako adi na sapatos.,5,sapatos,NOUN,,0.9929,False
+v2_rank_10925,2026-11-23T08:39:17+00:00,Diri ustu kanako adi na sapatos.,6,.,PUNCT,,0.9999,False
+v2_rank_10961,2026-11-23T08:39:17+00:00,Diri sira naapunan  nakatapos tulus ta naamay sirang nagpila,0,Diri,PART,,0.9048,False
+v2_rank_10961,2026-11-23T08:39:17+00:00,Diri sira naapunan  nakatapos tulus ta naamay sirang nagpila,1,sira,PRON,,0.9915,False
+v2_rank_10961,2026-11-23T08:39:17+00:00,Diri sira naapunan  nakatapos tulus ta naamay sirang nagpila,2,naapunan,VERB,,0.9999,True
+v2_rank_10961,2026-11-23T08:39:17+00:00,Diri sira naapunan  nakatapos tulus ta naamay sirang nagpila,3,nakatapos,VERB,,0.8409,False
+v2_rank_10961,2026-11-23T08:39:17+00:00,Diri sira naapunan  nakatapos tulus ta naamay sirang nagpila,4,tulus,ADV,,0.9287,False
+v2_rank_10961,2026-11-23T08:39:17+00:00,Diri sira naapunan  nakatapos tulus ta naamay sirang nagpila,5,ta,SCONJ,,0.9906,False
+v2_rank_10961,2026-11-23T08:39:17+00:00,Diri sira naapunan  nakatapos tulus ta naamay sirang nagpila,6,naamay,VERB,,0.8936,True
+v2_rank_10961,2026-11-23T08:39:17+00:00,Diri sira naapunan  nakatapos tulus ta naamay sirang nagpila,7,sirang,PRON,,0.9787,False
+v2_rank_10961,2026-11-23T08:39:17+00:00,Diri sira naapunan  nakatapos tulus ta naamay sirang nagpila,8,nagpila,VERB,,0.999,False
+v2_rank_10999,2026-11-23T08:39:17+00:00,Nagibu ngamin diri nagibu diri nagibu pataas diri nagibo Magsurat sa limang pangungusap.,0,Nagibu,VERB,,0.9998,False
+v2_rank_10999,2026-11-23T08:39:17+00:00,Nagibu ngamin diri nagibu diri nagibu pataas diri nagibo Magsurat sa limang pangungusap.,1,ngamin,PRON,,0.9692,False
+v2_rank_10999,2026-11-23T08:39:17+00:00,Nagibu ngamin diri nagibu diri nagibu pataas diri nagibo Magsurat sa limang pangungusap.,2,diri,PART,,0.9947,False
+v2_rank_10999,2026-11-23T08:39:17+00:00,Nagibu ngamin diri nagibu diri nagibu pataas diri nagibo Magsurat sa limang pangungusap.,3,nagibu,VERB,,0.9975,False
+v2_rank_10999,2026-11-23T08:39:17+00:00,Nagibu ngamin diri nagibu diri nagibu pataas diri nagibo Magsurat sa limang pangungusap.,4,diri,PART,,0.9975,False
+v2_rank_10999,2026-11-23T08:39:17+00:00,Nagibu ngamin diri nagibu diri nagibu pataas diri nagibo Magsurat sa limang pangungusap.,5,nagibu,VERB,,0.9999,False
+v2_rank_10999,2026-11-23T08:39:17+00:00,Nagibu ngamin diri nagibu diri nagibu pataas diri nagibo Magsurat sa limang pangungusap.,6,pataas,ADV,,0.8414,False
+v2_rank_10999,2026-11-23T08:39:17+00:00,Nagibu ngamin diri nagibu diri nagibu pataas diri nagibo Magsurat sa limang pangungusap.,7,diri,PART,,0.9986,False
+v2_rank_10999,2026-11-23T08:39:17+00:00,Nagibu ngamin diri nagibu diri nagibu pataas diri nagibo Magsurat sa limang pangungusap.,8,nagibo,VERB,,0.9987,False
+v2_rank_10999,2026-11-23T08:39:17+00:00,Nagibu ngamin diri nagibu diri nagibu pataas diri nagibo Magsurat sa limang pangungusap.,9,Magsurat,VERB,,1.0,False
+v2_rank_10999,2026-11-23T08:39:17+00:00,Nagibu ngamin diri nagibu diri nagibu pataas diri nagibo Magsurat sa limang pangungusap.,10,sa,ADP,,1.0,False
+v2_rank_10999,2026-11-23T08:39:17+00:00,Nagibu ngamin diri nagibu diri nagibu pataas diri nagibo Magsurat sa limang pangungusap.,11,limang,ADJ,,0.4722,False
+v2_rank_10999,2026-11-23T08:39:17+00:00,Nagibu ngamin diri nagibu diri nagibu pataas diri nagibo Magsurat sa limang pangungusap.,12,pangungusap,NOUN,,0.9998,False
+v2_rank_10999,2026-11-23T08:39:17+00:00,Nagibu ngamin diri nagibu diri nagibu pataas diri nagibo Magsurat sa limang pangungusap.,13,.,PUNCT,,1.0,False
+v2_rank_11007,2026-11-23T08:39:17+00:00,Unung ayup su pinakadakul,0,Unung,PRON,,0.813,False
+v2_rank_11007,2026-11-23T08:39:17+00:00,Unung ayup su pinakadakul,1,ayup,NOUN,,0.9977,False
+v2_rank_11007,2026-11-23T08:39:17+00:00,Unung ayup su pinakadakul,2,su,DET,,0.9994,False
+v2_rank_11007,2026-11-23T08:39:17+00:00,Unung ayup su pinakadakul,3,pinakadakul,ADJ,,0.9814,True
+v2_rank_11013,2026-11-23T08:39:17+00:00,"Dakul na paagi kin paunu adi magigibu, paryu ka paggibu ka twolevel outline ka binasang isturya o teksto.",0,Dakul,ADJ,,0.9995,False
+v2_rank_11013,2026-11-23T08:39:17+00:00,"Dakul na paagi kin paunu adi magigibu, paryu ka paggibu ka twolevel outline ka binasang isturya o teksto.",1,na,PART,,0.9989,False
+v2_rank_11013,2026-11-23T08:39:17+00:00,"Dakul na paagi kin paunu adi magigibu, paryu ka paggibu ka twolevel outline ka binasang isturya o teksto.",2,paagi,NOUN,,0.8658,False
+v2_rank_11013,2026-11-23T08:39:17+00:00,"Dakul na paagi kin paunu adi magigibu, paryu ka paggibu ka twolevel outline ka binasang isturya o teksto.",3,kin,SCONJ,,0.991,False
+v2_rank_11013,2026-11-23T08:39:17+00:00,"Dakul na paagi kin paunu adi magigibu, paryu ka paggibu ka twolevel outline ka binasang isturya o teksto.",4,paunu,ADV,,0.9987,False
+v2_rank_11013,2026-11-23T08:39:17+00:00,"Dakul na paagi kin paunu adi magigibu, paryu ka paggibu ka twolevel outline ka binasang isturya o teksto.",5,adi,PRON,,0.9978,False
+v2_rank_11013,2026-11-23T08:39:17+00:00,"Dakul na paagi kin paunu adi magigibu, paryu ka paggibu ka twolevel outline ka binasang isturya o teksto.",6,magigibu,VERB,,0.9989,True
+v2_rank_11013,2026-11-23T08:39:17+00:00,"Dakul na paagi kin paunu adi magigibu, paryu ka paggibu ka twolevel outline ka binasang isturya o teksto.",7,",",PUNCT,,0.9999,False
+v2_rank_11013,2026-11-23T08:39:17+00:00,"Dakul na paagi kin paunu adi magigibu, paryu ka paggibu ka twolevel outline ka binasang isturya o teksto.",8,paryu,ADJ,,0.8613,False
+v2_rank_11013,2026-11-23T08:39:17+00:00,"Dakul na paagi kin paunu adi magigibu, paryu ka paggibu ka twolevel outline ka binasang isturya o teksto.",9,ka,ADP,,0.9939,False
+v2_rank_11013,2026-11-23T08:39:17+00:00,"Dakul na paagi kin paunu adi magigibu, paryu ka paggibu ka twolevel outline ka binasang isturya o teksto.",10,paggibu,NOUN,,0.9991,False
+v2_rank_11013,2026-11-23T08:39:17+00:00,"Dakul na paagi kin paunu adi magigibu, paryu ka paggibu ka twolevel outline ka binasang isturya o teksto.",11,ka,ADP,,0.999,False
+v2_rank_11013,2026-11-23T08:39:17+00:00,"Dakul na paagi kin paunu adi magigibu, paryu ka paggibu ka twolevel outline ka binasang isturya o teksto.",12,twolevel,NOUN,,0.9681,True
+v2_rank_11013,2026-11-23T08:39:17+00:00,"Dakul na paagi kin paunu adi magigibu, paryu ka paggibu ka twolevel outline ka binasang isturya o teksto.",13,outline,NOUN,,0.8224,True
+v2_rank_11013,2026-11-23T08:39:17+00:00,"Dakul na paagi kin paunu adi magigibu, paryu ka paggibu ka twolevel outline ka binasang isturya o teksto.",14,ka,ADP,,0.9509,False
+v2_rank_11013,2026-11-23T08:39:17+00:00,"Dakul na paagi kin paunu adi magigibu, paryu ka paggibu ka twolevel outline ka binasang isturya o teksto.",15,binasang,NOUN,,0.5296,False
+v2_rank_11013,2026-11-23T08:39:17+00:00,"Dakul na paagi kin paunu adi magigibu, paryu ka paggibu ka twolevel outline ka binasang isturya o teksto.",16,isturya,NOUN,,0.9981,False
+v2_rank_11013,2026-11-23T08:39:17+00:00,"Dakul na paagi kin paunu adi magigibu, paryu ka paggibu ka twolevel outline ka binasang isturya o teksto.",17,o,CCONJ,,0.9981,False
+v2_rank_11013,2026-11-23T08:39:17+00:00,"Dakul na paagi kin paunu adi magigibu, paryu ka paggibu ka twolevel outline ka binasang isturya o teksto.",18,teksto,NOUN,,0.9866,False
+v2_rank_11013,2026-11-23T08:39:17+00:00,"Dakul na paagi kin paunu adi magigibu, paryu ka paggibu ka twolevel outline ka binasang isturya o teksto.",19,.,PUNCT,,0.9999,False
+v2_rank_11041,2026-11-23T08:39:17+00:00,Unung alduw agku pinakagatikut na naipabakal .,0,Unung,PRON,,0.7118,False
+v2_rank_11041,2026-11-23T08:39:17+00:00,Unung alduw agku pinakagatikut na naipabakal .,1,alduw,NOUN,,0.9973,False
+v2_rank_11041,2026-11-23T08:39:17+00:00,Unung alduw agku pinakagatikut na naipabakal .,2,agku,VERB,,0.9763,False
+v2_rank_11041,2026-11-23T08:39:17+00:00,Unung alduw agku pinakagatikut na naipabakal .,3,pinakagatikut,ADJ,,0.9887,True
+v2_rank_11041,2026-11-23T08:39:17+00:00,Unung alduw agku pinakagatikut na naipabakal .,4,na,PART,,0.9962,False
+v2_rank_11041,2026-11-23T08:39:17+00:00,Unung alduw agku pinakagatikut na naipabakal .,5,naipabakal,VERB,,0.966,True
+v2_rank_11041,2026-11-23T08:39:17+00:00,Unung alduw agku pinakagatikut na naipabakal .,6,.,PUNCT,,0.9999,False

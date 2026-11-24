@@ -67,6 +67,9 @@ def update_model_registry(
     cv_score,
     cv_std,
     best_params,
+    source=None,
+    notes=None,
+    extra_metadata=None,
 ):
     if REGISTRY_PATH.exists():
         with open(REGISTRY_PATH, "r", encoding="utf-8") as file:
@@ -104,9 +107,11 @@ def update_model_registry(
             "crf_model": sha256(archived_model),
             "vocab": sha256(archived_vocab),
         },
-        "source": "initial_training" if version == 1 else "retraining",
-        "notes": "Original baseline model" if version == 1 else "Retrained model",
+        "source": source or ("initial_training" if version == 1 else "training"),
+        "notes": notes or ("Original baseline model" if version == 1 else "Trained model"),
     }
+    if extra_metadata:
+        entry.update(extra_metadata)
 
     versions.append(entry)
     registry["active_version"] = version

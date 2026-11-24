@@ -95,7 +95,7 @@ def main():
     print("------------------------------------------------------------------")
     print(f"  Exported -> {export_path.relative_to(PROJECT_ROOT)}")
     print(f"  Schema: sentence_id, timestamp, full_sentence, token_index, token,")
-    print(f"          model_tag, top_alternative, user-corrected_tag, confidence, is_oov")
+    print(f"          model_tag, user-corrected_tag, confidence, is_oov")
     print("  (Ready for review and corpus curation)")
 
     # ──────────────────────────────────────────────────────────────────

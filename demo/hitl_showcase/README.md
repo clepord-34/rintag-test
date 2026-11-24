@@ -56,7 +56,7 @@ Generated in `output/` on each run (gitignored):
 | `passive_feedback_captured.csv` | Passive library feedback from the demo sentences |
 | `batch_audit.csv` | Passive feedback captured within the scoped batch example |
 
-Passive feedback uses a `0.75` confidence threshold by default; set `threshold` to override it. Its CSV includes `top_alternative` for every token when another tag is available, including high-confidence tokens. Feedback exports contain only prediction and user-correction fields; validator annotations are handled separately by maintainers.
+Passive feedback uses a `0.75` confidence threshold by default; set `threshold` to override it. Feedback exports contain only prediction and user-correction fields; validator annotations are handled separately by maintainers.
 
 ## Schema: `hitl_feedback_top{N}.csv`
 
