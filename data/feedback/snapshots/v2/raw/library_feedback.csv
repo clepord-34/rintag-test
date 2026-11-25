@@ -1,5 +1,5 @@
 sentence_id,timestamp,full_sentence,token_index,token,model_tag,user-corrected_tag,confidence,is_oov,validator_tag
-1,2026-11-23T08:39:17+00:00,Sigurado mamumuya kita sadtu.,0,Sigurado,ADV,ADV,0.4149,FALSE,
+1,2026-11-23T08:39:17+00:00,Sigurado mamumuya kita sadtu.,0,Sigurado,ADV,ADV,0.4149,FALSE,ADV
 1,2026-11-23T08:39:17+00:00,Sigurado mamumuya kita sadtu.,1,mamumuya,VERB,VERB,0.865,FALSE,
 1,2026-11-23T08:39:17+00:00,Sigurado mamumuya kita sadtu.,2,kita,PRON,PRON,0.9987,FALSE,
 1,2026-11-23T08:39:17+00:00,Sigurado mamumuya kita sadtu.,3,sadtu,ADV,ADV,0.4558,FALSE,
