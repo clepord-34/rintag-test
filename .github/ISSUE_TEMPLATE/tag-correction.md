@@ -9,12 +9,12 @@ assignees: ''
 ## Tag Correction Submission
 
 **How did you generate this feedback?**
-- [ ] Using the `rintag.export_feedback()` library function
-- [ ] Export from custom script
+- [ ] Using the `rintag.export_passive_feedback()` or `rintag.export_feedback()` library function
+- [ ] Export from custom script or uncertainty sampling demo
 - [ ] Manual review
 
 **Feedback file attached?**
-<!-- Please attach your rintag_feedback.csv file below by dragging and dropping it into this box -->
+<!-- Please attach your feedback CSV file below by dragging and dropping it into this box -->
 
 **Number of corrections made:**
 <!-- e.g., "7 corrections across 15 sentences" -->

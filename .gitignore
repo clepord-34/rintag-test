@@ -1,16 +1,32 @@
+# Python bytecode & environments
 __pycache__/
 *.pyc
+.venv/
+demo/.venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Packaging & distribution
 *.egg-info/
 dist/
 build/
-.venv/
-data/raw/*.csv
-data/lexicon/*.csv
-demo/.venv
-demo/try_lang1.py
+
+# Environment & secrets
 .env
 .env.*
 !.env.example
 
-# HITL showcase generated output
+# Local scratch scripts
+demo/try_lang1.py
+demo/hitl_showcase/test_lang.py
+
+# Raw & interim local caches
+data/raw/*.csv
+data/lexicon/*.csv
+
+# HITL showcase outputs & local feedback exports
 demo/hitl_showcase/output/
+hitl_showcase/
+rintag_feedback*.csv
+audit*.csv
