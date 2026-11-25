@@ -3,21 +3,15 @@ from pathlib import Path
 from hitl import common
 
 
-def test_sentence_keys_and_pinned_buckets():
-    assert common.holdout_bucket(common.sentence_key("wagas na sasalan")) == 88
-    assert common.holdout_bucket(common.sentence_key("Sigurado mamumuya kita sadtu.")) == 50
-    assert common.holdout_bucket(common.sentence_key("  Nag-dalagan   SU igin! ")) == 37
+def test_sentence_keys():
     assert common.sentence_key("...") == ""
     assert common.sentence_key("Nag-dalagan  SU igin!") == "nag dalagan su igin"
 
 
-def test_jaccard_and_splits():
+def test_jaccard():
     assert common.jaccard(common.token_set("a b c d e"), common.token_set("a b c d e f")) > 0.8
     assert common.jaccard(common.token_set("a b c"), common.token_set("a b c d")) == 0.75
     assert common.jaccard(frozenset(), frozenset({"a"})) == 0.0
-    for text in ("one two", "three four", "five six"):
-        key = common.sentence_key(text)
-        assert (common.split_of(key) == "holdout") == (common.holdout_bucket(key) < 20)
 
 
 def test_constants_match_original_trainer():

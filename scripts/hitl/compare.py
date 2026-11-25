@@ -15,11 +15,10 @@ from hitl.metrics import (
 from hitl.registry import get_entry, load_registry
 
 LEGEND = (
-    "gold_source: corpus_annotation = test set labels; validator = validator_tag (thesis-grade feedback holdout); community_user_or_model = user-corrected tag, or the model's own tag when the user left it blank (diagnostic only).\n"
-    "experimental=True: the version was trained WITHOUT validator-only labels (label_policy user / validator_then_user). Not thesis-grade; do not promote.\n"
-    "hitl_holdout_user favours experimental versions (same label source as their training labels); judge them on test."
+    "gold_source: corpus_annotation = frozen corpus test/dev annotations.\n"
+    "experimental=True: the version was trained WITHOUT validator-only labels (label_policy user / validator_then_user). Not thesis-grade; do not promote."
 )
-GOLD_SOURCE = {"test": "corpus_annotation", "hitl_holdout": "validator", "hitl_holdout_user": "community_user_or_model"}
+GOLD_SOURCE = {"test": "corpus_annotation", "dev": "corpus_annotation"}
 
 
 def _rounded(value):
@@ -38,13 +37,15 @@ def compare(paths, versions=None, resamples=1000):
     for version in selected:
         get_entry(registry, version)
     paths.compare_out.mkdir(parents=True, exist_ok=True)
+    for path in paths.compare_out.glob("*hitl_holdout*.csv"):
+        path.unlink()
     version_rows = []
     eval_context = {}
     metrics_by_pair = {}
     prediction_by_pair = {}
     counts_by_pair = {}
     distributions = {}
-    for name in ("test", "hitl_holdout", "hitl_holdout_user"):
+    for name in ("test", "dev"):
         evalset = load_evalset(paths, name)
         if not evalset.n_sentences:
             print(f"NOTE: {name} eval set is empty; skipped")
@@ -101,7 +102,8 @@ def compare(paths, versions=None, resamples=1000):
     comparison = pd.DataFrame(version_rows, columns=comparison_columns)
     comparison.to_csv(paths.compare_out / "version_comparison.csv", index=False)
     title = "RinTag HITL version comparison"
-    text = title + "\n" + "=" * len(title) + "\n\n" + comparison.to_string(index=False) + "\n\n" + LEGEND + "\n"
+    table = "\n".join(line.rstrip() for line in comparison.to_string(index=False).splitlines())
+    text = title + "\n" + "=" * len(title) + "\n\n" + table + "\n\n" + LEGEND + "\n"
     (paths.compare_out / "version_comparison.txt").write_text(text, encoding="utf-8")
 
     if len(selected) >= 2:
@@ -161,8 +163,8 @@ def compare(paths, versions=None, resamples=1000):
             y = [metrics_by_pair[(version, name)]["macro_f1"] for version in selected]
             low = [metrics_by_pair[(version, name)]["macro_f1"] - ci95(distributions[(version, name)][1])[0] for version in selected]
             high = [ci95(distributions[(version, name)][1])[1] - metrics_by_pair[(version, name)]["macro_f1"] for version in selected]
-            axis.errorbar(selected, y, yerr=[low, high], marker="o", linestyle="--" if name == "hitl_holdout_user" else "-", capsize=3, label=name)
-            offset = -18 if name == "hitl_holdout_user" else 8
+            axis.errorbar(selected, y, yerr=[low, high], marker="o", capsize=3, label=name)
+            offset = 8
             for version, value in zip(selected, y):
                 axis.annotate(f"{value:.4f}", (version, value), textcoords="offset points", xytext=(0, offset), ha="center", va="bottom" if offset > 0 else "top")
         axis.set_xticks(selected, [f"v{version}{'*' if get_entry(registry, version).get('experimental') else ''}" for version in selected])

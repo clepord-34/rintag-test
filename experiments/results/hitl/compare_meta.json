@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-11-25T02:36:11Z",
+  "created_utc": "2026-11-25T07:03:29Z",
   "versions": [
     1,
     2,
@@ -12,11 +12,11 @@
       "n_sentences": 200,
       "n_tokens": 3183
     },
-    "hitl_holdout_user": {
-      "id": "aa5e012aaf234cb707019f36e6314a1ece0244ea293b48b43f9fd8e14ea4fbfb",
-      "gold_source": "community_user_or_model",
-      "n_sentences": 41,
-      "n_tokens": 304
+    "dev": {
+      "id": "4f2799c827ac68b307a6bd54f2e56ed2f3b31b65a85cc69b466f79ecb4f54bd6",
+      "gold_source": "corpus_annotation",
+      "n_sentences": 200,
+      "n_tokens": 2990
     }
   },
   "bootstrap": {

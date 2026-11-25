@@ -25,12 +25,13 @@ def test_user_retrain_archives_candidate_and_preserves_baseline(tmp_repo):
     assert entry["experimental"] is True
     assert entry["label_policy"] == "user"
     assert entry["notes"].startswith("EXPERIMENTAL")
-    assert entry["hitl_holdout_user_accuracy"] is not None
-    assert entry["hitl_holdout_accuracy"] is None
     assert paths.model_file(2).exists() and paths.vocab_file(2).exists()
     manifest = read_json(paths.version_results(2) / "train_manifest.json")
     assert len(manifest["feedback"]["train_uids"]) == entry["n_feedback_train_sentences"]
-    assert all("holdout" not in uid for uid in manifest["feedback"]["train_uids"])
+    report = read_json(paths.snapshot(2) / "ingest_report.json")
+    assert entry["n_feedback_train_sentences"] == report["n_trainable"]
+    assert "n_feedback_holdout_sentences" not in entry
+    assert "n_holdout_sentences" not in manifest["feedback"]
     with open(paths.vocab_file(2), "rb") as file:
         import pickle
         assert "mamumuya" in pickle.load(file)

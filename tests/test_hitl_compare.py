@@ -34,9 +34,12 @@ def test_comparison_and_token_regression_reporting(tmp_repo):
     assert pair_rows[0]["n_fixed"] == pair_rows[0]["n_regressed"] == "0"
     assert float(pair_rows[0]["mcnemar_p"]) == 1.0
     assert float(pair_rows[0]["delta_accuracy"]) == 0.0
-    assert (paths.compare_out / "version_comparison.txt").read_text(encoding="utf-8").rstrip().endswith(LEGEND)
+    comparison_text = (paths.compare_out / "version_comparison.txt").read_text(encoding="utf-8")
+    assert comparison_text.rstrip().endswith(LEGEND)
+    assert all(not line.endswith(" ") for line in comparison_text.splitlines())
     comparison = read_csv_rows(paths.compare_out / "version_comparison.csv")[1]
-    assert len(comparison) == 2
+    assert len(comparison) == 4
+    assert {row["evalset"] for row in comparison} == {"test", "dev"}
     assert comparison[1]["experimental"] == "True"
 
     pred_path = next(paths.version_results(2).glob("pred_test_*.csv"))
@@ -61,3 +64,12 @@ def test_single_version_comparison_writes_no_pairwise_files(tmp_repo):
     assert meta["versions"] == [1]
     assert (paths.compare_out / "version_comparison.csv").exists()
     assert not list(paths.compare_out.glob("pairwise_*.csv"))
+
+
+def test_comparison_removes_obsolete_feedback_holdout_reports(tmp_repo):
+    paths, _, _ = tmp_repo
+    obsolete = paths.compare_out / "pairwise_hitl_holdout_user.csv"
+    obsolete.parent.mkdir(parents=True, exist_ok=True)
+    obsolete.write_text("stale", encoding="utf-8")
+    compare(paths, [1], resamples=5)
+    assert not obsolete.exists()

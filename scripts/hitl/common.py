@@ -18,7 +18,6 @@ sys.path.insert(0, str(REPO_ROOT / "src"))
 ALGORITHM = "lbfgs"
 MAX_ITERATIONS = 200
 TAGSET = ["ADJ", "ADP", "ADV", "AUX", "CCONJ", "DET", "INTJ", "NOUN", "NUM", "PART", "PRON", "PROPN", "PUNCT", "SCONJ", "VERB"]
-HOLDOUT_PERCENT = 20
 NEAR_DUP_JACCARD = 0.8
 LOW_CONF_THRESHOLD = 0.75
 BOOTSTRAP_RESAMPLES = 1000
@@ -135,11 +134,3 @@ def token_set(key: str) -> frozenset:
 
 def jaccard(a: frozenset, b: frozenset) -> float:
     return len(a & b) / len(a | b) if a and b else 0.0
-
-
-def holdout_bucket(key: str) -> int:
-    return int(hashlib.sha1(key.encode("utf-8")).hexdigest(), 16) % 100
-
-
-def split_of(key: str) -> str:
-    return "holdout" if holdout_bucket(key) < HOLDOUT_PERCENT else "train"

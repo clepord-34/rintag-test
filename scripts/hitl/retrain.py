@@ -57,7 +57,7 @@ def _cleanup(paths, version, original_registry):
 def _feedback_training(paths):
     _, sentence_rows = read_csv_rows(paths.feedback_validated / "feedback_sentences.csv")
     _, token_rows = read_csv_rows(paths.feedback_validated / "feedback_tokens.csv")
-    train_uids = [row["uid"] for row in sentence_rows if row["status"] == "ok" and row["trainable"] == "true" and row["split"] == "train"]
+    train_uids = [row["uid"] for row in sentence_rows if row["status"] == "ok" and row["trainable"] == "true"]
     selected = set(train_uids)
     grouped = {uid: [] for uid in train_uids}
     for row in token_rows:
@@ -136,16 +136,12 @@ def retrain(paths, inputs=None, label_policy="validator", parent=None, c1=None, 
 
         from hitl.evaluate import evaluate_version
         evaluations = {}
-        for name in ("test", "dev", "hitl_holdout", "hitl_holdout_user"):
+        for name in ("test", "dev"):
             evaluations[name] = evaluate_version(paths, version, name)
         save_registry(paths, original_registry)
 
         test = evaluations["test"]
         dev = evaluations["dev"]
-        holdout = evaluations["hitl_holdout"]
-        holdout_user = evaluations["hitl_holdout_user"]
-        n_holdout = report["n_holdout"]
-        n_holdout_validated = report["n_holdout_validated"]
         experimental = label_policy != "validator"
         prefix = f"EXPERIMENTAL (policy={label_policy}, unvalidated labels): " if experimental else ""
         notes = prefix + f"CRF retrained on corpus train + {len(feedback)} feedback sentences (policy={label_policy})"
@@ -160,12 +156,6 @@ def retrain(paths, inputs=None, label_policy="validator", parent=None, c1=None, 
             "parent_version": parent_version, "label_policy": label_policy, "experimental": experimental,
             "n_feedback_train_sentences": len(feedback),
             "n_feedback_train_tokens": sum(len(sentence) for sentence in feedback),
-            "n_feedback_holdout_sentences": n_holdout,
-            "n_feedback_holdout_validated_sentences": n_holdout_validated,
-            "hitl_holdout_accuracy": None if holdout is None else holdout["accuracy"],
-            "hitl_holdout_macro_f1": None if holdout is None else holdout["macro_f1"],
-            "hitl_holdout_user_accuracy": None if holdout_user is None else holdout_user["accuracy"],
-            "hitl_holdout_user_macro_f1": None if holdout_user is None else holdout_user["macro_f1"],
             "leakage_audit_ok": True, "snapshot_dir": f"data/feedback/snapshots/v{version}",
             "results_dir": f"models/results/v{version}",
         }
@@ -186,8 +176,7 @@ def retrain(paths, inputs=None, label_policy="validator", parent=None, c1=None, 
             "feedback": {
                 "inputs": [{"path": item["path"], "sha256": item["sha256"]} for item in report["inputs"]],
                 "snapshot_dir": entry["snapshot_dir"], "n_train_sentences": len(feedback),
-                "n_train_tokens": entry["n_feedback_train_tokens"], "n_holdout_sentences": n_holdout,
-                "n_holdout_validated_sentences": n_holdout_validated, "train_uids": train_uids,
+                "n_train_tokens": entry["n_feedback_train_tokens"], "train_uids": train_uids,
             },
             "leakage_audit": audit,
             "libraries": {"python": sys.version.split()[0], "scikit_learn": _library_version("scikit-learn"),
@@ -202,7 +191,4 @@ def retrain(paths, inputs=None, label_policy="validator", parent=None, c1=None, 
         raise
 
     print(f"v{parent_version} -> v{version}: test acc={test['accuracy']:.4f} macro_f1={test['macro_f1']:.4f}")
-    for name, result in (("hitl_holdout", holdout), ("hitl_holdout_user", holdout_user)):
-        if result is not None:
-            print(f"{name}: acc={result['accuracy']:.4f} macro_f1={result['macro_f1']:.4f}")
     return version

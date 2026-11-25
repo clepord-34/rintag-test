@@ -17,7 +17,7 @@ RinTag supports two complementary feedback channels:
 
 ## 2. Ingestion & Data Hygiene Safeguards
 
-Before any feedback sentence is accepted into training or evaluation sets, `scripts/06_hitl.py ingest` executes automated data hygiene checks:
+Before any feedback sentence is accepted into training, `scripts/06_hitl.py ingest` executes automated data hygiene checks:
 
 ```mermaid
 flowchart TD
@@ -25,13 +25,12 @@ flowchart TD
     Parse --> CheckSplit["Check against SplitIndex"]
     CheckSplit -->|Exact match in Train/Dev/Test| Reject["REJECT (in_corpus / in_split)"]
     CheckSplit -->|Jaccard Similarity >= 0.80 with Dev/Test| RejectNear["REJECT (near_duplicate_test/dev)"]
-    CheckSplit -->|Clean & Unique| AssignSplit["Deterministic Hash Split"]
-    AssignSplit --> TrainSplit["80% Ingested Train Pool"]
-    AssignSplit --> HoldoutSplit["20% Frozen HITL Holdout"]
+    CheckSplit -->|Clean & Unique| TrainSplit["Feedback Training Pool"]
 ```
 
 - **Leakage Prevention**: Feedback sentences identical or near-duplicate ($J \ge 0.80$) to `dev.csv` or `test.csv` are immediately rejected.
-- **Deterministic Holdout**: A fixed 20% holdout split is calculated using `sha1(sentence_key) % 100 < 20`, guaranteeing consistent evaluation sets across versions.
+- **Feedback Usage**: All accepted, trainable feedback sentences are used for retraining. Feedback labels are not treated as an evaluation set because uncorrected labels can simply be the model's own predictions.
+- **Evaluation**: Model comparisons use the frozen corpus test set; the dev set is reported separately. Neither corpus split is used for retraining.
 - **Audit Verification**: `python scripts/06_hitl.py audit` independently checks all ingested sentences against all splits.
 
 ---
@@ -76,14 +75,14 @@ python scripts/06_hitl.py promote --version 2
 |---|---|---|
 | `validator` | **Thesis-grade standard.** Only sentences where language experts have verified all tokens (`validator_tag`) are admitted to training. | Eligible for promotion if test metrics improve. |
 | `validator_then_user` | Prefers validator annotations; falls back to user corrections when validator tag is absent. | Marked **EXPERIMENTAL**. Promotion requires `--force`. |
-| `user` | Trains directly on community user corrections. | Marked **EXPERIMENTAL**. Promotion requires `--force`. |
+| `user` | Uses user corrections where present; otherwise retains the model's tag. | Marked **EXPERIMENTAL**. Promotion requires `--force`. |
 
 ---
 
 ## 5. Version Comparison Artifacts
 
 Each retraining run outputs paired statistical comparisons in `experiments/results/hitl/`:
-- `version_comparison.csv` / `version_comparison.txt`: Accuracy, Macro $F_1$, and 95% bootstrap confidence intervals across test and holdout sets.
+- `version_comparison.csv` / `version_comparison.txt`: Accuracy, Macro $F_1$, and 95% bootstrap confidence intervals across the corpus test and dev sets.
 - `per_tag_f1_test.csv`: Per-tag $F_1$ deltas between versions.
 - `changes_test_v{A}_to_v{B}.csv`: Token-level regressions and improvements.
 - `macro_f1_by_version.png`: Longitudinal tracking plot.

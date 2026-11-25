@@ -1,4 +1,4 @@
-"""Validate, deduplicate, label, and split feedback CSV inputs."""
+"""Validate, deduplicate, and label feedback CSV inputs."""
 
 import hashlib
 from collections import Counter, OrderedDict
@@ -8,7 +8,7 @@ from sklearn.metrics import cohen_kappa_score
 
 from hitl.common import (
     LABEL_POLICIES, NEAR_DUP_JACCARD, TAGSET, HitlError, jaccard,
-    read_csv_rows, sentence_key, split_of, token_set, utc_now_iso, write_csv,
+    read_csv_rows, sentence_key, token_set, utc_now_iso, write_csv,
     write_json_atomic,
 )
 from hitl.leakage import SplitIndex, format_audit, leakage_audit
@@ -201,7 +201,7 @@ def run_ingest(paths, inputs=None, label_policy="validator"):
             kept.append(item)
     for item in candidates:
         if item["status"] == "ok":
-            item["split"] = split_of(item["key"])
+            item["split"] = "train"
 
     sentence_rows = []
     token_rows = []
@@ -228,20 +228,16 @@ def run_ingest(paths, inputs=None, label_policy="validator"):
     ok = [item for item in candidates if item["status"] == "ok"]
     trainable = [item for item in ok if item["trainable"]]
     rejected_reasons = Counter(item["reason"].split(":", 1)[0] for item in candidates if item["status"] == "rejected")
-    train_items = [item for item in trainable if item["split"] == "train"]
-    holdout_items = [item for item in ok if item["split"] == "holdout"]
+    train_items = trainable
     report = {
         "created_utc": utc_now_iso(), "label_policy": label_policy,
         "experimental": label_policy != "validator", "inputs": input_metadata,
-        "holdout_percent": 20, "near_dup_jaccard": NEAR_DUP_JACCARD,
+        "near_dup_jaccard": NEAR_DUP_JACCARD,
         "n_candidates": len(candidates), "n_ok": len(ok),
         "n_rejected": len(candidates) - len(ok),
         "n_validated": sum(item["validated"] for item in ok),
         "n_trainable": len(trainable), "n_train": len(train_items),
-        "n_holdout": len(holdout_items),
-        "n_holdout_validated": sum(item["validated"] for item in holdout_items),
         "n_train_tokens": sum(item["n_tokens"] for item in train_items),
-        "n_holdout_tokens": sum(item["n_tokens"] for item in holdout_items),
         "rejected_by_reason": dict(rejected_reasons), **_statistics(candidates),
     }
     write_json_atomic(paths.feedback_validated / "ingest_report.json", report)

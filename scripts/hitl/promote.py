@@ -23,7 +23,7 @@ def promote(paths, version, assume_yes=False, force=False, skip_tests=False):
 
     active = registry["active_version"]
     print(f"Promotion comparison: v{version} vs active v{active}")
-    for name in ("test", "hitl_holdout", "hitl_holdout_user"):
+    for name in ("test",):
         target = evaluate_version(paths, version, name)
         current = evaluate_version(paths, active, name)
         if target is None or current is None:

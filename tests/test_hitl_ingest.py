@@ -20,6 +20,19 @@ def test_policy_labels_and_blank_user_defaults_to_model(tmp_repo):
     assert report["experimental"] is True
 
 
+def test_all_accepted_trainable_feedback_is_assigned_to_training(tmp_repo):
+    paths, write_feedback, candidates = tmp_repo
+    input_path = paths.root / "prototype_feedback.csv"
+    write_feedback(input_path, candidates(1), validator=False, user=True)
+
+    report = run_ingest(paths, [input_path.name], "user")
+    _, sentences = read_csv_rows(paths.feedback_validated / "feedback_sentences.csv")
+
+    assert report["n_train"] == report["n_trainable"] == report["n_ok"] == 1
+    assert sentences[0]["split"] == "train"
+    assert not any(key.startswith("n_holdout") for key in report)
+
+
 def test_duplicate_ids_are_namespaced_and_validated_copy_wins(tmp_repo):
     paths, write_feedback, candidates = tmp_repo
     sentence = candidates(1)

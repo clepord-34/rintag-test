@@ -22,7 +22,7 @@ def build_parser():
     p.set_defaults(func=cmd_verify)
     p = sub.add_parser("evaluate", help="Score a version on an eval set.")
     p.add_argument("--version", type=int, required=True)
-    p.add_argument("--evalset", choices=["test", "dev", "hitl_holdout", "hitl_holdout_user", "all"], default="all")
+    p.add_argument("--evalset", choices=["test", "dev", "all"], default="all")
     p.add_argument("--force", action="store_true")
     p.set_defaults(func=cmd_evaluate)
     p = sub.add_parser("status", help="List versions and feedback counts.")
@@ -67,7 +67,7 @@ def cmd_verify(paths, args):
 
 def cmd_evaluate(paths, args):
     from hitl.evaluate import evaluate_version
-    names = ["test", "dev", "hitl_holdout", "hitl_holdout_user"] if args.evalset == "all" else [args.evalset]
+    names = ["test", "dev"] if args.evalset == "all" else [args.evalset]
     for name in names:
         metrics = evaluate_version(paths, args.version, name, force=args.force)
         if metrics is None:
@@ -88,14 +88,14 @@ def cmd_status(paths, args):
     report_path = paths.feedback_validated / "ingest_report.json"
     if report_path.exists():
         report = read_json(report_path)
-        print(f"last ingest (policy={report['label_policy']}): ok={report['n_ok']} validated={report['n_validated']} trainable={report['n_trainable']} (train={report['n_train']}, holdout={report['n_holdout']}) rejected={report['n_rejected']}")
+        print(f"last ingest (policy={report['label_policy']}): ok={report['n_ok']} validated={report['n_validated']} trainable={report['n_trainable']} (training={report['n_train']}) rejected={report['n_rejected']}")
     return 0
 
 
 def cmd_ingest(paths, args):
     from hitl.ingest import run_ingest
     report = run_ingest(paths, args.input, args.label_policy)
-    print(f"ingest: candidates={report['n_candidates']} ok={report['n_ok']} validated={report['n_validated']} trainable={report['n_trainable']} (train={report['n_train']}, holdout={report['n_holdout']}) rejected={report['n_rejected']}")
+    print(f"ingest: candidates={report['n_candidates']} ok={report['n_ok']} validated={report['n_validated']} trainable={report['n_trainable']} (training={report['n_train']}) rejected={report['n_rejected']}")
     return 0
 
 
