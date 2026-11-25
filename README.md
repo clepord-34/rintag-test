@@ -87,6 +87,20 @@ python demo/hitl_showcase/demo_passive_feedback.py
 
 See [`demo/hitl_showcase/`](demo/hitl_showcase/) for full documentation.
 
+### 3. Retraining with validated feedback
+
+After validators fill `validator_tag` for every token, run the archived retraining workflow:
+
+```bash
+python scripts/06_hitl.py ingest
+python scripts/06_hitl.py audit
+python scripts/06_hitl.py retrain
+python scripts/06_hitl.py compare
+python scripts/06_hitl.py promote --version N
+```
+
+Thesis results must use the default `validator` policy. Experiment mode, `python scripts/06_hitl.py retrain --label-policy user`, trains without validator tags, marks the version experimental, and cannot be promoted without `--force`. Feedback sentences that match or nearly match dev/test sentences are rejected, and `audit` independently verifies the leakage guarantee. Comparison outputs are written to [`experiments/results/hitl/`](experiments/results/hitl/).
+
 ## Authors
 - Vince Clifford C. Aguilar
 - Nhel Adam S. Benosa

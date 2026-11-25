@@ -1,0 +1,30 @@
+{
+  "created_utc": "2026-11-24T23:59:48Z",
+  "versions": [
+    1,
+    2,
+    3
+  ],
+  "evalsets": {
+    "test": {
+      "id": "d32ba9917fe29462e66b302f8460668496366de103f21918d8a84eaa513a2fda",
+      "gold_source": "corpus_annotation",
+      "n_sentences": 200,
+      "n_tokens": 3183
+    },
+    "hitl_holdout_user": {
+      "id": "aa5e012aaf234cb707019f36e6314a1ece0244ea293b48b43f9fd8e14ea4fbfb",
+      "gold_source": "community_user_or_model",
+      "n_sentences": 41,
+      "n_tokens": 304
+    }
+  },
+  "bootstrap": {
+    "resamples": 1000,
+    "seed": 42
+  },
+  "leakage_audit_ok": {
+    "2": true,
+    "3": true
+  }
+}

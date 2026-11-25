@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "evalset": "dev",
+  "evalset_id": "4f2799c827ac68b307a6bd54f2e56ed2f3b31b65a85cc69b466f79ecb4f54bd6",
+  "n_sentences": 200,
+  "n_tokens": 2990,
+  "labels": [
+    "ADJ",
+    "ADP",
+    "ADV",
+    "AUX",
+    "CCONJ",
+    "DET",
+    "INTJ",
+    "NOUN",
+    "NUM",
+    "PART",
+    "PRON",
+    "PROPN",
+    "PUNCT",
+    "SCONJ",
+    "VERB"
+  ],
+  "accuracy": 0.8518394648829432,
+  "macro_f1": 0.8354312597532778,
+  "weighted_f1": 0.8498262951939578,
+  "low_conf_rate": 0.11471571906354515,
+  "mean_confidence": 0.9298483160497996,
+  "oov_own_vocab": {
+    "correct": 513,
+    "total": 677,
+    "accuracy": 0.757754800590842
+  },
+  "oov_baseline_vocab": {
+    "correct": 513,
+    "total": 677,
+    "accuracy": 0.757754800590842
+  },
+  "per_tag": {
+    "ADJ": {
+      "precision": 0.6524822695035462,
+      "recall": 0.5897435897435898,
+      "f1": 0.6195286195286195,
+      "support": 156
+    },
+    "ADP": {
+      "precision": 0.7992424242424242,
+      "recall": 0.8755186721991701,
+      "f1": 0.8356435643564356,
+      "support": 241
+    },
+    "ADV": {
+      "precision": 0.78125,
+      "recall": 0.6944444444444444,
+      "f1": 0.7352941176470589,
+      "support": 252
+    },
+    "AUX": {
+      "precision": 1.0,
+      "recall": 0.9166666666666666,
+      "f1": 0.9565217391304348,
+      "support": 12
+    },
+    "CCONJ": {
+      "precision": 0.89,
+      "recall": 0.956989247311828,
+      "f1": 0.9222797927461139,
+      "support": 93
+    },
+    "DET": {
+      "precision": 0.85,
+      "recall": 0.8862559241706162,
+      "f1": 0.8677494199535963,
+      "support": 211
+    },
+    "INTJ": {
+      "precision": 0.95,
+      "recall": 0.6551724137931034,
+      "f1": 0.7755102040816326,
+      "support": 29
+    },
+    "NOUN": {
+      "precision": 0.847571189279732,
+      "recall": 0.887719298245614,
+      "f1": 0.8671808054841473,
+      "support": 570
+    },
+    "NUM": {
+      "precision": 0.88,
+      "recall": 0.5365853658536586,
+      "f1": 0.6666666666666666,
+      "support": 41
+    },
+    "PART": {
+      "precision": 0.8434343434343434,
+      "recall": 0.8067632850241546,
+      "f1": 0.8246913580246914,
+      "support": 207
+    },
+    "PRON": {
+      "precision": 0.8810289389067524,
+      "recall": 0.8810289389067524,
+      "f1": 0.8810289389067524,
+      "support": 311
+    },
+    "PROPN": {
+      "precision": 0.8163265306122449,
+      "recall": 0.96,
+      "f1": 0.8823529411764706,
+      "support": 125
+    },
+    "PUNCT": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 256
+    },
+    "SCONJ": {
+      "precision": 0.8591549295774648,
+      "recall": 0.782051282051282,
+      "f1": 0.8187919463087249,
+      "support": 78
+    },
+    "VERB": {
+      "precision": 0.8814814814814815,
+      "recall": 0.875,
+      "f1": 0.8782287822878229,
+      "support": 408
+    }
+  },
+  "created_utc": "2026-11-24T22:31:33Z"
+}

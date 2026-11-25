@@ -1,0 +1,35 @@
+{
+  "created_utc": "2026-11-24T23:58:38Z",
+  "label_policy": "user",
+  "experimental": true,
+  "inputs": [
+    {
+      "path": "C:\\Users\\clepord\\Desktop\\RinTag Thesis\\RinTag\\library_feedback.csv",
+      "source": "library",
+      "sha256": "ad1906a7534ac83d0ee83786278232bc10954f566681dcc8c1b4f93fd8baa5b5",
+      "n_rows": 846
+    }
+  ],
+  "holdout_percent": 20,
+  "near_dup_jaccard": 0.8,
+  "n_candidates": 105,
+  "n_ok": 101,
+  "n_rejected": 4,
+  "n_validated": 0,
+  "n_trainable": 101,
+  "n_train": 79,
+  "n_holdout": 22,
+  "n_holdout_validated": 0,
+  "n_train_tokens": 630,
+  "n_holdout_tokens": 185,
+  "rejected_by_reason": {
+    "invalid_tag": 3,
+    "duplicate_of": 1
+  },
+  "n_tokens_with_validator_tag": 0,
+  "validator_vs_model_agreement": null,
+  "validator_vs_user_agreement": null,
+  "validator_vs_model_kappa": null,
+  "validator_vs_user_kappa": null,
+  "top_model_to_validator_changes": null
+}
