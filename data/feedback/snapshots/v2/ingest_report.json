@@ -1,30 +1,26 @@
 {
-  "created_utc": "2026-11-24T23:58:38Z",
+  "created_utc": "2026-11-25T07:26:22Z",
   "label_policy": "user",
   "experimental": true,
   "inputs": [
     {
-      "path": "C:\\Users\\clepord\\Desktop\\RinTag Thesis\\RinTag\\library_feedback.csv",
-      "source": "library",
-      "sha256": "ad1906a7534ac83d0ee83786278232bc10954f566681dcc8c1b4f93fd8baa5b5",
-      "n_rows": 846
+      "path": "C:\\Users\\clepord\\Desktop\\RinTag Thesis\\RinTag\\prototype_feedback.csv",
+      "source": "prototype",
+      "sha256": "23ece14f1b8e01c33237e2e6c4c3dee748b6c9f044ecc9380215e37cc9700e5e",
+      "n_rows": 643
     }
   ],
-  "holdout_percent": 20,
   "near_dup_jaccard": 0.8,
-  "n_candidates": 105,
-  "n_ok": 101,
-  "n_rejected": 4,
+  "n_candidates": 101,
+  "n_ok": 98,
+  "n_rejected": 3,
   "n_validated": 0,
-  "n_trainable": 101,
-  "n_train": 79,
-  "n_holdout": 22,
-  "n_holdout_validated": 0,
+  "n_trainable": 98,
+  "n_train": 98,
   "n_train_tokens": 630,
-  "n_holdout_tokens": 185,
   "rejected_by_reason": {
-    "invalid_tag": 3,
-    "duplicate_of": 1
+    "tokenization_mismatch": 2,
+    "near_dup_test": 1
   },
   "n_tokens_with_validator_tag": 0,
   "validator_vs_model_agreement": null,

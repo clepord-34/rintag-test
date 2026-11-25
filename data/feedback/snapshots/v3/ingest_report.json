@@ -1,37 +1,33 @@
 {
-  "created_utc": "2026-11-24T23:59:10Z",
+  "created_utc": "2026-11-25T07:26:51Z",
   "label_policy": "user",
   "experimental": true,
   "inputs": [
     {
-      "path": "C:\\Users\\clepord\\Desktop\\RinTag Thesis\\RinTag\\library_feedback.csv",
-      "source": "library",
-      "sha256": "ad1906a7534ac83d0ee83786278232bc10954f566681dcc8c1b4f93fd8baa5b5",
-      "n_rows": 846
-    },
-    {
       "path": "C:\\Users\\clepord\\Desktop\\RinTag Thesis\\RinTag\\prototype_feedback.csv",
       "source": "prototype",
-      "sha256": "df99cff7dfdea74a7c37cd82cf70886f65cff9eae578f1d95a1123a3d4b10701",
-      "n_rows": 644
+      "sha256": "23ece14f1b8e01c33237e2e6c4c3dee748b6c9f044ecc9380215e37cc9700e5e",
+      "n_rows": 643
+    },
+    {
+      "path": "C:\\Users\\clepord\\Desktop\\RinTag Thesis\\RinTag\\library_feedback.csv",
+      "source": "library",
+      "sha256": "1ef370b33ce7d129b9ec4a0633513593032a5b00c25f51a8980093ba7200fca2",
+      "n_rows": 843
     }
   ],
-  "holdout_percent": 20,
   "near_dup_jaccard": 0.8,
   "n_candidates": 206,
-  "n_ok": 200,
-  "n_rejected": 6,
+  "n_ok": 201,
+  "n_rejected": 5,
   "n_validated": 0,
-  "n_trainable": 200,
-  "n_train": 159,
-  "n_holdout": 41,
-  "n_holdout_validated": 0,
-  "n_train_tokens": 1145,
-  "n_holdout_tokens": 304,
+  "n_trainable": 201,
+  "n_train": 201,
+  "n_train_tokens": 1459,
   "rejected_by_reason": {
-    "invalid_tag": 3,
-    "duplicate_of": 2,
-    "near_dup_test": 1
+    "tokenization_mismatch": 2,
+    "near_dup_test": 1,
+    "duplicate_of": 2
   },
   "n_tokens_with_validator_tag": 0,
   "validator_vs_model_agreement": null,
