@@ -1,0 +1,11 @@
+sentence_id,timestamp,full_sentence,token_index,token,model_tag,user-corrected_tag,confidence,is_oov
+1,2026-11-25T00:14:42.049173+00:00,"Mayna, usaya na ding lamisa ta magkaun na kita",0,Mayna,INTJ,,0.419,False
+1,2026-11-25T00:14:42.049173+00:00,"Mayna, usaya na ding lamisa ta magkaun na kita",1,",",PUNCT,,1.0,False
+1,2026-11-25T00:14:42.049173+00:00,"Mayna, usaya na ding lamisa ta magkaun na kita",2,usaya,VERB,,0.8163,True
+1,2026-11-25T00:14:42.049173+00:00,"Mayna, usaya na ding lamisa ta magkaun na kita",3,na,ADV,,0.8259,False
+1,2026-11-25T00:14:42.049173+00:00,"Mayna, usaya na ding lamisa ta magkaun na kita",4,ding,ADP,,0.2981,False
+1,2026-11-25T00:14:42.049173+00:00,"Mayna, usaya na ding lamisa ta magkaun na kita",5,lamisa,NOUN,,0.7493,True
+1,2026-11-25T00:14:42.049173+00:00,"Mayna, usaya na ding lamisa ta magkaun na kita",6,ta,SCONJ,,0.9833,False
+1,2026-11-25T00:14:42.049173+00:00,"Mayna, usaya na ding lamisa ta magkaun na kita",7,magkaun,VERB,,0.9178,False
+1,2026-11-25T00:14:42.049173+00:00,"Mayna, usaya na ding lamisa ta magkaun na kita",8,na,ADV,,0.9973,False
+1,2026-11-25T00:14:42.049173+00:00,"Mayna, usaya na ding lamisa ta magkaun na kita",9,kita,PRON,,0.9998,False

@@ -85,5 +85,9 @@ Export top-N feedback CSV (Google Sheets schema)
        ↓  share with linguists / native speakers
 Expert reviews → fills user-corrected_tag
        ↓  submit via Google Sheets, GitHub Issue, or CSV
-Use reviewed corrections for manual corpus curation and analysis.
+Validators tag every token with a full UPOS tag (validator_tag)
+       |  python scripts/06_hitl.py retrain
+New model version trained, archived and evaluated on frozen sets
+       |  python scripts/06_hitl.py compare
+Compare against earlier versions, then promote or keep the current model
 ```
