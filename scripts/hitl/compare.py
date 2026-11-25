@@ -162,6 +162,9 @@ def compare(paths, versions=None, resamples=1000):
             low = [metrics_by_pair[(version, name)]["macro_f1"] - ci95(distributions[(version, name)][1])[0] for version in selected]
             high = [ci95(distributions[(version, name)][1])[1] - metrics_by_pair[(version, name)]["macro_f1"] for version in selected]
             axis.errorbar(selected, y, yerr=[low, high], marker="o", linestyle="--" if name == "hitl_holdout_user" else "-", capsize=3, label=name)
+            offset = -18 if name == "hitl_holdout_user" else 8
+            for version, value in zip(selected, y):
+                axis.annotate(f"{value:.4f}", (version, value), textcoords="offset points", xytext=(0, offset), ha="center", va="bottom" if offset > 0 else "top")
         axis.set_xticks(selected, [f"v{version}{'*' if get_entry(registry, version).get('experimental') else ''}" for version in selected])
         axis.set_xlabel("Model version")
         axis.set_ylabel("Macro-F1")
